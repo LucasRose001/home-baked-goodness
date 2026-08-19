@@ -180,8 +180,29 @@
     padding:12px 24px;border-radius:3px;font-weight:700;font-size:14.5px;
   }
   .btn-solid-cream{
-    background:var(--cream-light);color:var(--terracotta-dark);
-    padding:13px 26px;border-radius:3px;font-weight:700;font-size:14.5px;
+    background:var(--gold);color:var(--espresso);
+    padding:15px 30px;border-radius:4px;font-weight:800;font-size:15.5px;
+    letter-spacing:.4px;
+    box-shadow:0 8px 22px rgba(0,0,0,.22),0 2px 4px rgba(0,0,0,.14);
+    transition:transform .18s ease,box-shadow .18s ease,background .18s ease;
+    position:relative;
+  }
+  .btn-solid-cream:hover{
+    background:#E5B45A;transform:translateY(-2px);
+    box-shadow:0 12px 28px rgba(0,0,0,.28),0 3px 6px rgba(0,0,0,.18);
+  }
+  .btn-solid-cream:active{transform:translateY(0);box-shadow:0 4px 12px rgba(0,0,0,.2);}
+  @media(prefers-reduced-motion:no-preference){
+    @keyframes btnPulse{
+      0%,100%{box-shadow:0 8px 22px rgba(0,0,0,.22),0 2px 4px rgba(0,0,0,.14),0 0 0 0 rgba(217,164,65,.55);}
+      50%{box-shadow:0 8px 22px rgba(0,0,0,.22),0 2px 4px rgba(0,0,0,.14),0 0 0 12px rgba(217,164,65,0);}
+    }
+    .btn-solid-cream{animation:btnPulse 2.4s ease-in-out infinite;}
+    .btn-solid-cream:hover{animation:none;}
+  }
+  @media(prefers-reduced-motion:no-preference){
+    html.js .reveal{opacity:0;transform:translateY(28px);transition:opacity .7s ease,transform .7s ease;will-change:opacity,transform;}
+    html.js .reveal.is-visible{opacity:1;transform:none;}
   }
   .hero .order-dd .order-dd-panel{right:auto;left:0;}
   .hero-collage{
@@ -520,7 +541,7 @@
   <div class="scallop"></div>
 </header>
 
-<section class="trust">
+<section class="trust reveal">
   <div class="wrap">
     <div class="trust-item"><b>Hague</b> ★4.5 · 117 reviews</div>
     <span class="trust-dot">•</span>
@@ -532,7 +553,7 @@
   </div>
 </section>
 
-<section class="story" id="story">
+<section class="story reveal" id="story">
   <div class="wrap">
     <div class="story-photo">
       <div class="story-tag">Est. in Hague</div>
@@ -565,7 +586,7 @@
   </div>
 </section>
 
-<section class="menu" id="menu">
+<section class="menu reveal" id="menu">
   <div class="wrap">
     <div class="menu-head">
       <div class="eyebrow">What We Make</div>
@@ -649,7 +670,7 @@
   </div>
 </section>
 
-<section class="testimonials">
+<section class="testimonials reveal">
   <div class="wrap">
     <div class="testimonials-head">
       <div class="eyebrow">What Locals Say</div>
@@ -675,7 +696,7 @@
   </div>
 </section>
 
-<section class="locations" id="locations">
+<section class="locations reveal" id="locations">
   <div class="wrap">
     <div class="loc-head">
       <div class="eyebrow">Order Online</div>
@@ -719,7 +740,7 @@
   </div>
 </section>
 
-<section class="contact" id="contact">
+<section class="contact reveal" id="contact">
   <div class="wrap contact-wrap">
     <div>
       <div class="eyebrow">Get In Touch</div>
@@ -777,6 +798,22 @@
 </footer>
 
 <script>
+document.documentElement.classList.add('js');
+(function(){
+  if(!('IntersectionObserver' in window)){
+    document.querySelectorAll('.reveal').forEach(function(el){el.classList.add('is-visible');});
+    return;
+  }
+  var io = new IntersectionObserver(function(entries){
+    entries.forEach(function(e){
+      if(e.isIntersecting){
+        e.target.classList.add('is-visible');
+        io.unobserve(e.target);
+      }
+    });
+  },{rootMargin:'0px 0px -8% 0px',threshold:0.08});
+  document.querySelectorAll('.reveal').forEach(function(el){io.observe(el);});
+})();
 function toggleMobileMenu(){
   var panel = document.getElementById('mobile-menu');
   var btn = document.getElementById('hamburger-btn');
