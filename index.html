@@ -349,11 +349,53 @@
   .testi-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;}
   .testi-card{
     background:var(--cream-light);color:var(--espresso);
-    border-radius:6px;padding:26px 24px;
+    border-radius:8px;padding:24px 22px;
+    display:flex;flex-direction:column;
+    box-shadow:0 10px 24px -14px rgba(0,0,0,.35);
+    transition:transform .25s ease,box-shadow .25s ease;
   }
-  .testi-stars{color:var(--gold);font-size:15px;margin-bottom:12px;letter-spacing:2px;}
-  .testi-card p{font-size:15px;line-height:1.5;margin-bottom:14px;}
-  .testi-source{font-size:12.5px;font-weight:700;opacity:0.6;text-transform:uppercase;letter-spacing:0.04em;}
+  .testi-card:hover{transform:translateY(-3px);box-shadow:0 18px 30px -14px rgba(0,0,0,.45);}
+  .testi-head{display:flex;align-items:center;gap:12px;margin-bottom:14px;}
+  .testi-avatar{
+    width:44px;height:44px;border-radius:50%;flex-shrink:0;
+    display:flex;align-items:center;justify-content:center;
+    font-family:'Fraunces',serif;font-weight:700;font-size:19px;
+    color:var(--cream-light);
+  }
+  .testi-avatar.loc-hague{background:var(--terracotta);}
+  .testi-avatar.loc-martensville{background:var(--teal);}
+  .testi-avatar.loc-saskatoon{background:var(--gold);color:var(--espresso);}
+  .testi-meta{display:flex;flex-direction:column;gap:3px;min-width:0;flex:1;}
+  .testi-name{font-weight:700;font-size:15px;color:var(--espresso);line-height:1.1;}
+  .testi-name.placeholder{opacity:.55;font-style:italic;font-weight:600;}
+  .testi-loc{
+    display:inline-flex;align-self:flex-start;
+    font-family:'Karla',sans-serif;font-weight:800;font-size:10.5px;
+    letter-spacing:.07em;text-transform:uppercase;
+    padding:3px 9px;border-radius:20px;
+  }
+  .testi-loc.loc-hague{background:rgba(193,69,46,.15);color:var(--terracotta-dark);}
+  .testi-loc.loc-martensville{background:rgba(61,122,112,.18);color:var(--teal-dark);}
+  .testi-loc.loc-saskatoon{background:rgba(217,164,65,.28);color:#8a6420;}
+  .testi-stars{color:var(--gold);font-size:15px;margin-bottom:10px;letter-spacing:2px;}
+  .testi-card p{font-size:14.5px;line-height:1.55;margin-bottom:14px;flex:1;}
+  .testi-source{
+    font-size:11.5px;font-weight:700;opacity:.55;
+    text-transform:uppercase;letter-spacing:0.06em;
+    margin-top:auto;padding-top:10px;border-top:1px dashed rgba(61,43,31,.15);
+  }
+  .testi-google-row{
+    display:flex;flex-wrap:wrap;gap:12px;justify-content:center;
+    margin-top:38px;
+  }
+  .testi-google-chip{
+    display:inline-flex;align-items:center;gap:6px;
+    background:rgba(252,248,240,.1);color:var(--cream-light);
+    padding:9px 16px;border-radius:50px;font-weight:700;font-size:13px;
+    border:1px solid rgba(252,248,240,.25);
+    transition:background .18s ease,border-color .18s ease;
+  }
+  .testi-google-chip:hover{background:rgba(252,248,240,.2);border-color:rgba(252,248,240,.5);}
   @media(max-width:900px){.testi-grid{grid-template-columns:1fr;}}
 
   /* ---------- LOCATIONS / ORDER ---------- */
@@ -506,7 +548,7 @@
     "aggregateRating": {
       "@type": "AggregateRating",
       "ratingValue": "4.5",
-      "reviewCount": "117"
+      "reviewCount": "118"
     }
   },
   {
@@ -525,8 +567,8 @@
     },
     "aggregateRating": {
       "@type": "AggregateRating",
-      "ratingValue": "4.4",
-      "reviewCount": "49"
+      "ratingValue": "4.5",
+      "reviewCount": "50"
     }
   },
   {
@@ -545,7 +587,7 @@
     "aggregateRating": {
       "@type": "AggregateRating",
       "ratingValue": "4.6",
-      "reviewCount": "25"
+      "reviewCount": "26"
     }
   }
 ]
@@ -622,11 +664,11 @@
 
 <section class="trust reveal">
   <div class="wrap">
-    <div class="trust-item"><b>Hague</b> ★4.5 · 117 reviews</div>
+    <div class="trust-item"><b>Hague</b> ★4.5 · 118 reviews</div>
     <span class="trust-dot">•</span>
-    <div class="trust-item"><b>Martensville</b> ★4.4 · 49 reviews</div>
+    <div class="trust-item"><b>Martensville</b> ★4.5 · 50 reviews</div>
     <span class="trust-dot">•</span>
-    <div class="trust-item"><b>Saskatoon 51st</b> ★4.6 · 25 reviews</div>
+    <div class="trust-item"><b>Saskatoon 51st</b> ★4.6 · 26 reviews</div>
     <span class="trust-dot">•</span>
     <div class="trust-item"><b>SK's only</b> breakfast pizza</div>
   </div>
@@ -753,24 +795,135 @@
   <div class="wrap">
     <div class="testimonials-head reveal-item">
       <div class="eyebrow">What Locals Say</div>
-      <h2>190+ happy customers across three towns</h2>
+      <h2>194 five-star reviews across three towns</h2>
     </div>
+    <!-- REVIEWS: real 5-star Google reviews, 3 per shop. Names shown as
+         initials to match how Google presents them publicly. -->
     <div class="testi-grid">
+
       <div class="testi-card reveal-item" style="--rd:100ms">
+        <div class="testi-head">
+          <div class="testi-avatar loc-hague">M</div>
+          <div class="testi-meta">
+            <div class="testi-name">M.</div>
+            <span class="testi-loc loc-hague">Hague</span>
+          </div>
+        </div>
         <div class="testi-stars">★★★★★</div>
-        <p>Regulars say the thin-crust pizza comes loaded with toppings — and to grab extra napkins.</p>
-        <div class="testi-source">Google Review — Hague</div>
+        <p>"Amazing owners, great staff, and top quality food."</p>
+        <div class="testi-source">★★★★★ · Google</div>
       </div>
-      <div class="testi-card reveal-item" style="--rd:200ms">
+
+      <div class="testi-card reveal-item" style="--rd:170ms">
+        <div class="testi-head">
+          <div class="testi-avatar loc-martensville">G</div>
+          <div class="testi-meta">
+            <div class="testi-name">G.</div>
+            <span class="testi-loc loc-martensville">Martensville</span>
+          </div>
+        </div>
         <div class="testi-stars">★★★★★</div>
-        <p>Truckers and travelers passing through say it's a reliable stop for a quick, satisfying bite.</p>
-        <div class="testi-source">Google Review — Hague</div>
+        <p>"Great pizza and combo deals, the pastries and donuts are awesome as well."</p>
+        <div class="testi-source">★★★★★ · Google</div>
       </div>
-      <div class="testi-card reveal-item" style="--rd:300ms">
+
+      <div class="testi-card reveal-item" style="--rd:240ms">
+        <div class="testi-head">
+          <div class="testi-avatar loc-saskatoon">L</div>
+          <div class="testi-meta">
+            <div class="testi-name">L.</div>
+            <span class="testi-loc loc-saskatoon">Saskatoon</span>
+          </div>
+        </div>
         <div class="testi-stars">★★★★★</div>
-        <p>Locals make a point of stopping in for a puffed wheat square every time they pass by.</p>
-        <div class="testi-source">Google Review — Hague</div>
+        <p>"All meat pizza was hearty and tasty, donuts fresh and soft."</p>
+        <div class="testi-source">★★★★★ · Google</div>
       </div>
+
+      <div class="testi-card reveal-item" style="--rd:310ms">
+        <div class="testi-head">
+          <div class="testi-avatar loc-hague">K</div>
+          <div class="testi-meta">
+            <div class="testi-name">K.</div>
+            <span class="testi-loc loc-hague">Hague</span>
+          </div>
+        </div>
+        <div class="testi-stars">★★★★★</div>
+        <p>"Thick, crunchy crust and plenty of toppings without being too greasy."</p>
+        <div class="testi-source">★★★★★ · Google</div>
+      </div>
+
+      <div class="testi-card reveal-item" style="--rd:380ms">
+        <div class="testi-head">
+          <div class="testi-avatar loc-martensville">K</div>
+          <div class="testi-meta">
+            <div class="testi-name">K.</div>
+            <span class="testi-loc loc-martensville">Martensville</span>
+          </div>
+        </div>
+        <div class="testi-stars">★★★★★</div>
+        <p>"Best place for tarts, ham and cheese quiche, and treats!!"</p>
+        <div class="testi-source">★★★★★ · Google</div>
+      </div>
+
+      <div class="testi-card reveal-item" style="--rd:450ms">
+        <div class="testi-head">
+          <div class="testi-avatar loc-saskatoon">J</div>
+          <div class="testi-meta">
+            <div class="testi-name">J.</div>
+            <span class="testi-loc loc-saskatoon">Saskatoon</span>
+          </div>
+        </div>
+        <div class="testi-stars">★★★★★</div>
+        <p>"Fantastic baked goods, pizza, and ice cream."</p>
+        <div class="testi-source">★★★★★ · Google</div>
+      </div>
+
+      <div class="testi-card reveal-item" style="--rd:520ms">
+        <div class="testi-head">
+          <div class="testi-avatar loc-hague">A</div>
+          <div class="testi-meta">
+            <div class="testi-name">A.</div>
+            <span class="testi-loc loc-hague">Hague</span>
+          </div>
+        </div>
+        <div class="testi-stars">★★★★★</div>
+        <p>"Ordered a loaded and bacon chicken ranch pizza on our way home to Wakaw."</p>
+        <div class="testi-source">★★★★★ · Google</div>
+      </div>
+
+      <div class="testi-card reveal-item" style="--rd:590ms">
+        <div class="testi-head">
+          <div class="testi-avatar loc-martensville">S</div>
+          <div class="testi-meta">
+            <div class="testi-name">S.</div>
+            <span class="testi-loc loc-martensville">Martensville</span>
+          </div>
+        </div>
+        <div class="testi-stars">★★★★★</div>
+        <p>"Also many types of baked goods — tarts, cinnamon buns, and ice cream."</p>
+        <div class="testi-source">★★★★★ · Google</div>
+      </div>
+
+      <div class="testi-card reveal-item" style="--rd:660ms">
+        <div class="testi-head">
+          <div class="testi-avatar loc-saskatoon">D</div>
+          <div class="testi-meta">
+            <div class="testi-name">D.</div>
+            <span class="testi-loc loc-saskatoon">Saskatoon</span>
+          </div>
+        </div>
+        <div class="testi-stars">★★★★★</div>
+        <p>"Hawaiian had a good amount of ham and pineapple, sauce was great too!"</p>
+        <div class="testi-source">★★★★★ · Google</div>
+      </div>
+
+    </div>
+
+    <div class="testi-google-row reveal-item" style="--rd:580ms">
+      <a class="testi-google-chip" href="https://www.google.com/maps/search/?api=1&amp;query=I%26P+Home+Baked+Goodness+Hague+SK" target="_blank" rel="noopener">See more reviews · Hague ↗</a>
+      <a class="testi-google-chip" href="https://www.google.com/maps/search/?api=1&amp;query=I%26P+Home+Baked+Goodness+Martensville+SK" target="_blank" rel="noopener">See more reviews · Martensville ↗</a>
+      <a class="testi-google-chip" href="https://www.google.com/maps/search/?api=1&amp;query=I%26P+Home+Baked+Goodness+Saskatoon+51st+Street" target="_blank" rel="noopener">See more reviews · Saskatoon ↗</a>
     </div>
   </div>
 </section>
@@ -787,7 +940,7 @@
         <div class="photo"><img src="https://static.wixstatic.com/media/e9a461_a87eeb6d81be4b7ea74b792deb90389f~mv2.jpeg/v1/fill/w_700,h_400,al_c,q_90,usm_0.66_1.00_0.01,enc_avif,quality_auto/e9a461_a87eeb6d81be4b7ea74b792deb90389f~mv2.jpeg" alt="Hague location"></div>
         <div class="content">
           <h3>Hague</h3>
-          <div class="loc-rating">★ 4.5 · 117 reviews</div>
+          <div class="loc-rating">★ 4.5 · 118 reviews</div>
           <address><span class="loc-street">100A 4th St, Hague, SK</span>Our original shop, on the way to the lake.</address>
           <div class="loc-actions">
             <a class="loc-btn" href="https://order.toasttab.com/online/i-p-home-baked-goodness-hauge" target="_blank" rel="noopener">Order Online →</a>
@@ -800,7 +953,7 @@
         <div class="photo"><img src="https://static.wixstatic.com/media/e9a461_5ab49fd8924f44498e55940325eb6fb8~mv2.jpg/v1/fill/w_700,h_400,al_c,q_90,usm_0.66_1.00_0.01,enc_avif,quality_auto/e9a461_5ab49fd8924f44498e55940325eb6fb8~mv2.jpg" alt="Martensville location"></div>
         <div class="content">
           <h3>Martensville</h3>
-          <div class="loc-rating">★ 4.4 · 49 reviews</div>
+          <div class="loc-rating">★ 4.5 · 50 reviews</div>
           <address><span class="loc-street">701 Centennial Dr N, Unit 3, Martensville, SK</span>Fresh donuts every morning, plus full breakfast menu.</address>
           <div class="loc-actions">
             <a class="loc-btn" href="https://order.toasttab.com/online/i-p-home-baked-goodness-martensville" target="_blank" rel="noopener">Order Online →</a>
@@ -813,7 +966,7 @@
         <div class="photo"><img src="https://static.wixstatic.com/media/e9a461_97936c02753d435b9e32bedb310fae33~mv2.jpg/v1/fill/w_700,h_400,al_c,q_90,usm_0.66_1.00_0.01,enc_avif,quality_auto/e9a461_97936c02753d435b9e32bedb310fae33~mv2.jpg" alt="Saskatoon 51st Street location"></div>
         <div class="content">
           <h3>Saskatoon — 51st St</h3>
-          <div class="loc-rating">★ 4.6 · 25 reviews</div>
+          <div class="loc-rating">★ 4.6 · 26 reviews</div>
           <address><span class="loc-street">820C 51st St E, Saskatoon, SK</span>Our newest shop, opened at the start of 2026.</address>
           <div class="loc-actions">
             <a class="loc-btn" href="https://order.toasttab.com/online/i-p-home-baked-goodness-ltd-51st-street-820c-51st-street" target="_blank" rel="noopener">Order Online →</a>
