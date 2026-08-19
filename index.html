@@ -407,10 +407,12 @@
   .loc-card{
     background:var(--cream-light);border:1px solid rgba(61,43,31,0.12);
     border-radius:6px;overflow:hidden;
+    display:flex;flex-direction:column;height:100%;
   }
-  .loc-card .photo{height:150px;overflow:hidden;}
+  .loc-card .photo{height:150px;overflow:hidden;flex-shrink:0;}
   .loc-card .photo img{width:100%;height:100%;object-fit:cover;}
-  .loc-card .content{padding:22px;}
+  .loc-card .content{padding:22px;flex:1;display:flex;flex-direction:column;}
+  .loc-card .loc-actions{margin-top:auto;padding-top:6px;}
   .loc-card h3{font-size:20px;color:var(--terracotta-dark);margin-bottom:6px;}
   .loc-rating{font-size:13.5px;font-weight:700;color:var(--teal);margin-bottom:10px;}
   .loc-card address{font-style:normal;font-size:14px;opacity:0.8;margin-bottom:16px;}
