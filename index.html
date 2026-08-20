@@ -526,6 +526,37 @@
     html.js .reveal-item.is-visible{opacity:1;transform:none;}
   }
 
+  /* ---------- MAIL PICKER MODAL ---------- */
+  .mail-picker[hidden]{display:none;}
+  .mail-picker{position:fixed;inset:0;z-index:100;display:flex;align-items:center;justify-content:center;padding:20px;}
+  .mail-picker-backdrop{position:absolute;inset:0;background:rgba(61,43,31,.6);cursor:pointer;}
+  .mail-picker-panel{
+    position:relative;background:var(--cream-light);color:var(--espresso);
+    border-radius:8px;padding:32px 28px 26px;
+    max-width:420px;width:100%;
+    box-shadow:0 24px 48px -8px rgba(0,0,0,.4);
+  }
+  .mail-picker-close{
+    position:absolute;top:10px;right:10px;background:none;border:none;
+    font-size:26px;line-height:1;cursor:pointer;color:var(--espresso);
+    width:36px;height:36px;border-radius:50%;
+    display:flex;align-items:center;justify-content:center;
+    transition:background .15s ease;
+  }
+  .mail-picker-close:hover{background:rgba(61,43,31,.08);}
+  .mail-picker-panel h3{font-size:20px;margin-bottom:8px;color:var(--terracotta-dark);font-family:'Fraunces',serif;}
+  .mail-picker-panel p{font-size:14px;opacity:.75;margin-bottom:18px;line-height:1.4;}
+  .mail-picker-options{display:flex;flex-direction:column;gap:8px;}
+  .mail-picker-opt{
+    display:flex;align-items:center;gap:12px;padding:13px 16px;
+    background:var(--cream);border:1px solid rgba(61,43,31,.15);border-radius:4px;
+    font-weight:700;font-size:14.5px;color:var(--espresso);text-align:left;
+    font-family:'Karla',sans-serif;cursor:pointer;
+    transition:background .15s ease,border-color .15s ease,transform .15s ease;
+  }
+  .mail-picker-opt:hover{background:var(--cream-light);border-color:var(--terracotta);transform:translateX(2px);}
+  .mail-picker-opt .mp-i{font-size:16px;flex-shrink:0;color:var(--terracotta);}
+
   /* ---------- MOBILE ORDER FAB ---------- */
   .mobile-order-fab{
     display:none;
@@ -1047,7 +1078,7 @@
       </div>
       <button type="submit" class="form-submit">Send Message</button>
       <div class="form-status" id="form-status" role="status" aria-live="polite"></div>
-      <p class="form-hint">Send opens your email app addressed to Irene. Custom cake or catering order? Calling directly is fastest.</p>
+      <p class="form-hint">Send opens the mail service of your choice, addressed to Irene. Custom cake or catering order? Calling directly is fastest.</p>
     </form>
   </div>
 </section>
@@ -1067,6 +1098,21 @@
 </footer>
 
 <a class="mobile-order-fab" href="#locations" aria-label="Order online">🍕 Order Online</a>
+
+<div class="mail-picker" id="mail-picker" role="dialog" aria-modal="true" aria-labelledby="mail-picker-title" hidden>
+  <div class="mail-picker-backdrop" data-close-picker></div>
+  <div class="mail-picker-panel">
+    <button type="button" class="mail-picker-close" data-close-picker aria-label="Close">×</button>
+    <h3 id="mail-picker-title">Send with which mail app?</h3>
+    <p>Pick your mail service and we'll open a pre-filled message to Irene.</p>
+    <div class="mail-picker-options">
+      <button type="button" class="mail-picker-opt" data-mail="gmail"><span class="mp-i">✉</span>Gmail (browser)</button>
+      <button type="button" class="mail-picker-opt" data-mail="outlook"><span class="mp-i">✉</span>Outlook (browser)</button>
+      <button type="button" class="mail-picker-opt" data-mail="yahoo"><span class="mp-i">✉</span>Yahoo Mail (browser)</button>
+      <button type="button" class="mail-picker-opt" data-mail="default"><span class="mp-i">📱</span>Default mail app on this device</button>
+    </div>
+  </div>
+</div>
 
 <script>
 document.documentElement.classList.add('js');
@@ -1099,6 +1145,20 @@ document.documentElement.classList.add('js');
   var form = document.getElementById('contact-form');
   if(!form) return;
   var status = document.getElementById('form-status');
+  var picker = document.getElementById('mail-picker');
+  var pending = null;
+  var TO = 'info@homebakedgoodness.ca';
+
+  function openPicker(data){
+    pending = data;
+    picker.hidden = false;
+    document.body.style.overflow = 'hidden';
+  }
+  function closePicker(){
+    picker.hidden = true;
+    document.body.style.overflow = '';
+  }
+
   form.addEventListener('submit', function(e){
     e.preventDefault();
     var loc = (document.getElementById('contact-location')||{}).value || '';
@@ -1118,12 +1178,43 @@ document.documentElement.classList.add('js');
       'Name: ' + name + '\n' +
       'Reply to: ' + email + '\n\n' +
       'Message:\n' + msg + '\n';
-    var href = 'mailto:info@homebakedgoodness.ca' +
-      '?subject=' + encodeURIComponent(subject) +
-      '&body=' + encodeURIComponent(body);
-    window.location.href = href;
-    status.textContent = "Opening your email app… hit Send in there to finish. Nothing happening? Email info@homebakedgoodness.ca directly, or call 306-225-2244 ext 9.";
-    status.className = 'form-status ok';
+    openPicker({subject: subject, body: body});
+    status.textContent = '';
+    status.className = 'form-status';
+  });
+
+  picker.addEventListener('click', function(e){
+    if(e.target.hasAttribute('data-close-picker')) closePicker();
+  });
+  document.addEventListener('keydown', function(e){
+    if(e.key === 'Escape' && !picker.hidden) closePicker();
+  });
+
+  picker.querySelectorAll('.mail-picker-opt').forEach(function(btn){
+    btn.addEventListener('click', function(){
+      if(!pending) return;
+      var s = encodeURIComponent(pending.subject);
+      var b = encodeURIComponent(pending.body);
+      var to = encodeURIComponent(TO);
+      var url;
+      switch(btn.dataset.mail){
+        case 'gmail':
+          url = 'https://mail.google.com/mail/?view=cm&fs=1&to=' + to + '&su=' + s + '&body=' + b;
+          window.open(url, '_blank', 'noopener'); break;
+        case 'outlook':
+          url = 'https://outlook.office.com/mail/deeplink/compose?to=' + to + '&subject=' + s + '&body=' + b;
+          window.open(url, '_blank', 'noopener'); break;
+        case 'yahoo':
+          url = 'https://compose.mail.yahoo.com/?to=' + to + '&subject=' + s + '&body=' + b;
+          window.open(url, '_blank', 'noopener'); break;
+        default:
+          url = 'mailto:' + TO + '?subject=' + s + '&body=' + b;
+          window.location.href = url;
+      }
+      closePicker();
+      status.textContent = "Opened in " + btn.textContent.trim() + " — hit Send there to actually deliver it.";
+      status.className = 'form-status ok';
+    });
   });
 })();
 function toggleAllMenus(){
