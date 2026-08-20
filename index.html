@@ -454,6 +454,10 @@
     cursor:pointer;font-family:'Karla',sans-serif;
   }
   .form-hint{font-size:12.5px;opacity:0.65;margin:10px auto 0;text-align:center;max-width:260px;}
+  .form-status{margin-top:14px;font-size:13.5px;padding:10px 14px;border-radius:4px;line-height:1.4;}
+  .form-status:empty{display:none;}
+  .form-status.ok{background:rgba(61,122,112,.12);color:var(--teal-dark);border:1px solid rgba(61,122,112,.35);}
+  .form-status.err{background:rgba(193,69,46,.1);color:var(--terracotta-dark);border:1px solid rgba(193,69,46,.35);}
   @media(max-width:880px){.contact-wrap{grid-template-columns:1fr;}.form-two{grid-template-columns:1fr;}}
 
   /* ---------- MENU MASTER TOGGLE ---------- */
@@ -1013,10 +1017,14 @@
       <p>For custom orders, the fastest way to reach Irene directly:</p>
       <div class="contact-phone">📞 306-225-2244 ext 9</div>
     </div>
-    <form class="contact-form" onsubmit="event.preventDefault(); alert('This is a design prototype — the real site will send this to I&P.');">
+    <form class="contact-form" id="contact-form" action="https://formsubmit.co/ajax/info@homebakedgoodness.ca" method="POST">
+      <input type="hidden" name="_subject" value="New message from homebakedgoodness.ca">
+      <input type="hidden" name="_template" value="table">
+      <input type="hidden" name="_captcha" value="true">
+      <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off">
       <div class="form-row">
         <label for="contact-location">Which location is this about?</label>
-        <select id="contact-location">
+        <select id="contact-location" name="Location">
           <option>Hague</option>
           <option>Martensville</option>
           <option>Saskatoon — 51st St</option>
@@ -1026,22 +1034,23 @@
       <div class="form-two">
         <div class="form-row">
           <label for="contact-first">First name</label>
-          <input type="text" id="contact-first" required>
+          <input type="text" id="contact-first" name="First name" required>
         </div>
         <div class="form-row">
           <label for="contact-last">Last name</label>
-          <input type="text" id="contact-last">
+          <input type="text" id="contact-last" name="Last name">
         </div>
       </div>
       <div class="form-row">
         <label for="contact-email">Email</label>
-        <input type="email" id="contact-email" required>
+        <input type="email" id="contact-email" name="Email" required>
       </div>
       <div class="form-row">
         <label for="contact-msg">Message</label>
-        <textarea id="contact-msg" placeholder="Tell us what you need..."></textarea>
+        <textarea id="contact-msg" name="Message" placeholder="Tell us what you need..."></textarea>
       </div>
       <button type="submit" class="form-submit">Send Message</button>
+      <div class="form-status" id="form-status" role="status" aria-live="polite"></div>
       <p class="form-hint">Custom cake or catering order? Calling Irene directly is fastest.</p>
     </form>
   </div>
@@ -1089,6 +1098,36 @@ document.documentElement.classList.add('js');
   }
   window.addEventListener('scroll', onScroll, {passive:true});
   onScroll();
+})();
+(function(){
+  var form = document.getElementById('contact-form');
+  if(!form) return;
+  var status = document.getElementById('form-status');
+  form.addEventListener('submit', function(e){
+    e.preventDefault();
+    var btn = form.querySelector('.form-submit');
+    var original = btn.textContent;
+    btn.disabled = true; btn.textContent = 'Sending…';
+    status.textContent = ''; status.className = 'form-status';
+    fetch(form.action, {method:'POST', body:new FormData(form), headers:{'Accept':'application/json'}})
+      .then(function(r){ return r.json().catch(function(){return{};}); })
+      .then(function(res){
+        if(res.success === 'true' || res.success === true){
+          form.reset();
+          status.textContent = "Thanks! Your message is on its way to Irene. We'll get back to you as soon as we can.";
+          status.className = 'form-status ok';
+        } else {
+          throw new Error(res.message || 'Send failed');
+        }
+      })
+      .catch(function(){
+        status.textContent = 'Something went wrong sending your message. Please try again, or call Irene at 306-225-2244 ext 9.';
+        status.className = 'form-status err';
+      })
+      .finally(function(){
+        btn.disabled = false; btn.textContent = original;
+      });
+  });
 })();
 function toggleAllMenus(){
   var lists = document.querySelectorAll('#pizza-more, #baking-more, #icecream-more');
