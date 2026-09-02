@@ -3,1400 +3,2077 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="color-scheme" content="light only">
-<meta name="theme-color" content="#F7EFE1">
-<title>I&amp;P Home Baked Goodness | Family. Flour. Flame.</title>
-<meta name="description" content="Scratch-made pizza, fresh baking, and retro ice cream in Hague, Martensville &amp; Saskatoon, SK. Family-owned since 2011. Order online for pickup or delivery.">
-<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🍕</text></svg>">
+<meta name="color-scheme" content="dark only">
+<meta name="theme-color" content="#141210">
+<title>Saskatoon Deck Shop — Backyards, Elevated.</title>
+<meta name="description" content="Saskatoon's craft deck builder. Composite, cedar, and pressure-treated decks with a 10-year workmanship warranty. Free quotes, real numbers, honest builds.">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><rect width=%22100%22 height=%22100%22 rx=%2218%22 fill=%22%23141210%22/><path d=%22M14 62 L86 62 L74 78 L26 78 Z%22 fill=%22%23B08155%22/><path d=%22M22 40 L78 40 L86 62 L14 62 Z%22 fill=%22%23C9955F%22/><path d=%22M22 40 L78 40 L74 78 L26 78 Z%22 fill=%22none%22 stroke=%22%23141210%22 stroke-width=%223%22 stroke-linejoin=%22round%22/></svg>">
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700;9..144,900&family=Karla:wght@400;500;600;700&family=Caveat:wght@600;700&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700;9..144,900&family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
 <style>
   :root{
-    --terracotta:#C1452E;
-    --terracotta-dark:#9E3A26;
-    --cream:#F7EFE1;
-    --cream-light:#FCF8F0;
-    --teal:#3D7A70;
-    --teal-dark:#234742;
-    --espresso:#3D2B1F;
-    --gold:#D9A441;
+    --paper:#F4EDE0;
+    --paper-dim:#D9D0BF;
+    --ink:#141210;
+    --ink-2:#1D1A17;
+    --ink-3:#26221D;
+    --line:rgba(244,237,224,0.12);
+    --line-strong:rgba(244,237,224,0.28);
+    --wood:#C9955F;
+    --wood-2:#B08155;
+    --wood-3:#8A5F3C;
+    --wood-shadow:#6B4423;
+    --moss:#8FAE5F;
+    --moss-2:#6B8E4E;
+    --rust:#E06A2B;
+    --rust-2:#C05621;
+    --sky:#7FB3C7;
+    --shadow-lg:0 30px 60px -20px rgba(0,0,0,.6),0 8px 20px -8px rgba(0,0,0,.4);
+    --ease-out:cubic-bezier(.22,1,.36,1);
+    --ease-io:cubic-bezier(.65,0,.35,1);
   }
   *{margin:0;padding:0;box-sizing:border-box;}
-  html{color-scheme:light;background:var(--cream);scroll-behavior:smooth;}
-  [id]{scroll-margin-top:88px;}
-  a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible, textarea:focus-visible{
-    outline:3px solid var(--teal);outline-offset:2px;
-  }
-  .skip-link{
-    position:absolute;left:-9999px;top:0;z-index:100;
-    background:var(--espresso);color:var(--cream-light);
-    padding:12px 20px;border-radius:0 0 4px 0;font-weight:700;
-  }
-  .skip-link:focus{left:0;}
-  @media(prefers-reduced-motion: reduce){
-    *{transition:none!important;animation:none!important;}
-  }
+  html{background:var(--ink);color:var(--paper);scroll-behavior:smooth;overflow-x:hidden;}
   body{
-    font-family:'Karla',sans-serif;
-    background:var(--cream);
-    color:var(--espresso);
+    font-family:'Inter',system-ui,sans-serif;
+    background:var(--ink);
+    color:var(--paper);
     line-height:1.5;
     -webkit-font-smoothing:antialiased;
+    overflow-x:hidden;
+    min-height:100vh;
+    position:relative;
   }
-  img{
-    display:block;max-width:100%;
-    background:linear-gradient(135deg, rgba(193,69,46,0.16), rgba(217,164,65,0.22));
-    color:transparent;
-    font-size:0;
-    text-indent:-9999px;
-    overflow:hidden;
+  body::before{
+    content:"";position:fixed;inset:0;pointer-events:none;z-index:1;
+    background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='200' height='200'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 0.95, 0 0 0 0 0.93, 0 0 0 0 0.88, 0 0 0 0.06 0'/></filter><rect width='200' height='200' filter='url(%23n)'/></svg>");
+    mix-blend-mode:overlay;opacity:.55;
   }
-  .wrap{max-width:1180px;margin:0 auto;padding:0 28px;}
+  a{color:inherit;text-decoration:none;}
+  button{font-family:inherit;color:inherit;background:none;border:none;cursor:pointer;}
+  img,svg{display:block;max-width:100%;}
+  [hidden]{display:none !important;}
+
+  ::selection{background:var(--rust);color:var(--paper);}
+  a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,textarea:focus-visible{
+    outline:2px solid var(--wood);outline-offset:3px;border-radius:2px;
+  }
+
+  .wrap{max-width:1240px;margin:0 auto;padding:0 32px;position:relative;z-index:2;}
   .eyebrow{
-    font-family:'Karla',sans-serif;
-    font-weight:700;
-    letter-spacing:0.14em;
-    text-transform:uppercase;
-    font-size:12.5px;
+    font-family:'JetBrains Mono',monospace;font-weight:500;font-size:11.5px;
+    letter-spacing:0.22em;text-transform:uppercase;color:var(--wood);
+    display:inline-flex;align-items:center;gap:10px;
   }
+  .eyebrow::before{content:"";width:22px;height:1px;background:var(--wood);display:inline-block;}
+  h1,h2,h3,h4{font-family:'Fraunces',serif;font-weight:600;line-height:1.05;letter-spacing:-0.02em;}
+  h2{font-size:clamp(36px,5vw,64px);}
+  h3{font-size:clamp(22px,2.4vw,28px);}
+  p{font-size:16px;line-height:1.6;}
 
-  /* ---------- NAV ---------- */
-  nav{
-    position:sticky;top:0;z-index:50;
-    background:var(--cream-light);
-    border-bottom:1px solid rgba(61,43,31,0.1);
-    transition:box-shadow .2s ease;
+  /* ------------------ CUSTOM CURSOR ------------------ */
+  .cursor-dot,.cursor-ring{
+    position:fixed;top:0;left:0;pointer-events:none;z-index:9999;
+    transform:translate(-50%,-50%);will-change:transform;
+    mix-blend-mode:difference;
   }
-  nav .wrap{display:flex;align-items:center;justify-content:space-between;height:76px;transition:height .2s ease;}
-  nav.scrolled{box-shadow:0 4px 14px -6px rgba(61,43,31,.22);}
-  nav.scrolled .wrap{height:60px;}
-  nav.scrolled .brand img{height:36px;width:36px;}
-  .brand{display:flex;align-items:center;gap:12px;}
-  .brand img{height:44px;width:44px;border-radius:4px;transition:height .2s ease,width .2s ease;}
-  .brand-text{display:flex;flex-direction:column;line-height:1.05;}
-  .brand-eyebrow{
-    font-family:'Karla',sans-serif;font-weight:700;font-size:10.5px;
-    letter-spacing:0.14em;text-transform:uppercase;color:var(--terracotta);
-    margin-bottom:2px;
-  }
-  .brand-main{font-family:'Fraunces',serif;font-weight:700;font-size:19px;color:var(--espresso);}
-  .brand-main span{color:var(--terracotta);}
-  .nav-links{display:flex;align-items:center;gap:34px;}
-  .nav-links a{font-weight:600;font-size:14.5px;color:var(--espresso);position:relative;}
-  .nav-links a:hover{color:var(--terracotta);}
-  .nav-links > a{padding-bottom:4px;}
-  .nav-links > a:after{
-    content:"";position:absolute;left:0;bottom:0;height:2px;width:100%;
-    background:var(--terracotta);transform:scaleX(0);transform-origin:left center;
-    transition:transform .25s ease;
-  }
-  .nav-links > a:hover:after{transform:scaleX(1);}
-  .btn-order{
-    background:var(--terracotta);color:var(--cream-light)!important;
-    padding:11px 22px;border-radius:3px;font-weight:700;font-size:14px;
-    box-shadow:3px 3px 0 var(--gold);
-    transition:transform .15s ease;
-  }
-  .btn-order:hover{transform:translate(-2px,-2px);}
-  @media(max-width:820px){.nav-links a:not(.order-dd){display:none;}}
+  .cursor-dot{width:6px;height:6px;background:var(--paper);border-radius:50%;transition:width .2s var(--ease-out),height .2s var(--ease-out);}
+  .cursor-ring{width:36px;height:36px;border:1.5px solid var(--paper);border-radius:50%;transition:width .25s var(--ease-out),height .25s var(--ease-out),border-color .2s;}
+  .cursor-ring.hover{width:70px;height:70px;border-color:var(--wood);}
+  .cursor-dot.hover{width:0;height:0;}
+  @media(hover:none),(pointer:coarse){.cursor-dot,.cursor-ring{display:none;}}
 
-  /* mobile hamburger + menu panel */
-  .hamburger{
-    display:none;
-    background:none;border:none;cursor:pointer;
-    width:40px;height:40px;padding:0;
-    flex-direction:column;justify-content:center;align-items:center;gap:5px;
+  /* ------------------ NAV ------------------ */
+  nav.top{
+    position:fixed;top:0;left:0;right:0;z-index:80;
+    padding:22px 0;
+    transition:padding .25s var(--ease-out),background-color .25s var(--ease-out),backdrop-filter .25s var(--ease-out),border-color .25s var(--ease-out);
+    border-bottom:1px solid transparent;
   }
-  .hamburger span{
-    display:block;width:22px;height:2px;background:var(--espresso);
-    transition:transform .2s ease, opacity .2s ease;
+  nav.top.scrolled{
+    padding:12px 0;background:rgba(20,18,16,.82);backdrop-filter:blur(14px);
+    -webkit-backdrop-filter:blur(14px);border-bottom-color:var(--line);
   }
+  nav.top .wrap{display:flex;align-items:center;justify-content:space-between;gap:24px;}
+  .brand{display:flex;align-items:center;gap:12px;font-family:'Fraunces',serif;font-weight:700;font-size:20px;letter-spacing:-.01em;}
+  .brand svg{width:38px;height:38px;flex-shrink:0;}
+  .brand small{display:block;font-family:'JetBrains Mono',monospace;font-weight:400;font-size:9.5px;letter-spacing:.24em;text-transform:uppercase;color:var(--wood);margin-top:2px;}
+  .nav-links{display:flex;align-items:center;gap:36px;}
+  .nav-links a{position:relative;font-size:14.5px;font-weight:500;color:var(--paper-dim);transition:color .2s;}
+  .nav-links a:hover{color:var(--paper);}
+  .nav-links a::after{content:"";position:absolute;left:0;bottom:-6px;width:100%;height:1px;background:var(--wood);transform:scaleX(0);transform-origin:left;transition:transform .3s var(--ease-out);}
+  .nav-links a:hover::after{transform:scaleX(1);}
+  .nav-cta{display:flex;align-items:center;gap:14px;}
+  .nav-phone{font-family:'JetBrains Mono',monospace;font-size:13px;font-weight:500;color:var(--paper-dim);}
+  .nav-phone b{color:var(--paper);font-weight:700;}
+  .btn{
+    display:inline-flex;align-items:center;gap:10px;
+    padding:12px 22px;border-radius:2px;
+    font-size:14px;font-weight:600;letter-spacing:.02em;
+    background:var(--rust);color:var(--paper);
+    transition:background .18s,transform .18s var(--ease-out),box-shadow .18s;
+    position:relative;overflow:hidden;
+  }
+  .btn:hover{background:var(--rust-2);transform:translateY(-1px);box-shadow:0 10px 24px -10px var(--rust-2);}
+  .btn:active{transform:translateY(0);}
+  .btn.ghost{background:transparent;color:var(--paper);border:1px solid var(--line-strong);}
+  .btn.ghost:hover{background:var(--paper);color:var(--ink);border-color:var(--paper);}
+  .btn.wood{background:var(--wood);color:var(--ink);}
+  .btn.wood:hover{background:var(--wood-2);}
+  .btn .arrow{transition:transform .25s var(--ease-out);}
+  .btn:hover .arrow{transform:translateX(4px);}
+
+  .hamburger{display:none;width:44px;height:44px;flex-direction:column;justify-content:center;align-items:center;gap:5px;}
+  .hamburger span{width:22px;height:2px;background:var(--paper);transition:transform .25s,opacity .25s;}
   .hamburger.open span:nth-child(1){transform:translateY(7px) rotate(45deg);}
   .hamburger.open span:nth-child(2){opacity:0;}
   .hamburger.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg);}
+
   .mobile-menu{
-    display:none;
-    max-height:0;overflow:hidden;
-    background:var(--cream-light);
-    border-top:1px solid rgba(61,43,31,0.1);
-    transition:max-height .3s ease;
+    position:fixed;inset:64px 0 0 0;z-index:70;
+    background:var(--ink-2);padding:32px;
+    transform:translateY(-100%);transition:transform .35s var(--ease-io);
+    display:flex;flex-direction:column;gap:8px;
   }
-  .mobile-menu.open{max-height:340px;}
-  .mobile-menu-inner{display:flex;flex-direction:column;padding:18px 28px 26px;}
-  .mobile-menu-inner a{
-    padding:13px 0;font-weight:600;font-size:16px;color:var(--espresso);
-    border-bottom:1px solid rgba(61,43,31,0.1);
-  }
-  @media(max-width:820px){
+  .mobile-menu.open{transform:translateY(0);}
+  .mobile-menu a{padding:18px 0;font-family:'Fraunces',serif;font-size:28px;border-bottom:1px solid var(--line);}
+  .mobile-menu .btn{margin-top:20px;justify-content:center;}
+
+  @media(max-width:900px){
+    .nav-links,.nav-phone{display:none;}
     .hamburger{display:flex;}
-    .mobile-menu{display:block;}
+    .nav-cta .btn{padding:10px 16px;font-size:13px;}
   }
 
-  /* order dropdown */
-  .order-dd{position:relative;}
-  .order-dd-panel{
-    position:absolute;top:calc(100% + 10px);right:0;
-    background:var(--cream-light);border:1px solid rgba(61,43,31,0.15);
-    border-radius:6px;box-shadow:0 16px 34px -12px rgba(61,43,31,0.35);
-    min-width:230px;padding:8px;
-    opacity:0;visibility:hidden;transform:translateY(-6px);
-    transition:all .15s ease;
-    z-index:60;
-  }
-  .order-dd:hover .order-dd-panel,
-  .order-dd:focus-within .order-dd-panel{
-    opacity:1;visibility:visible;transform:translateY(0);
-  }
-  .order-dd-panel a{
-    display:flex;justify-content:space-between;align-items:center;gap:10px;
-    padding:11px 12px;border-radius:4px;color:var(--espresso)!important;
-    font-weight:600;font-size:14px;
-  }
-  .order-dd-panel a:hover{background:var(--cream);}
-  .order-dd-panel a small{font-weight:500;opacity:0.6;font-size:12px;}
-  .order-dd-panel .dd-all{
-    margin-top:4px;padding-top:10px;border-top:1px dashed rgba(61,43,31,0.18);
-    font-size:12.5px;font-weight:700;color:var(--terracotta)!important;justify-content:center;
-  }
-  .btn-order .caret{font-size:10px;margin-left:6px;opacity:0.85;}
-
-  /* ---------- HERO ---------- */
+  /* ------------------ HERO ------------------ */
   .hero{
-    position:relative;
-    background:var(--terracotta);
-    color:var(--cream-light);
-    padding:88px 0 0;
-  }
-  .hero .wrap{display:grid;grid-template-columns:1.1fr 0.9fr;gap:50px;align-items:center;position:relative;z-index:2;}
-  .hero-eyebrow{color:var(--gold);}
-  .hero h1{
-    font-size:clamp(40px,5.6vw,66px);
-    font-weight:900;
-    margin:16px 0 22px;
-  }
-  .hero h1 em{
-    font-style:normal;
-    font-family:'Caveat',cursive;
-    font-weight:700;
-    color:var(--gold);
-    display:block;
-    font-size:1.15em;
-    line-height:0.9;
-    margin-top:2px;
-  }
-  .hero p.sub{font-size:18px;max-width:460px;opacity:0.92;margin-bottom:30px;}
-  .hero-ctas{display:flex;gap:14px;flex-wrap:wrap;}
-  .btn-ghost{
-    border:2px solid var(--cream-light);color:var(--cream-light);
-    padding:12px 24px;border-radius:3px;font-weight:700;font-size:14.5px;
-  }
-  .btn-solid-cream{
-    background:var(--gold);color:var(--espresso);
-    padding:15px 30px;border-radius:4px;font-weight:800;font-size:15.5px;
-    letter-spacing:.4px;
-    box-shadow:0 8px 22px rgba(0,0,0,.22),0 2px 4px rgba(0,0,0,.14);
-    transition:transform .18s ease,box-shadow .18s ease,background .18s ease;
-    position:relative;
-  }
-  .btn-solid-cream:hover{
-    background:#E5B45A;transform:translateY(-2px);
-    box-shadow:0 12px 28px rgba(0,0,0,.28),0 3px 6px rgba(0,0,0,.18);
-  }
-  .btn-solid-cream:active{transform:translateY(0);box-shadow:0 4px 12px rgba(0,0,0,.2);}
-  @media(prefers-reduced-motion:no-preference){
-    @keyframes btnPulse{
-      0%,100%{box-shadow:0 8px 22px rgba(0,0,0,.22),0 2px 4px rgba(0,0,0,.14),0 0 0 0 rgba(217,164,65,.55);}
-      50%{box-shadow:0 8px 22px rgba(0,0,0,.22),0 2px 4px rgba(0,0,0,.14),0 0 0 12px rgba(217,164,65,0);}
-    }
-    .btn-solid-cream{animation:btnPulse 2.4s ease-in-out infinite;}
-    .btn-solid-cream:hover{animation:none;}
-  }
-  @media(prefers-reduced-motion:no-preference){
-    html.js .reveal{opacity:0;transform:translateY(28px);transition:opacity .7s ease,transform .7s ease;will-change:opacity,transform;}
-    html.js .reveal.is-visible{opacity:1;transform:none;}
-  }
-  .hero .order-dd .order-dd-panel{right:auto;left:0;}
-  .hero-collage{
-    position:relative;height:440px;overflow:hidden;
-  }
-  .hero-collage img{
-    position:absolute;border-radius:4px;
-    box-shadow:0 18px 40px -12px rgba(0,0,0,0.45);
-    object-fit:cover;
-  }
-  .hc1{width:56%;height:260px;top:0;right:0;transform:rotate(3deg);z-index:2;}
-  .hc2{width:46%;height:220px;bottom:0;left:0;transform:rotate(-4deg);z-index:3;border:6px solid var(--cream-light);}
-  .hc-badge{
-    position:absolute;bottom:18px;right:12px;z-index:4;
-    background:var(--gold);color:var(--espresso);
-    width:108px;height:108px;border-radius:50%;
-    display:flex;align-items:center;justify-content:center;text-align:center;
-    font-family:'Fraunces',serif;font-weight:700;font-size:13px;line-height:1.2;
-    transform:rotate(8deg);
-    box-shadow:0 10px 24px -8px rgba(0,0,0,0.5);
-  }
-  @media(max-width:900px){.hero .wrap{grid-template-columns:1fr;}.hero-collage{height:320px;margin-top:20px;}}
-
-  /* scalloped divider (pie-crust edge) */
-  .scallop{
-    width:100%;height:34px;
+    position:relative;padding:180px 0 100px;
     background:
-      radial-gradient(circle at 10px 0, transparent 12px, var(--cream) 13px) 0 -1px/24px 24px repeat-x;
-    margin-top:40px;
+      radial-gradient(ellipse 60% 50% at 80% 20%,rgba(224,106,43,.10),transparent 60%),
+      radial-gradient(ellipse 40% 40% at 10% 80%,rgba(143,174,95,.08),transparent 60%),
+      var(--ink);
+    overflow:hidden;
+  }
+  .hero-grid{display:grid;grid-template-columns:1.05fr 1fr;gap:60px;align-items:center;}
+  .hero-eyebrow{margin-bottom:28px;}
+  .hero h1{
+    font-size:clamp(48px,7.8vw,116px);font-weight:600;letter-spacing:-0.035em;line-height:.94;
+  }
+  .hero h1 .line{display:block;overflow:hidden;}
+  .hero h1 .line span{display:inline-block;transform:translateY(110%);animation:heroRise .9s var(--ease-out) forwards;}
+  .hero h1 .line:nth-child(2) span{animation-delay:.08s;}
+  .hero h1 .line:nth-child(3) span{animation-delay:.16s;}
+  .hero h1 em{
+    font-style:italic;font-family:'Fraunces',serif;font-weight:400;
+    color:var(--wood);position:relative;
+  }
+  .hero h1 em::after{
+    content:"";position:absolute;left:0;right:0;bottom:6px;height:8px;
+    background:var(--rust);opacity:.28;z-index:-1;transform:skewX(-8deg);
+  }
+  @keyframes heroRise{to{transform:translateY(0);}}
+  .hero p.lede{
+    font-size:19px;line-height:1.55;max-width:520px;margin:36px 0 40px;
+    color:var(--paper-dim);opacity:0;transform:translateY(16px);
+    animation:heroFade .8s var(--ease-out) .5s forwards;
+  }
+  @keyframes heroFade{to{opacity:1;transform:none;}}
+  .hero-ctas{display:flex;gap:14px;flex-wrap:wrap;opacity:0;animation:heroFade .8s var(--ease-out) .7s forwards;}
+  .hero-meta{
+    margin-top:56px;display:flex;flex-wrap:wrap;gap:36px;align-items:center;
+    opacity:0;animation:heroFade .8s var(--ease-out) .9s forwards;
+  }
+  .hero-meta .stat{display:flex;flex-direction:column;gap:2px;}
+  .hero-meta .stat b{font-family:'Fraunces',serif;font-size:32px;font-weight:600;letter-spacing:-.02em;line-height:1;}
+  .hero-meta .stat span{font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--paper-dim);margin-top:4px;}
+  .live-dot{display:inline-flex;align-items:center;gap:8px;font-family:'JetBrains Mono',monospace;font-size:11.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--moss);}
+  .live-dot::before{content:"";width:8px;height:8px;border-radius:50%;background:var(--moss);box-shadow:0 0 0 0 var(--moss);animation:pulse 1.8s infinite;}
+  @keyframes pulse{
+    0%{box-shadow:0 0 0 0 rgba(143,174,95,.6);}
+    70%{box-shadow:0 0 0 10px rgba(143,174,95,0);}
+    100%{box-shadow:0 0 0 0 rgba(143,174,95,0);}
   }
 
-  /* ---------- TRUST BAR ---------- */
-  .trust{
-    background:var(--teal);color:var(--cream-light);
-    padding:20px 0;
-  }
-  .trust .wrap{display:flex;flex-wrap:wrap;gap:34px;justify-content:center;align-items:center;text-align:center;}
-  .trust-item{font-size:14.5px;font-weight:600;display:flex;align-items:center;gap:8px;}
-  .trust-item b{font-family:'Fraunces',serif;font-size:19px;font-weight:700;color:var(--gold);}
-  .trust-dot{opacity:0.4;}
-  @media(max-width:700px){.trust-dot{display:none;}}
-
-  /* ---------- STORY ---------- */
-  .story{padding:100px 0;background:var(--cream);}
-  .story .wrap{display:grid;grid-template-columns:0.85fr 1.15fr;gap:64px;align-items:center;}
-  .story-photo{position:relative;}
-  .story-photo img{width:100%;height:auto;border-radius:4px;display:block;}
-  .story-tag{
-    position:absolute;top:-18px;left:-18px;
-    background:var(--cream-light);border:2px solid var(--espresso);
-    padding:10px 16px;border-radius:3px;
-    font-family:'Fraunces',serif;font-weight:600;font-size:14px;
-    transform:rotate(-5deg);
-  }
-  .story h2{font-size:clamp(30px,3.6vw,42px);color:var(--terracotta-dark);margin:14px 0 18px;}
-  .story p{font-size:16.5px;margin-bottom:16px;max-width:520px;color:#4a382c;}
-  .story-quote{
-    font-family:'Caveat',cursive;font-weight:700;font-size:30px;
-    color:var(--teal);margin-top:24px;line-height:1.25;max-width:480px;
-  }
-  @media(max-width:880px){.story .wrap{grid-template-columns:1fr;}.story-photo{margin-bottom:10px;}}
-
-  /* expandable content */
-  .more-content{
-    max-height:0;overflow:hidden;opacity:0;
-    transition:max-height .5s ease, opacity .4s ease;
-  }
-  .more-content.open{max-height:3000px;opacity:1;}
-  .toggle-btn{
-    background:none;border:none;cursor:pointer;
-    font-weight:700;font-size:14px;color:var(--terracotta);
-    padding:0;margin-top:18px;display:inline-flex;align-items:center;gap:6px;
-    font-family:'Karla',sans-serif;
-  }
-  .toggle-btn:after{content:"↓";transition:transform .3s ease;font-size:12px;}
-  .toggle-btn.open:after{transform:rotate(180deg);}
-  .story-chapter{margin-top:36px;padding-top:32px;border-top:1px dashed rgba(61,43,31,0.18);}
-  .story-chapter-tag{
-    display:inline-block;background:var(--gold);color:var(--espresso);
-    font-family:'Fraunces',serif;font-weight:700;font-size:12px;
-    padding:4px 12px;border-radius:20px;margin-bottom:10px;
-  }
-  .story-chapter h3{font-size:20px;color:var(--terracotta-dark);margin-bottom:10px;}
-
-  /* ---------- MENU ---------- */
-  .menu{background:var(--cream-light);padding:100px 0;color:var(--espresso);border-top:5px solid var(--terracotta);border-bottom:5px solid var(--terracotta);}
-  .menu-head{text-align:center;max-width:560px;margin:0 auto 54px;}
-  .menu-head .eyebrow{color:var(--terracotta-dark);}
-  .menu-head h2{font-size:clamp(30px,3.6vw,42px);margin:14px 0;color:var(--espresso);}
-  .menu-head p{opacity:0.75;font-size:16px;}
-  .menu-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:26px;}
-  .menu-card{
-    background:var(--cream-light);color:var(--espresso);
-    border-radius:6px;overflow:hidden;
-    display:flex;flex-direction:column;
-    border:1px solid rgba(61,43,31,0.12);
-    box-shadow:0 10px 24px -14px rgba(61,43,31,0.35);
-  }
-  .menu-card figure{position:relative;height:190px;overflow:hidden;}
-  .menu-card img{width:100%;height:100%;object-fit:cover;}
-  .menu-card figcaption{
-    position:absolute;top:12px;left:12px;
-    background:var(--terracotta);color:var(--cream-light);
-    padding:5px 12px;border-radius:2px;
-    font-family:'Fraunces',serif;font-weight:700;font-size:12.5px;
-    letter-spacing:0.04em;text-transform:uppercase;
-  }
-  .menu-card .body{padding:22px 22px 26px;flex:1;display:flex;flex-direction:column;}
-  .menu-card h3{font-size:21px;margin-bottom:10px;color:var(--terracotta-dark);}
-  .menu-list{list-style:none;font-size:14.5px;margin-bottom:0;}
-  .menu-list li em{
-    font-style:normal;font-weight:500;font-size:12.5px;
-    color:#6b5a4a;opacity:.85;display:block;margin-top:2px;line-height:1.35;
-  }
-  .menu-list li.menu-divider{
-    display:block;border-bottom:none;padding:14px 0 4px;margin-top:6px;
-    border-top:1px dashed rgba(61,43,31,.25);
-  }
-  .menu-list li.menu-divider span{
-    font-family:'Fraunces',serif;font-weight:700;font-size:13.5px;
-    color:var(--terracotta-dark);text-transform:uppercase;letter-spacing:.06em;
-  }
-  .menu-list li.menu-divider em{font-style:italic;color:#6b5a4a;text-transform:none;letter-spacing:0;font-size:11.5px;display:inline;margin-left:6px;}
-  .menu-sub{
-    font-size:12.5px;color:#6b5a4a;line-height:1.5;margin:-4px 0 14px;
-    font-weight:500;opacity:.85;
-  }
-  .menu-foot{
-    font-size:12px;color:#6b5a4a;line-height:1.5;margin-top:14px;
-    padding-top:12px;border-top:1px dashed rgba(61,43,31,.2);
-    font-weight:500;opacity:.9;
-  }
-  .menu-list li{
-    display:flex;justify-content:space-between;gap:10px;
-    padding:7px 0;border-bottom:1px dashed rgba(61,43,31,0.18);
-  }
-  .menu-list li span:last-child{color:var(--teal);font-weight:700;white-space:nowrap;}
-  .menu-list li span:first-child{display:flex;align-items:center;gap:8px;flex-wrap:wrap;}
-  .loc-tag{
-    font-family:'Karla',sans-serif;font-weight:700;font-size:10px;
-    letter-spacing:0.03em;text-transform:uppercase;
-    background:rgba(193,69,46,0.12);color:var(--terracotta-dark);
-    padding:2px 7px;border-radius:20px;white-space:nowrap;
-  }
-  .menu-card a.view-all{font-weight:700;font-size:13.5px;color:var(--terracotta);}
-  .menu-card a.view-all:after{content:" →";}
-  @media(max-width:900px){.menu-grid{grid-template-columns:1fr;}}
-
-  /* ---------- TESTIMONIALS ---------- */
-  .testimonials{padding:90px 0;background:var(--teal);color:var(--cream-light);}
-  .testimonials-head{text-align:center;max-width:560px;margin:0 auto 46px;}
-  .testimonials-head .eyebrow{color:var(--gold);}
-  .testimonials-head h2{font-size:clamp(28px,3.4vw,38px);margin:14px 0;}
-  .testi-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;}
-  .testi-card{
-    background:var(--cream-light);color:var(--espresso);
-    border-radius:8px;padding:24px 22px;
-    display:flex;flex-direction:column;
-    box-shadow:0 10px 24px -14px rgba(0,0,0,.35);
-    transition:transform .25s ease,box-shadow .25s ease;
-  }
-  .testi-card:hover{transform:translateY(-3px);box-shadow:0 18px 30px -14px rgba(0,0,0,.45);}
-  .testi-head{display:flex;align-items:center;gap:12px;margin-bottom:14px;}
-  .testi-avatar{
-    width:44px;height:44px;border-radius:50%;flex-shrink:0;
+  .hero-visual{
+    position:relative;perspective:1400px;
     display:flex;align-items:center;justify-content:center;
-    font-family:'Fraunces',serif;font-weight:700;font-size:19px;
-    color:var(--cream-light);
+    min-height:460px;
   }
-  .testi-avatar.loc-hague{background:var(--terracotta);}
-  .testi-avatar.loc-martensville{background:var(--teal);}
-  .testi-avatar.loc-saskatoon{background:var(--gold);color:var(--espresso);}
-  .testi-avatar.has-photo{background:transparent;overflow:hidden;}
-  .testi-avatar img{width:100%;height:100%;object-fit:cover;display:block;}
-  .testi-meta{display:flex;flex-direction:column;gap:3px;min-width:0;flex:1;}
-  .testi-name{font-weight:700;font-size:15px;color:var(--espresso);line-height:1.1;}
-  .testi-name.placeholder{opacity:.55;font-style:italic;font-weight:600;}
-  .testi-loc{
-    display:inline-flex;align-self:flex-start;
-    font-family:'Karla',sans-serif;font-weight:800;font-size:10.5px;
-    letter-spacing:.07em;text-transform:uppercase;
-    padding:3px 9px;border-radius:20px;
+  .hero-deck-stage{
+    width:100%;max-width:560px;aspect-ratio:1/1;position:relative;
+    transform-style:preserve-3d;transition:transform .3s var(--ease-out);
   }
-  .testi-loc.loc-hague{background:rgba(193,69,46,.15);color:var(--terracotta-dark);}
-  .testi-loc.loc-martensville{background:rgba(61,122,112,.18);color:var(--teal-dark);}
-  .testi-loc.loc-saskatoon{background:rgba(217,164,65,.28);color:#8a6420;}
-  .testi-stars{color:var(--gold);font-size:15px;margin-bottom:10px;letter-spacing:2px;}
-  .testi-card p{font-size:14.5px;line-height:1.55;margin-bottom:14px;flex:1;}
-  .testi-source{
-    font-size:11.5px;font-weight:700;opacity:.55;
-    text-transform:uppercase;letter-spacing:0.06em;
-    margin-top:auto;padding-top:10px;border-top:1px dashed rgba(61,43,31,.15);
+  .hero-deck-svg{width:100%;height:100%;filter:drop-shadow(0 40px 40px rgba(0,0,0,.55));}
+  .hero-floaty{
+    position:absolute;background:var(--ink-2);border:1px solid var(--line);
+    border-radius:6px;padding:14px 18px;box-shadow:var(--shadow-lg);
+    display:flex;align-items:center;gap:12px;font-size:13px;
+    transform:translateZ(60px);
   }
-  .testi-google-row{
-    display:flex;flex-wrap:wrap;gap:12px;justify-content:center;
-    margin-top:38px;
-  }
-  .testi-google-chip{
-    display:inline-flex;align-items:center;gap:6px;
-    background:rgba(252,248,240,.1);color:var(--cream-light);
-    padding:9px 16px;border-radius:50px;font-weight:700;font-size:13px;
-    border:1px solid rgba(252,248,240,.25);
-    transition:background .18s ease,border-color .18s ease;
-  }
-  .testi-google-chip:hover{background:rgba(252,248,240,.2);border-color:rgba(252,248,240,.5);}
-  @media(max-width:900px){.testi-grid{grid-template-columns:1fr;}}
+  .hero-floaty.f1{top:12%;left:-8%;}
+  .hero-floaty.f2{bottom:14%;right:-6%;}
+  .hero-floaty.f3{top:52%;left:-14%;}
+  .hero-floaty .swatch{width:28px;height:28px;border-radius:3px;flex-shrink:0;position:relative;}
+  .hero-floaty .swatch.cedar{background:linear-gradient(135deg,#D69A5C 0%,#B77A44 100%);}
+  .hero-floaty .swatch.composite{background:linear-gradient(135deg,#5A4A3A 0%,#3D3025 100%);}
+  .hero-floaty .swatch.moss{background:var(--moss-2);}
+  .hero-floaty b{display:block;font-weight:700;color:var(--paper);font-size:13.5px;}
+  .hero-floaty small{color:var(--paper-dim);font-family:'JetBrains Mono',monospace;font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;}
+  @keyframes float1{0%,100%{transform:translateZ(60px) translateY(0);}50%{transform:translateZ(60px) translateY(-8px);}}
+  @keyframes float2{0%,100%{transform:translateZ(60px) translateY(0);}50%{transform:translateZ(60px) translateY(6px);}}
+  .hero-floaty.f1{animation:float1 5s ease-in-out infinite;}
+  .hero-floaty.f2{animation:float2 6s ease-in-out infinite;}
+  .hero-floaty.f3{animation:float1 5.5s ease-in-out infinite .5s;}
 
-  /* ---------- LOCATIONS / ORDER ---------- */
-  .locations{padding:100px 0;background:var(--cream);}
-  .loc-head{text-align:center;max-width:600px;margin:0 auto 54px;}
-  .loc-head .eyebrow{color:var(--terracotta);}
-  .loc-head h2{font-size:clamp(30px,3.6vw,42px);margin:14px 0;color:var(--espresso);}
-  .loc-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;}
-  .loc-card{
-    background:var(--cream-light);border:1px solid rgba(61,43,31,0.12);
-    border-radius:6px;overflow:hidden;
-    display:flex;flex-direction:column;height:100%;
-  }
-  .loc-card .photo{height:150px;overflow:hidden;flex-shrink:0;}
-  .loc-card .photo img{width:100%;height:100%;object-fit:cover;}
-  .loc-card .content{padding:22px;flex:1;display:flex;flex-direction:column;}
-  .loc-card .loc-actions{margin-top:auto;padding-top:6px;}
-  .loc-card h3{font-size:20px;color:var(--terracotta-dark);margin-bottom:6px;}
-  .loc-rating{font-size:13.5px;font-weight:700;color:var(--teal);margin-bottom:10px;}
-  .loc-card address{font-style:normal;font-size:14px;opacity:0.8;margin-bottom:14px;}
-  .loc-hours{
-    background:rgba(193,69,46,0.06);border-left:3px solid var(--terracotta);
-    padding:10px 12px;border-radius:3px;margin-bottom:16px;font-size:13px;line-height:1.55;
-  }
-  .loc-hours .h-row{display:flex;justify-content:space-between;gap:14px;}
-  .loc-hours .h-row b{color:var(--espresso);font-weight:700;letter-spacing:0.02em;}
-  .loc-hours .h-row span{color:#4a382c;opacity:0.85;font-variant-numeric:tabular-nums;}
-  .loc-btn{
-    display:inline-block;background:var(--gold);color:var(--espresso);
-    padding:10px 20px;border-radius:3px;font-weight:700;font-size:13.5px;
-    width:100%;text-align:center;
-  }
-  .custom-note{
-    text-align:center;margin-top:44px;font-size:15px;color:#4a382c;
-  }
-  .custom-note b{color:var(--terracotta-dark);}
-  @media(max-width:900px){.loc-grid{grid-template-columns:1fr;}}
-
-  /* ---------- FOOTER ---------- */
-  /* ---------- CONTACT ---------- */
-  .contact{padding:100px 0;background:var(--espresso);color:var(--cream-light);}
-  .contact-wrap{display:grid;grid-template-columns:0.9fr 1.1fr;gap:56px;align-items:start;}
-  .contact .eyebrow{color:var(--gold);}
-  .contact h2{font-size:clamp(28px,3.4vw,38px);margin:14px 0 16px;}
-  .contact p{opacity:0.85;font-size:15.5px;max-width:400px;margin-bottom:10px;}
-  .contact-phone{
-    font-family:'Fraunces',serif;font-weight:700;font-size:19px;color:var(--gold);margin-top:14px;
-  }
-  .contact-form{background:var(--cream-light);border-radius:8px;padding:32px;color:var(--espresso);}
-  .form-row{margin-bottom:18px;}
-  .form-row label{display:block;font-weight:700;font-size:13px;margin-bottom:6px;letter-spacing:0.02em;}
-  .form-row select,.form-row input,.form-row textarea{
-    width:100%;padding:11px 12px;border:1px solid rgba(61,43,31,0.25);
-    border-radius:4px;font-family:'Karla',sans-serif;font-size:14.5px;
-    background:var(--cream);color:var(--espresso);
-  }
-  .form-row textarea{resize:vertical;min-height:90px;}
-  .form-two{display:grid;grid-template-columns:1fr 1fr;gap:16px;}
-  .form-submit{
-    width:100%;background:var(--terracotta);color:var(--cream-light);
-    padding:13px;border:none;border-radius:4px;font-weight:700;font-size:15px;
-    cursor:pointer;font-family:'Karla',sans-serif;
-  }
-  .form-hint{font-size:12.5px;opacity:0.65;margin:10px auto 0;text-align:center;max-width:260px;}
-  .form-optional{font-weight:500;font-size:11.5px;opacity:.6;letter-spacing:.02em;text-transform:none;}
-  .form-status{margin-top:14px;font-size:13.5px;padding:10px 14px;border-radius:4px;line-height:1.4;}
-  .form-status:empty{display:none;}
-  .form-status.ok{background:rgba(61,122,112,.12);color:var(--teal-dark);border:1px solid rgba(61,122,112,.35);}
-  .form-status.err{background:rgba(193,69,46,.1);color:var(--terracotta-dark);border:1px solid rgba(193,69,46,.35);}
-  @media(max-width:880px){.contact-wrap{grid-template-columns:1fr;}.form-two{grid-template-columns:1fr;}}
-
-  /* ---------- MENU MASTER TOGGLE ---------- */
-  .menu-master-toggle{
-    display:block;margin:38px auto 0;
-    background:var(--terracotta);color:var(--cream-light);
-    padding:14px 32px;border-radius:4px;border:none;cursor:pointer;
-    font-family:'Karla',sans-serif;font-weight:800;font-size:15px;
-    letter-spacing:.3px;
-    box-shadow:0 8px 22px -8px rgba(193,69,46,.5);
-    transition:transform .18s ease,box-shadow .18s ease,background .18s ease;
-  }
-  .menu-master-toggle:hover{
-    background:var(--terracotta-dark);transform:translateY(-2px);
-    box-shadow:0 12px 26px -8px rgba(193,69,46,.6);
-  }
-  .menu-master-toggle:after{content:" ↓";display:inline-block;margin-left:4px;transition:transform .3s ease;}
-  .menu-master-toggle.open:after{content:" ↑";}
-
-  /* ---------- MENU CARD HOVER ---------- */
-  .menu-card{transition:transform .25s ease,box-shadow .25s ease;}
-  .menu-card:hover{transform:translateY(-4px);box-shadow:0 20px 34px -14px rgba(61,43,31,.4);}
-  .menu-card figure img{transition:transform .6s ease;}
-  .menu-card:hover figure img{transform:scale(1.06);}
-
-  /* ---------- LOCATION CARD HOVER + MAP CHIP ---------- */
-  .loc-card{transition:transform .25s ease,box-shadow .25s ease;}
-  .loc-card:hover{transform:translateY(-4px);box-shadow:0 20px 34px -14px rgba(193,69,46,.35);}
-  .loc-card .photo img{transition:transform .5s ease;}
-  .loc-card:hover .photo img{transform:scale(1.05);}
-  .loc-actions{display:flex;flex-direction:column;gap:8px;}
-  .loc-map{
-    display:inline-flex;align-items:center;justify-content:center;gap:6px;
-    background:transparent;color:var(--teal);
-    padding:9px 18px;border-radius:3px;font-weight:700;font-size:13px;
-    border:1.5px solid rgba(61,122,112,.35);text-align:center;
-    transition:background .18s ease,color .18s ease,border-color .18s ease;
-  }
-  .loc-map:hover{background:var(--teal);color:var(--cream-light);border-color:var(--teal);}
-  .loc-card address .loc-street{display:block;font-weight:700;color:var(--espresso);opacity:1;margin-bottom:4px;font-size:14.5px;}
-
-  /* ---------- DOORDASH BADGE ---------- */
-  .doordash-pill{
-    display:inline-block;background:#EB1700;color:#fff;
-    padding:2px 10px;border-radius:20px;
-    font-weight:800;font-size:13px;letter-spacing:.02em;
-    vertical-align:baseline;
+  @media(max-width:900px){
+    .hero{padding:140px 0 80px;}
+    .hero-grid{grid-template-columns:1fr;gap:40px;}
+    .hero-visual{min-height:360px;}
+    .hero-meta{gap:24px;}
+    .hero-meta .stat b{font-size:24px;}
+    .hero-floaty.f3{display:none;}
   }
 
-  /* ---------- DELIVERY SECTION ---------- */
-  .delivery{
-    background:var(--cream-light);color:var(--espresso);
-    padding:90px 0;
-    border-top:5px solid var(--terracotta);
-    border-bottom:5px solid var(--terracotta);
+  /* ------------------ MARQUEE ------------------ */
+  .marquee{
+    padding:22px 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line);
+    background:var(--ink-2);overflow:hidden;position:relative;
   }
-  .delivery-head{text-align:center;max-width:600px;margin:0 auto 46px;}
-  .delivery-head .eyebrow{color:var(--terracotta);}
-  .delivery-head h2{font-size:clamp(30px,3.6vw,42px);margin:14px 0;color:var(--espresso);}
-  .delivery-head p{opacity:0.75;font-size:16px;}
-  .delivery-grid{display:grid;grid-template-columns:repeat(2,1fr);max-width:820px;margin:0 auto;gap:22px;}
-  .delivery-card{
-    background:var(--cream);border:1px solid rgba(61,43,31,.12);border-radius:8px;
-    padding:32px 28px;text-align:center;
-    display:flex;flex-direction:column;align-items:center;gap:14px;
-    transition:transform .25s ease,box-shadow .25s ease;
-  }
-  .delivery-card:hover{transform:translateY(-4px);box-shadow:0 20px 34px -14px rgba(61,43,31,.35);}
-  .delivery-service{
-    display:inline-block;background:#EB1700;color:#fff;
-    padding:6px 18px;border-radius:4px;
-    font-weight:800;font-size:14px;letter-spacing:.02em;
-  }
-  .delivery-loc{
-    font-family:'Fraunces',serif;font-weight:700;font-size:22px;color:var(--espresso);
-    line-height:1.15;
-  }
-  .delivery-btn{
-    display:inline-flex;align-items:center;justify-content:center;gap:6px;
-    background:var(--gold);color:var(--espresso);
-    padding:12px 26px;border-radius:3px;font-weight:800;font-size:14.5px;
-    letter-spacing:.03em;
-    box-shadow:0 8px 20px -8px rgba(217,164,65,.55);
-    transition:transform .18s ease,box-shadow .18s ease,background .18s ease;
-    width:100%;max-width:220px;
-  }
-  .delivery-btn:hover{background:#E5B45A;transform:translateY(-2px);box-shadow:0 12px 24px -8px rgba(217,164,65,.7);}
-  .delivery-btn.pending{background:transparent;color:var(--espresso);border:1.5px dashed rgba(61,43,31,.35);box-shadow:none;opacity:.75;cursor:default;}
-  .delivery-btn.pending:hover{transform:none;background:transparent;box-shadow:none;}
-  .delivery-note{
-    text-align:center;margin-top:38px;font-size:15px;color:#4a382c;line-height:1.55;
-  }
-  .delivery-note b{color:var(--terracotta-dark);}
-  @media(max-width:700px){.delivery-grid{grid-template-columns:1fr;}}
+  .marquee-track{display:flex;gap:64px;animation:marquee 40s linear infinite;white-space:nowrap;width:max-content;}
+  .marquee:hover .marquee-track{animation-play-state:paused;}
+  .marquee span{font-family:'Fraunces',serif;font-style:italic;font-size:26px;font-weight:400;color:var(--paper-dim);display:inline-flex;align-items:center;gap:32px;letter-spacing:-.01em;}
+  .marquee span::after{content:"◆";color:var(--wood);font-size:14px;font-family:sans-serif;}
+  @keyframes marquee{from{transform:translateX(0);}to{transform:translateX(-50%);}}
 
-  /* ---------- HERO COLLAGE KEN-BURNS ---------- */
-  @media(prefers-reduced-motion:no-preference){
-    @keyframes hcZoom1{0%,100%{transform:rotate(3deg) scale(1);}50%{transform:rotate(3deg) scale(1.05);}}
-    @keyframes hcZoom2{0%,100%{transform:rotate(-4deg) scale(1);}50%{transform:rotate(-4deg) scale(1.06);}}
-    .hero-collage .hc1{animation:hcZoom1 22s ease-in-out infinite;transform-origin:center;}
-    .hero-collage .hc2{animation:hcZoom2 24s ease-in-out infinite;transform-origin:center;}
-  }
+  /* ------------------ SECTION PATTERNS ------------------ */
+  section{padding:120px 0;position:relative;}
+  .section-head{max-width:720px;margin-bottom:64px;}
+  .section-head h2{margin-top:20px;}
+  .section-head p{margin-top:20px;font-size:18px;color:var(--paper-dim);max-width:560px;}
+  .section-two{display:grid;grid-template-columns:auto 1fr;gap:80px;align-items:end;margin-bottom:64px;}
+  .section-two .section-head{margin-bottom:0;}
+  .section-two p.side{max-width:360px;color:var(--paper-dim);font-size:15px;}
+  @media(max-width:800px){.section-two{grid-template-columns:1fr;gap:24px;}}
 
-  /* ---------- STAGGERED REVEAL ---------- */
-  @media(prefers-reduced-motion:no-preference){
-    html.js .reveal-item{
-      opacity:0;transform:translateY(24px);
-      transition:opacity .55s ease,transform .55s ease;
-      transition-delay:var(--rd,0ms);
-      will-change:opacity,transform;
-    }
-    html.js .reveal-item.is-visible{opacity:1;transform:none;}
-  }
+  /* Reveal system */
+  .reveal{opacity:0;transform:translateY(28px);transition:opacity .8s var(--ease-out),transform .8s var(--ease-out);transition-delay:var(--rd,0ms);}
+  .reveal.in{opacity:1;transform:none;}
+  @media(prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none;transition:none;}.marquee-track{animation:none;}.hero h1 .line span{animation:none;transform:none;}.hero p.lede,.hero-ctas,.hero-meta{opacity:1;animation:none;}}
 
-  /* ---------- MAIL PICKER MODAL ---------- */
-  .mail-picker[hidden]{display:none;}
-  .mail-picker{position:fixed;inset:0;z-index:100;display:flex;align-items:center;justify-content:center;padding:20px;}
-  .mail-picker-backdrop{position:absolute;inset:0;background:rgba(61,43,31,.6);cursor:pointer;}
-  .mail-picker-panel{
-    position:relative;background:var(--cream-light);color:var(--espresso);
-    border-radius:8px;padding:32px 28px 26px;
-    max-width:420px;width:100%;
-    box-shadow:0 24px 48px -8px rgba(0,0,0,.4);
+  /* ------------------ SERVICES ------------------ */
+  .services{background:var(--ink);}
+  .svc-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;}
+  @media(max-width:900px){.svc-grid{grid-template-columns:1fr;}}
+  .svc-card{
+    background:var(--ink-2);border:1px solid var(--line);
+    padding:32px;border-radius:6px;position:relative;overflow:hidden;
+    transition:transform .3s var(--ease-out),border-color .3s;
+    display:flex;flex-direction:column;gap:20px;min-height:340px;
   }
-  .mail-picker-close{
-    position:absolute;top:10px;right:10px;background:none;border:none;
-    font-size:26px;line-height:1;cursor:pointer;color:var(--espresso);
-    width:36px;height:36px;border-radius:50%;
-    display:flex;align-items:center;justify-content:center;
-    transition:background .15s ease;
+  .svc-card::before{
+    content:"";position:absolute;inset:0;
+    background:radial-gradient(circle 280px at var(--mx,50%) var(--my,50%),rgba(201,149,95,.10),transparent 60%);
+    opacity:0;transition:opacity .3s;pointer-events:none;
   }
-  .mail-picker-close:hover{background:rgba(61,43,31,.08);}
-  .mail-picker-panel h3{font-size:20px;margin-bottom:8px;color:var(--terracotta-dark);font-family:'Fraunces',serif;}
-  .mail-picker-panel p{font-size:14px;opacity:.75;margin-bottom:18px;line-height:1.4;}
-  .mail-picker-options{display:flex;flex-direction:column;gap:8px;}
-  .mail-picker-opt{
-    display:flex;align-items:center;gap:12px;padding:13px 16px;
-    background:var(--cream);border:1px solid rgba(61,43,31,.15);border-radius:4px;
-    font-weight:700;font-size:14.5px;color:var(--espresso);text-align:left;
-    font-family:'Karla',sans-serif;cursor:pointer;
-    transition:background .15s ease,border-color .15s ease,transform .15s ease;
-  }
-  .mail-picker-opt:hover{background:var(--cream-light);border-color:var(--terracotta);transform:translateX(2px);}
-  .mail-picker-opt .mp-i{font-size:16px;flex-shrink:0;color:var(--terracotta);}
+  .svc-card:hover{transform:translateY(-4px);border-color:var(--wood-3);}
+  .svc-card:hover::before{opacity:1;}
+  .svc-icon{width:64px;height:64px;color:var(--wood);}
+  .svc-card h3{font-size:24px;}
+  .svc-card p{color:var(--paper-dim);font-size:15px;flex:1;}
+  .svc-tags{display:flex;flex-wrap:wrap;gap:6px;margin-top:auto;}
+  .svc-tags span{font-family:'JetBrains Mono',monospace;font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;padding:4px 10px;border:1px solid var(--line-strong);border-radius:20px;color:var(--paper-dim);}
+  .svc-num{position:absolute;top:20px;right:24px;font-family:'JetBrains Mono',monospace;font-size:11.5px;letter-spacing:.16em;color:var(--paper-dim);opacity:.5;}
 
-  /* ---------- MOBILE ORDER FAB ---------- */
-  .mobile-order-fab{
-    display:none;
-    position:fixed;bottom:16px;right:16px;z-index:45;
-    background:var(--gold);color:var(--espresso);
-    padding:13px 22px;border-radius:50px;
-    font-weight:800;font-size:15px;letter-spacing:.3px;
-    box-shadow:0 12px 28px -8px rgba(0,0,0,.4);
-    align-items:center;gap:8px;
-    opacity:0;transform:translateY(20px);
-    transition:opacity .25s ease,transform .25s ease;
+  /* ------------------ ESTIMATOR ------------------ */
+  .estimator{
+    background:linear-gradient(180deg,var(--ink-2) 0%,var(--ink) 100%);
+    border-top:1px solid var(--line);border-bottom:1px solid var(--line);
+    position:relative;
+  }
+  .estimator::before{
+    content:"";position:absolute;inset:0;
+    background:
+      radial-gradient(circle 400px at 20% 30%,rgba(143,174,95,.05),transparent),
+      radial-gradient(circle 500px at 80% 70%,rgba(224,106,43,.05),transparent);
     pointer-events:none;
   }
-  @media(max-width:820px){
-    .mobile-order-fab{display:inline-flex;}
-    .mobile-order-fab.show{opacity:1;transform:none;pointer-events:auto;}
+  .est-shell{
+    display:grid;grid-template-columns:1fr 1fr;gap:0;
+    background:var(--ink-2);border:1px solid var(--line);border-radius:8px;overflow:hidden;
+    box-shadow:var(--shadow-lg);
+  }
+  @media(max-width:960px){.est-shell{grid-template-columns:1fr;}}
+  .est-controls{padding:44px 44px 40px;border-right:1px solid var(--line);}
+  @media(max-width:960px){.est-controls{border-right:none;border-bottom:1px solid var(--line);}}
+  .est-preview{padding:44px;background:radial-gradient(circle at 50% 40%,var(--ink-3),var(--ink));display:flex;flex-direction:column;}
+  .est-block{margin-bottom:32px;}
+  .est-block:last-child{margin-bottom:0;}
+  .est-label{
+    display:flex;justify-content:space-between;align-items:baseline;margin-bottom:12px;
+    font-family:'JetBrains Mono',monospace;font-size:11.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--paper-dim);
+  }
+  .est-label b{font-family:'Fraunces',serif;font-size:20px;font-weight:600;color:var(--paper);letter-spacing:-.01em;text-transform:none;}
+  .est-slider{
+    -webkit-appearance:none;width:100%;height:4px;background:var(--ink-3);border-radius:2px;outline:none;
+    background-image:linear-gradient(var(--wood),var(--wood));background-repeat:no-repeat;
+  }
+  .est-slider::-webkit-slider-thumb{
+    -webkit-appearance:none;width:22px;height:22px;border-radius:50%;
+    background:var(--paper);border:3px solid var(--wood);cursor:grab;
+    box-shadow:0 4px 10px rgba(0,0,0,.4);transition:transform .15s;
+  }
+  .est-slider::-webkit-slider-thumb:active{cursor:grabbing;transform:scale(1.15);}
+  .est-slider::-moz-range-thumb{width:22px;height:22px;border-radius:50%;background:var(--paper);border:3px solid var(--wood);cursor:grab;}
+  .mat-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;}
+  .mat-opt{
+    padding:14px 14px;border:1px solid var(--line-strong);border-radius:4px;
+    text-align:left;transition:all .2s;position:relative;
+    display:flex;flex-direction:column;gap:6px;
+  }
+  .mat-opt:hover{border-color:var(--wood);background:rgba(201,149,95,.05);}
+  .mat-opt.active{border-color:var(--wood);background:rgba(201,149,95,.12);}
+  .mat-opt.active::after{content:"✓";position:absolute;top:8px;right:10px;color:var(--wood);font-weight:700;}
+  .mat-opt b{font-size:14px;font-weight:600;color:var(--paper);}
+  .mat-opt small{font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--paper-dim);letter-spacing:.05em;}
+  .addon-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:8px;}
+  .addon{
+    display:flex;align-items:center;gap:10px;padding:12px 14px;
+    border:1px solid var(--line-strong);border-radius:4px;user-select:none;
+    transition:all .2s;font-size:13.5px;cursor:pointer;
+  }
+  .addon:hover{border-color:var(--wood);background:rgba(201,149,95,.05);}
+  .addon.on{border-color:var(--moss);background:rgba(143,174,95,.08);}
+  .addon-check{
+    width:18px;height:18px;border-radius:3px;border:1.5px solid var(--line-strong);
+    flex-shrink:0;display:flex;align-items:center;justify-content:center;
+    transition:all .2s;
+  }
+  .addon.on .addon-check{background:var(--moss);border-color:var(--moss);}
+  .addon-check svg{width:12px;height:12px;color:var(--ink);opacity:0;transition:opacity .15s;}
+  .addon.on .addon-check svg{opacity:1;}
+  .addon-price{margin-left:auto;font-family:'JetBrains Mono',monospace;font-size:11.5px;color:var(--paper-dim);}
+  .addon.on .addon-price{color:var(--moss);}
+
+  .plan-wrap{flex:1;display:flex;align-items:center;justify-content:center;min-height:280px;padding:20px 0;}
+  #plan-svg{width:100%;max-width:420px;height:auto;}
+  #plan-svg .deck-board{transition:fill .3s;}
+  #plan-svg .plan-dim{font-family:'JetBrains Mono',monospace;font-size:11px;fill:var(--paper-dim);letter-spacing:.1em;text-transform:uppercase;}
+  #plan-svg .plan-dim-line{stroke:var(--wood);stroke-width:1;}
+
+  .est-total{
+    display:grid;grid-template-columns:1fr auto;gap:20px;align-items:end;
+    margin-top:auto;padding-top:24px;border-top:1px dashed var(--line-strong);
+  }
+  .est-total-num{
+    font-family:'Fraunces',serif;font-size:44px;font-weight:600;letter-spacing:-.02em;line-height:.9;color:var(--paper);
+    display:flex;align-items:baseline;gap:6px;flex-wrap:wrap;
+  }
+  .est-total-num sup{font-size:20px;color:var(--wood);}
+  .est-total-num .to{font-family:'Inter',sans-serif;font-size:16px;color:var(--paper-dim);font-weight:400;margin:0 6px;}
+  .est-total-meta{font-family:'JetBrains Mono',monospace;font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--paper-dim);margin-top:6px;}
+  .est-breakdown{margin-top:14px;display:grid;gap:6px;}
+  .est-breakdown div{display:flex;justify-content:space-between;font-family:'JetBrains Mono',monospace;font-size:11.5px;color:var(--paper-dim);}
+  .est-breakdown div span:last-child{color:var(--paper);}
+
+  /* ------------------ MATERIALS ------------------ */
+  .materials{background:var(--ink);}
+  .mat-cards{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;}
+  @media(max-width:1000px){.mat-cards{grid-template-columns:repeat(2,1fr);}}
+  @media(max-width:600px){.mat-cards{grid-template-columns:1fr;}}
+  .mcard{
+    background:var(--ink-2);border:1px solid var(--line);border-radius:6px;overflow:hidden;
+    transition:transform .3s var(--ease-out),border-color .3s;position:relative;
+    display:flex;flex-direction:column;
+  }
+  .mcard:hover{transform:translateY(-4px);border-color:var(--wood-3);}
+  .mcard-swatch{height:120px;position:relative;overflow:hidden;}
+  .mcard-swatch svg{position:absolute;inset:0;width:100%;height:100%;}
+  .mcard-body{padding:24px;flex:1;display:flex;flex-direction:column;gap:12px;}
+  .mcard h3{font-size:20px;}
+  .mcard-rows{display:grid;gap:8px;margin-top:auto;padding-top:16px;border-top:1px dashed var(--line);}
+  .mcard-row{display:flex;justify-content:space-between;font-size:12.5px;color:var(--paper-dim);font-family:'JetBrains Mono',monospace;letter-spacing:.02em;}
+  .mcard-row b{color:var(--paper);font-weight:600;}
+  .mcard-price{font-family:'Fraunces',serif;font-size:24px;font-weight:600;color:var(--wood);letter-spacing:-.01em;}
+  .mcard-price small{font-family:'JetBrains Mono',monospace;font-size:11px;font-weight:400;color:var(--paper-dim);letter-spacing:.06em;text-transform:uppercase;}
+
+  /* ------------------ BEFORE / AFTER ------------------ */
+  .transform{background:var(--ink-2);border-top:1px solid var(--line);border-bottom:1px solid var(--line);}
+  .ba-wrap{
+    position:relative;max-width:1000px;margin:0 auto;
+    aspect-ratio:16/9;border-radius:8px;overflow:hidden;
+    box-shadow:var(--shadow-lg);cursor:ew-resize;user-select:none;
+    border:1px solid var(--line);
+  }
+  .ba-layer{position:absolute;inset:0;}
+  .ba-layer svg{width:100%;height:100%;display:block;}
+  .ba-after{clip-path:inset(0 0 0 var(--ba,50%));}
+  .ba-handle{
+    position:absolute;top:0;bottom:0;left:var(--ba,50%);width:2px;background:var(--paper);
+    transform:translateX(-50%);pointer-events:none;box-shadow:0 0 24px rgba(0,0,0,.5);
+  }
+  .ba-handle::before,.ba-handle::after{
+    content:"";position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);
+    width:52px;height:52px;border-radius:50%;background:var(--paper);
+    box-shadow:0 8px 20px rgba(0,0,0,.4);
+  }
+  .ba-handle::after{width:44px;height:44px;background:var(--ink);}
+  .ba-handle .arrows{
+    position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);z-index:1;
+    color:var(--paper);font-size:14px;font-weight:700;font-family:'JetBrains Mono',monospace;letter-spacing:-2px;
+  }
+  .ba-tag{
+    position:absolute;top:20px;padding:8px 14px;border-radius:2px;
+    font-family:'JetBrains Mono',monospace;font-size:11.5px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;
+    background:rgba(20,18,16,.85);backdrop-filter:blur(6px);color:var(--paper);z-index:2;
+  }
+  .ba-tag.before{left:20px;}
+  .ba-tag.after{right:20px;color:var(--moss);}
+
+  /* ------------------ GALLERY ------------------ */
+  .gallery{background:var(--ink);}
+  .gal-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;}
+  @media(max-width:900px){.gal-grid{grid-template-columns:repeat(2,1fr);}}
+  @media(max-width:520px){.gal-grid{grid-template-columns:1fr;}}
+  .gal-item{
+    position:relative;overflow:hidden;border-radius:6px;aspect-ratio:4/3;
+    background:var(--ink-2);border:1px solid var(--line);
+    cursor:pointer;transition:transform .35s var(--ease-out);
+  }
+  .gal-item.tall{aspect-ratio:4/5;}
+  .gal-item svg{width:100%;height:100%;transition:transform .5s var(--ease-out);}
+  .gal-item:hover{transform:translateY(-3px);}
+  .gal-item:hover svg{transform:scale(1.05);}
+  .gal-meta{
+    position:absolute;left:0;right:0;bottom:0;padding:20px;
+    background:linear-gradient(0deg,rgba(20,18,16,.92) 0%,transparent 100%);
+    transform:translateY(70%);transition:transform .35s var(--ease-out);
+  }
+  .gal-item:hover .gal-meta{transform:translateY(0);}
+  .gal-meta h4{font-family:'Fraunces',serif;font-size:18px;font-weight:600;margin-bottom:4px;}
+  .gal-meta p{font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--paper-dim);}
+  .gal-badge{
+    position:absolute;top:12px;left:12px;z-index:2;
+    background:rgba(20,18,16,.82);backdrop-filter:blur(6px);
+    padding:5px 10px;border-radius:2px;
+    font-family:'JetBrains Mono',monospace;font-size:10.5px;font-weight:500;letter-spacing:.12em;text-transform:uppercase;color:var(--wood);
   }
 
-  footer{background:var(--teal-dark);color:var(--cream-light);padding:50px 0 28px;}
-  footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:24px;align-items:center;}
-  .foot-brand{font-family:'Fraunces',serif;font-weight:700;font-size:19px;}
-  .foot-links{display:flex;gap:26px;flex-wrap:wrap;font-size:13.5px;opacity:0.85;}
-  .foot-bottom{
-    margin-top:34px;padding-top:22px;border-top:1px solid rgba(247,239,225,0.15);
-    text-align:center;font-size:12.5px;opacity:0.6;
+  /* Lightbox */
+  .lb{
+    position:fixed;inset:0;z-index:200;display:none;align-items:center;justify-content:center;
+    background:rgba(10,9,8,.92);backdrop-filter:blur(10px);padding:40px;
   }
+  .lb.open{display:flex;animation:lbFade .3s var(--ease-out);}
+  @keyframes lbFade{from{opacity:0;}to{opacity:1;}}
+  .lb-inner{max-width:1000px;width:100%;position:relative;}
+  .lb-inner svg{width:100%;height:auto;border-radius:6px;border:1px solid var(--line);}
+  .lb-meta{margin-top:20px;display:flex;justify-content:space-between;align-items:flex-end;gap:20px;flex-wrap:wrap;}
+  .lb-meta h3{font-size:28px;}
+  .lb-meta p{color:var(--paper-dim);font-size:14px;margin-top:6px;max-width:520px;}
+  .lb-close{
+    position:absolute;top:-40px;right:0;width:36px;height:36px;
+    border-radius:50%;background:var(--paper);color:var(--ink);
+    display:flex;align-items:center;justify-content:center;font-size:20px;
+  }
+
+  /* ------------------ PROCESS ------------------ */
+  .process{background:var(--ink-2);border-top:1px solid var(--line);}
+  .steps{position:relative;padding:20px 0;}
+  .step-line{
+    position:absolute;left:40px;top:0;bottom:0;width:2px;background:var(--line);
+    overflow:hidden;
+  }
+  .step-line::after{
+    content:"";position:absolute;top:0;left:0;right:0;height:var(--fill,0%);
+    background:linear-gradient(180deg,var(--wood),var(--moss));
+    transition:height .3s var(--ease-out);
+  }
+  .step{
+    display:grid;grid-template-columns:80px 1fr 1fr;gap:32px;align-items:start;
+    padding:44px 0;position:relative;
+  }
+  .step-num{
+    width:80px;height:80px;border-radius:50%;
+    background:var(--ink);border:2px solid var(--wood);
+    display:flex;align-items:center;justify-content:center;
+    font-family:'Fraunces',serif;font-size:28px;font-weight:600;color:var(--wood);
+    z-index:2;position:relative;transition:all .3s;
+  }
+  .step.active .step-num{background:var(--wood);color:var(--ink);transform:scale(1.05);}
+  .step-body h3{font-size:26px;margin-bottom:8px;}
+  .step-body p{color:var(--paper-dim);font-size:15.5px;max-width:400px;}
+  .step-tag{font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--wood);margin-bottom:6px;}
+  .step-visual{
+    background:var(--ink);border:1px solid var(--line);border-radius:4px;
+    padding:20px;font-family:'JetBrains Mono',monospace;font-size:12px;
+    display:flex;flex-direction:column;gap:10px;
+  }
+  .step-visual .line{display:flex;justify-content:space-between;gap:20px;color:var(--paper-dim);}
+  .step-visual .line b{color:var(--wood);font-weight:500;}
+  .step-visual .line .ok{color:var(--moss);}
+  @media(max-width:800px){
+    .step{grid-template-columns:60px 1fr;gap:20px;}
+    .step-visual{grid-column:1/-1;margin-left:80px;}
+    .step-num{width:60px;height:60px;font-size:22px;}
+    .step-line{left:30px;}
+  }
+
+  /* ------------------ TESTIMONIALS ------------------ */
+  .testi{background:var(--ink);}
+  .testi-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;}
+  @media(max-width:900px){.testi-grid{grid-template-columns:1fr;}}
+  .tcard{
+    background:var(--ink-2);border:1px solid var(--line);border-radius:6px;padding:32px;
+    display:flex;flex-direction:column;gap:16px;transition:transform .3s var(--ease-out),border-color .3s;
+    position:relative;overflow:hidden;
+  }
+  .tcard:hover{transform:translateY(-3px);border-color:var(--wood-3);}
+  .tcard-stars{color:var(--wood);font-size:18px;letter-spacing:3px;}
+  .tcard blockquote{
+    font-family:'Fraunces',serif;font-size:19px;font-weight:400;line-height:1.4;color:var(--paper);
+    flex:1;position:relative;
+  }
+  .tcard-foot{display:flex;align-items:center;gap:12px;padding-top:16px;border-top:1px dashed var(--line);}
+  .tcard-avatar{
+    width:44px;height:44px;border-radius:50%;
+    display:flex;align-items:center;justify-content:center;
+    font-family:'Fraunces',serif;font-weight:600;font-size:16px;
+    background:var(--wood);color:var(--ink);flex-shrink:0;
+  }
+  .tcard-meta{display:flex;flex-direction:column;line-height:1.2;}
+  .tcard-name{font-weight:600;font-size:14px;color:var(--paper);}
+  .tcard-loc{font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--paper-dim);letter-spacing:.06em;margin-top:2px;}
+
+  /* ------------------ SERVICE AREA ------------------ */
+  .area{background:var(--ink-2);border-top:1px solid var(--line);border-bottom:1px solid var(--line);}
+  .area-wrap{display:grid;grid-template-columns:1fr 1.2fr;gap:60px;align-items:center;}
+  @media(max-width:900px){.area-wrap{grid-template-columns:1fr;}}
+  .area-list{display:grid;grid-template-columns:repeat(2,1fr);gap:6px 20px;margin-top:24px;}
+  .area-list li{
+    list-style:none;padding:12px 0;border-bottom:1px dashed var(--line);
+    display:flex;align-items:center;gap:10px;font-size:15px;color:var(--paper-dim);
+    transition:color .2s;
+  }
+  .area-list li::before{content:"◆";color:var(--wood);font-size:10px;}
+  .area-list li:hover{color:var(--paper);}
+  .map-svg{width:100%;height:auto;}
+  .map-svg .ring{fill:none;stroke:var(--wood);stroke-opacity:.6;stroke-width:1;}
+  .map-svg .ring.pulse{animation:mapPulse 3s ease-out infinite;transform-origin:center;transform-box:fill-box;}
+  @keyframes mapPulse{0%{stroke-opacity:.8;transform:scale(.6);}100%{stroke-opacity:0;transform:scale(1.5);}}
+  .map-svg .pin{fill:var(--rust);}
+  .map-svg .city-dot{fill:var(--paper-dim);}
+  .map-svg .city-label{font-family:'JetBrains Mono',monospace;font-size:9px;letter-spacing:.12em;text-transform:uppercase;fill:var(--paper-dim);}
+  .map-svg .city-label.main{fill:var(--wood);font-weight:700;font-size:11px;}
+
+  /* ------------------ FAQ ------------------ */
+  .faq{background:var(--ink);}
+  .faq-list{max-width:820px;margin:0 auto;}
+  .qa{border-bottom:1px solid var(--line);padding:24px 0;cursor:pointer;}
+  .qa summary{
+    list-style:none;display:flex;justify-content:space-between;align-items:center;gap:20px;
+    font-family:'Fraunces',serif;font-size:22px;font-weight:600;letter-spacing:-.01em;
+    color:var(--paper);
+  }
+  .qa summary::-webkit-details-marker{display:none;}
+  .qa summary .plus{
+    flex-shrink:0;width:32px;height:32px;border-radius:50%;border:1px solid var(--line-strong);
+    display:flex;align-items:center;justify-content:center;
+    font-size:16px;color:var(--wood);transition:transform .3s var(--ease-out),background .2s;
+  }
+  .qa[open] summary .plus{transform:rotate(45deg);background:var(--wood);color:var(--ink);}
+  .qa-a{padding-top:16px;color:var(--paper-dim);font-size:15.5px;line-height:1.6;max-width:640px;}
+
+  /* ------------------ CONTACT ------------------ */
+  .contact{
+    background:linear-gradient(180deg,var(--ink) 0%,var(--ink-2) 100%);
+    border-top:1px solid var(--line);
+  }
+  .contact-wrap{display:grid;grid-template-columns:1fr 1.05fr;gap:60px;align-items:start;}
+  @media(max-width:900px){.contact-wrap{grid-template-columns:1fr;gap:40px;}}
+  .contact-info h2{margin-bottom:20px;}
+  .contact-info p.lede{color:var(--paper-dim);font-size:17px;max-width:440px;margin-bottom:36px;}
+  .contact-row{display:flex;align-items:flex-start;gap:14px;padding:20px 0;border-bottom:1px solid var(--line);}
+  .contact-row:last-of-type{border-bottom:none;}
+  .contact-ico{width:40px;height:40px;border-radius:50%;background:var(--ink-2);border:1px solid var(--line-strong);display:flex;align-items:center;justify-content:center;color:var(--wood);flex-shrink:0;}
+  .contact-row b{display:block;font-size:11.5px;font-family:'JetBrains Mono',monospace;letter-spacing:.16em;text-transform:uppercase;color:var(--paper-dim);margin-bottom:4px;font-weight:500;}
+  .contact-row a,.contact-row span{font-size:16px;color:var(--paper);font-weight:500;}
+
+  .form{
+    background:var(--ink-2);border:1px solid var(--line);border-radius:8px;
+    padding:36px;box-shadow:var(--shadow-lg);
+  }
+  .form h3{font-size:22px;margin-bottom:6px;}
+  .form-sub{font-size:13.5px;color:var(--paper-dim);margin-bottom:26px;}
+  .frow{margin-bottom:16px;}
+  .frow label{display:block;font-family:'JetBrains Mono',monospace;font-size:10.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--paper-dim);margin-bottom:6px;font-weight:500;}
+  .frow input,.frow select,.frow textarea{
+    width:100%;padding:12px 14px;background:var(--ink);color:var(--paper);
+    border:1px solid var(--line-strong);border-radius:3px;font-family:inherit;font-size:14.5px;
+    transition:border-color .2s;
+  }
+  .frow input:focus,.frow select:focus,.frow textarea:focus{border-color:var(--wood);outline:none;}
+  .frow textarea{resize:vertical;min-height:100px;}
+  .frow-two{display:grid;grid-template-columns:1fr 1fr;gap:12px;}
+  @media(max-width:500px){.frow-two{grid-template-columns:1fr;}}
+  .form .btn{width:100%;justify-content:center;padding:14px;margin-top:6px;}
+  .form-note{font-family:'JetBrains Mono',monospace;font-size:10.5px;color:var(--paper-dim);letter-spacing:.06em;margin-top:14px;text-align:center;}
+  .form-ok{background:rgba(143,174,95,.1);border:1px solid rgba(143,174,95,.35);color:var(--moss);padding:14px;border-radius:3px;margin-top:12px;font-size:14px;}
+  .form-ok:empty{display:none;}
+
+  /* ------------------ FOOTER ------------------ */
+  footer{background:var(--ink);padding:80px 0 30px;border-top:1px solid var(--line);position:relative;overflow:hidden;}
+  .foot-word{
+    font-family:'Fraunces',serif;font-size:clamp(70px,15vw,220px);font-weight:600;
+    letter-spacing:-.05em;line-height:.85;color:transparent;-webkit-text-stroke:1px var(--line-strong);
+    white-space:nowrap;text-align:center;margin:60px 0 0;user-select:none;
+  }
+  .foot-word em{font-style:italic;color:var(--wood);-webkit-text-stroke:0;}
+  .foot-cols{display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:40px;padding-bottom:60px;border-bottom:1px solid var(--line);}
+  @media(max-width:800px){.foot-cols{grid-template-columns:1fr 1fr;gap:32px;}}
+  .foot-col h5{font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--wood);margin-bottom:20px;font-weight:500;}
+  .foot-col ul{list-style:none;display:flex;flex-direction:column;gap:10px;}
+  .foot-col a{color:var(--paper-dim);font-size:14.5px;transition:color .2s;}
+  .foot-col a:hover{color:var(--paper);}
+  .foot-lede{color:var(--paper-dim);font-size:14.5px;max-width:280px;line-height:1.6;margin-top:14px;}
+  .foot-bottom{padding-top:24px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:14px;font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--paper-dim);letter-spacing:.08em;text-transform:uppercase;}
+
+  /* ------------------ SCROLL PROGRESS ------------------ */
+  .scroll-progress{position:fixed;top:0;left:0;height:2px;background:var(--wood);width:0%;z-index:90;transition:width .05s linear;}
+
 </style>
-<script type="application/ld+json">
-[
-  {
-    "@context": "https://schema.org",
-    "@type": "Bakery",
-    "name": "I&P Home Baked Goodness - Hague",
-    "servesCuisine": "Pizza, Bakery, Ice Cream",
-    "priceRange": "$$",
-    "telephone": "+1-306-225-2244",
-    "address": {
-      "@type": "PostalAddress",
-      "streetAddress": "100A 4th St",
-      "addressLocality": "Hague",
-      "addressRegion": "SK",
-      "addressCountry": "CA"
-    },
-    "aggregateRating": {
-      "@type": "AggregateRating",
-      "ratingValue": "4.5",
-      "reviewCount": "118"
-    }
-  },
-  {
-    "@context": "https://schema.org",
-    "@type": "Bakery",
-    "name": "I&P Home Baked Goodness - Martensville",
-    "servesCuisine": "Pizza, Bakery, Ice Cream",
-    "priceRange": "$$",
-    "telephone": "+1-306-225-2244",
-    "address": {
-      "@type": "PostalAddress",
-      "streetAddress": "701 Centennial Drive North, Unit 3",
-      "addressLocality": "Martensville",
-      "addressRegion": "SK",
-      "addressCountry": "CA"
-    },
-    "aggregateRating": {
-      "@type": "AggregateRating",
-      "ratingValue": "4.5",
-      "reviewCount": "50"
-    }
-  },
-  {
-    "@context": "https://schema.org",
-    "@type": "Bakery",
-    "name": "I&P Home Baked Goodness - Saskatoon 51st St",
-    "servesCuisine": "Pizza, Bakery, Ice Cream",
-    "priceRange": "$$",
-    "addressLocality": "Saskatoon",
-    "address": {
-      "@type": "PostalAddress",
-      "addressLocality": "Saskatoon",
-      "addressRegion": "SK",
-      "addressCountry": "CA"
-    },
-    "aggregateRating": {
-      "@type": "AggregateRating",
-      "ratingValue": "4.6",
-      "reviewCount": "26"
-    }
-  }
-]
-</script>
 </head>
 <body>
-<a href="#main-content" class="skip-link">Skip to main content</a>
 
-<nav>
+<div class="scroll-progress" id="scrollProgress"></div>
+<div class="cursor-ring" id="cursorRing"></div>
+<div class="cursor-dot" id="cursorDot"></div>
+
+<!-- ============ NAV ============ -->
+<nav class="top" id="topnav">
   <div class="wrap">
-    <div class="brand">
-      <img src="https://static.wixstatic.com/media/e9a461_bd83bc5c39e04b8f9f1c9c97d08bb496~mv2.png/v1/fill/w_300,h_188,al_c,q_90,usm_0.66_1.00_0.01,enc_avif,quality_auto/e9a461_bd83bc5c39e04b8f9f1c9c97d08bb496~mv2.png" alt="I&P Home Baked Goodness logo">
-      <div class="brand-text">
-        <span class="brand-eyebrow">I&amp;P</span>
-        <span class="brand-main">Home Baked <span>Goodness</span></span>
-      </div>
-    </div>
+    <a href="#top" class="brand" data-cursor="hover">
+      <svg class="brand-mark" viewBox="0 0 40 40">
+        <rect x="1" y="1" width="38" height="38" rx="6" fill="var(--ink-2)" stroke="var(--wood)" stroke-width="2"/>
+        <path d="M6 26 L34 26 L30 32 L10 32 Z" fill="var(--wood-3)"/>
+        <path d="M10 18 L30 18 L34 26 L6 26 Z" fill="var(--wood)"/>
+        <path d="M10 18 L30 18 L30 32 L10 32 Z" fill="none" stroke="var(--ink)" stroke-width="1.2"/>
+        <line x1="14" y1="18" x2="14" y2="32" stroke="var(--wood-shadow)" stroke-width=".8"/>
+        <line x1="20" y1="18" x2="20" y2="32" stroke="var(--wood-shadow)" stroke-width=".8"/>
+        <line x1="26" y1="18" x2="26" y2="32" stroke="var(--wood-shadow)" stroke-width=".8"/>
+      </svg>
+      <span>
+        Saskatoon Deck Shop
+        <small>Est. Saskatoon, SK</small>
+      </span>
+    </a>
     <div class="nav-links">
-      <a href="#story">Our Story</a>
-      <a href="#menu">Menu</a>
-      <a href="#locations">Locations</a>
-      <a href="#contact">Contact</a>
-      <div class="order-dd">
-        <a href="#locations" class="btn-order">Order Online <span class="caret">▾</span></a>
-        <div class="order-dd-panel">
-          <a href="https://order.toasttab.com/online/i-p-home-baked-goodness-hauge" target="_blank" rel="noopener">Hague <small>★4.5</small></a>
-          <a href="https://order.toasttab.com/online/i-p-home-baked-goodness-martensville" target="_blank" rel="noopener">Martensville <small>★4.4</small></a>
-          <a href="https://order.toasttab.com/online/i-p-home-baked-goodness-ltd-51st-street-820c-51st-street" target="_blank" rel="noopener">Saskatoon 51st St <small>★4.6</small></a>
-          <a href="#locations" class="dd-all">See all locations</a>
-        </div>
-      </div>
-      <button class="hamburger" id="hamburger-btn" aria-label="Menu" aria-expanded="false" onclick="toggleMobileMenu()">
-        <span></span><span></span><span></span>
-      </button>
+      <a href="#build" data-cursor="hover">What We Build</a>
+      <a href="#estimator" data-cursor="hover">Cost Estimator</a>
+      <a href="#gallery" data-cursor="hover">Projects</a>
+      <a href="#process" data-cursor="hover">Process</a>
+      <a href="#area" data-cursor="hover">Service Area</a>
     </div>
-  </div>
-  <div class="mobile-menu" id="mobile-menu">
-    <div class="mobile-menu-inner">
-      <a href="#story" onclick="closeMobileMenu()">Our Story</a>
-      <a href="#menu" onclick="closeMobileMenu()">Menu</a>
-      <a href="#locations" onclick="closeMobileMenu()">Locations</a>
-      <a href="#contact" onclick="closeMobileMenu()">Contact</a>
+    <div class="nav-cta">
+      <span class="nav-phone">Call <b>(306) 555-8342</b></span>
+      <a href="#contact" class="btn" data-cursor="hover">Free Quote <span class="arrow">→</span></a>
+      <button class="hamburger" id="ham" aria-label="Menu"><span></span><span></span><span></span></button>
     </div>
   </div>
 </nav>
 
-<header class="hero" id="main-content">
+<div class="mobile-menu" id="mobileMenu">
+  <a href="#build" onclick="window.closeMenu()">What We Build</a>
+  <a href="#estimator" onclick="window.closeMenu()">Cost Estimator</a>
+  <a href="#gallery" onclick="window.closeMenu()">Projects</a>
+  <a href="#process" onclick="window.closeMenu()">Process</a>
+  <a href="#area" onclick="window.closeMenu()">Service Area</a>
+  <a href="#contact" class="btn" onclick="window.closeMenu()">Get a Free Quote →</a>
+</div>
+
+<!-- ============ HERO ============ -->
+<header class="hero" id="top">
   <div class="wrap">
-    <div>
-      <div class="eyebrow hero-eyebrow">Hague · Martensville · Saskatoon, SK</div>
-      <h1>Family. Flour.<em>&amp; a little flame.</em></h1>
-      <p class="sub">Scratch-made pizza, from-the-oven baking, and retro hard-served ice cream, built by one family across three Saskatchewan towns.</p>
-      <div class="hero-ctas">
-        <div class="order-dd">
-          <a href="#locations" class="btn-solid-cream">Order Online <span class="caret">▾</span></a>
-          <div class="order-dd-panel">
-            <a href="https://order.toasttab.com/online/i-p-home-baked-goodness-hauge" target="_blank" rel="noopener">Hague <small>★4.5</small></a>
-            <a href="https://order.toasttab.com/online/i-p-home-baked-goodness-martensville" target="_blank" rel="noopener">Martensville <small>★4.4</small></a>
-            <a href="https://order.toasttab.com/online/i-p-home-baked-goodness-ltd-51st-street-820c-51st-street" target="_blank" rel="noopener">Saskatoon 51st St <small>★4.6</small></a>
-            <a href="#locations" class="dd-all">See all locations</a>
-          </div>
+    <div class="hero-grid">
+      <div>
+        <div class="hero-eyebrow eyebrow">Saskatoon's craft deck builder — since 2011</div>
+        <h1>
+          <span class="line"><span>Backyards,</span></span>
+          <span class="line"><span><em>elevated.</em></span></span>
+          <span class="line"><span>Down to the last board.</span></span>
+        </h1>
+        <p class="lede">Composite, cedar, and hardwood decks designed for prairie winters and long summer nights. Real numbers, honest builds, ten-year workmanship warranty.</p>
+        <div class="hero-ctas">
+          <a href="#estimator" class="btn" data-cursor="hover">Estimate My Deck <span class="arrow">→</span></a>
+          <a href="#gallery" class="btn ghost" data-cursor="hover">See Recent Builds</a>
         </div>
-        <a href="#story" class="btn-ghost">Read Our Story</a>
+        <div class="hero-meta">
+          <div class="live-dot" id="liveDot">Open now · replies in 20 min</div>
+          <div class="stat"><b>420+</b><span>Decks Built</span></div>
+          <div class="stat"><b>14 yr</b><span>In business</span></div>
+          <div class="stat"><b>4.9★</b><span>127 reviews</span></div>
+        </div>
+      </div>
+      <div class="hero-visual" id="heroVisual">
+        <div class="hero-deck-stage" id="heroDeck">
+          <svg class="hero-deck-svg" viewBox="0 0 560 560" fill="none">
+            <defs>
+              <linearGradient id="woodTop" x1="0" y1="0" x2="1" y2="0">
+                <stop offset="0" stop-color="#D69A5C"/>
+                <stop offset="1" stop-color="#B77A44"/>
+              </linearGradient>
+              <linearGradient id="woodSide" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0" stop-color="#8A5F3C"/>
+                <stop offset="1" stop-color="#6B4423"/>
+              </linearGradient>
+              <linearGradient id="grass" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0" stop-color="#6B8E4E"/>
+                <stop offset="1" stop-color="#4A6835"/>
+              </linearGradient>
+              <pattern id="grain" x="0" y="0" width="60" height="120" patternUnits="userSpaceOnUse">
+                <rect width="60" height="120" fill="url(#woodTop)"/>
+                <path d="M0 20 Q30 15 60 22" stroke="#8A5F3C" stroke-width=".5" fill="none" opacity=".5"/>
+                <path d="M0 55 Q30 60 60 52" stroke="#8A5F3C" stroke-width=".5" fill="none" opacity=".4"/>
+                <path d="M0 85 Q30 90 60 82" stroke="#8A5F3C" stroke-width=".5" fill="none" opacity=".5"/>
+                <path d="M0 108 Q30 100 60 110" stroke="#6B4423" stroke-width=".5" fill="none" opacity=".4"/>
+              </pattern>
+            </defs>
+
+            <ellipse cx="280" cy="480" rx="240" ry="40" fill="url(#grass)" opacity=".55"/>
+            <rect x="130" y="360" width="12" height="80" fill="#3D2B1F"/>
+            <rect x="418" y="360" width="12" height="80" fill="#3D2B1F"/>
+            <rect x="270" y="380" width="12" height="90" fill="#3D2B1F"/>
+
+            <path d="M460 340 L460 400 L280 500 L280 440 Z" fill="url(#woodSide)"/>
+            <line x1="460" y1="360" x2="280" y2="460" stroke="#4A2F1E" stroke-width="1" opacity=".6"/>
+            <line x1="460" y1="380" x2="280" y2="480" stroke="#4A2F1E" stroke-width="1" opacity=".6"/>
+
+            <path d="M280 440 L280 500 L100 400 L100 340 Z" fill="#6B4423"/>
+            <line x1="280" y1="460" x2="100" y2="360" stroke="#4A2F1E" stroke-width="1" opacity=".6"/>
+            <line x1="280" y1="480" x2="100" y2="380" stroke="#4A2F1E" stroke-width="1" opacity=".6"/>
+
+            <path d="M280 240 L460 340 L280 440 L100 340 Z" fill="url(#grain)"/>
+            <path d="M100 340 L280 240" stroke="#8A5F3C" stroke-width="1.2" opacity=".8"/>
+            <path d="M130 356 L310 256" stroke="#8A5F3C" stroke-width=".8" opacity=".5"/>
+            <path d="M160 372 L340 272" stroke="#8A5F3C" stroke-width=".8" opacity=".5"/>
+            <path d="M190 388 L370 288" stroke="#8A5F3C" stroke-width=".8" opacity=".5"/>
+            <path d="M220 404 L400 304" stroke="#8A5F3C" stroke-width=".8" opacity=".5"/>
+            <path d="M250 420 L430 320" stroke="#8A5F3C" stroke-width=".8" opacity=".5"/>
+            <path d="M280 436 L460 336" stroke="#8A5F3C" stroke-width=".8" opacity=".5"/>
+
+            <line x1="100" y1="340" x2="100" y2="280" stroke="#26221D" stroke-width="4"/>
+            <line x1="190" y1="290" x2="190" y2="230" stroke="#26221D" stroke-width="4"/>
+            <line x1="280" y1="240" x2="280" y2="180" stroke="#26221D" stroke-width="4"/>
+            <line x1="100" y1="280" x2="280" y2="180" stroke="#26221D" stroke-width="5"/>
+            <line x1="100" y1="310" x2="280" y2="210" stroke="#26221D" stroke-width="1.2" opacity=".7"/>
+            <line x1="130" y1="299" x2="130" y2="325" stroke="#26221D" stroke-width="1" opacity=".7"/>
+            <line x1="160" y1="283" x2="160" y2="309" stroke="#26221D" stroke-width="1" opacity=".7"/>
+            <line x1="220" y1="249" x2="220" y2="275" stroke="#26221D" stroke-width="1" opacity=".7"/>
+            <line x1="250" y1="233" x2="250" y2="259" stroke="#26221D" stroke-width="1" opacity=".7"/>
+
+            <line x1="460" y1="340" x2="460" y2="280" stroke="#26221D" stroke-width="4"/>
+            <line x1="370" y1="290" x2="370" y2="230" stroke="#26221D" stroke-width="4"/>
+            <line x1="460" y1="280" x2="280" y2="180" stroke="#26221D" stroke-width="5"/>
+            <line x1="460" y1="310" x2="280" y2="210" stroke="#26221D" stroke-width="1.2" opacity=".7"/>
+            <line x1="430" y1="299" x2="430" y2="325" stroke="#26221D" stroke-width="1" opacity=".7"/>
+            <line x1="400" y1="283" x2="400" y2="309" stroke="#26221D" stroke-width="1" opacity=".7"/>
+            <line x1="340" y1="249" x2="340" y2="275" stroke="#26221D" stroke-width="1" opacity=".7"/>
+            <line x1="310" y1="233" x2="310" y2="259" stroke="#26221D" stroke-width="1" opacity=".7"/>
+
+            <g transform="translate(220 300) rotate(-8)">
+              <path d="M0 0 L36 4 L34 -24 L-2 -28 Z" fill="#B08155"/>
+              <path d="M-2 -28 L34 -24 L30 -60 L-6 -64 Z" fill="#C9955F"/>
+              <line x1="-2" y1="-28" x2="34" y2="-24" stroke="#6B4423" stroke-width="1"/>
+              <line x1="0" y1="0" x2="-4" y2="16" stroke="#6B4423" stroke-width="2"/>
+              <line x1="36" y1="4" x2="32" y2="20" stroke="#6B4423" stroke-width="2"/>
+            </g>
+
+            <g transform="translate(360 330)">
+              <path d="M0 0 L40 10 L36 40 L4 30 Z" fill="#3D2B1F"/>
+              <ellipse cx="20" cy="0" rx="20" ry="5" fill="#26221D"/>
+              <path d="M8 -10 Q12 -30 6 -32 Q20 -34 22 -18 Q30 -34 36 -20 Q40 -28 34 -6" fill="#6B8E4E" opacity=".9"/>
+              <path d="M14 -18 Q18 -28 12 -32" stroke="#4A6835" stroke-width="1.2" fill="none"/>
+            </g>
+
+            <circle cx="120" cy="60" r="30" fill="#E06A2B" opacity=".18"/>
+            <circle cx="120" cy="60" r="18" fill="#E06A2B" opacity=".28"/>
+          </svg>
+        </div>
+
+        <div class="hero-floaty f1">
+          <div class="swatch cedar"></div>
+          <div><b>Western Red Cedar</b><small>$14.20 / sq ft</small></div>
+        </div>
+        <div class="hero-floaty f2">
+          <div class="swatch composite"></div>
+          <div><b>Composite · TimberTech</b><small>10-yr warranty</small></div>
+        </div>
+        <div class="hero-floaty f3">
+          <div class="swatch moss"></div>
+          <div><b>Zero landscape damage</b><small>guaranteed</small></div>
+        </div>
       </div>
     </div>
-    <div class="hero-collage">
-      <img class="hc1" src="https://static.wixstatic.com/media/e9a461_45d4c3408d7b46b899cc73ae497ea95b~mv2.jpeg/v1/fill/w_800,h_600,al_c,q_90,usm_0.66_1.00_0.01,enc_avif,quality_auto/e9a461_45d4c3408d7b46b899cc73ae497ea95b~mv2.jpeg" alt="Fresh made pizza">
-      <img class="hc2" src="832A5CB2-81FB-4168-9B3F-51C363CAD5F9.JPG" alt="Fresh-baked blueberry and saskatoon berry tarts">
-      <div class="hc-badge">15 years<br>from scratch</div>
-    </div>
   </div>
-  <div class="scallop"></div>
 </header>
 
-<section class="trust reveal">
-  <div class="wrap">
-    <div class="trust-item"><b>Hague</b> ★4.5 · 118 reviews</div>
-    <span class="trust-dot">•</span>
-    <div class="trust-item"><b>Martensville</b> ★4.5 · 50 reviews</div>
-    <span class="trust-dot">•</span>
-    <div class="trust-item"><b>Saskatoon 51st</b> ★4.6 · 26 reviews</div>
-    <span class="trust-dot">•</span>
-    <div class="trust-item"><b>SK's only</b> breakfast pizza</div>
+<!-- ============ MARQUEE ============ -->
+<div class="marquee" aria-hidden="true">
+  <div class="marquee-track" id="marqueeTrack">
+    <span>Composite decks</span><span>Cedar builds</span><span>Multi-level layouts</span><span>Cable railings</span>
+    <span>Pergolas & shade</span><span>Deck lighting</span><span>Built-in benches</span><span>Privacy screens</span>
+    <span>Stairs & landings</span><span>Old-deck teardown</span><span>Composite decks</span><span>Cedar builds</span>
+    <span>Multi-level layouts</span><span>Cable railings</span><span>Pergolas & shade</span><span>Deck lighting</span>
+    <span>Built-in benches</span><span>Privacy screens</span><span>Stairs & landings</span><span>Old-deck teardown</span>
   </div>
-</section>
+</div>
 
-<section class="story reveal" id="story">
+<!-- ============ WHAT WE BUILD ============ -->
+<section class="services" id="build">
   <div class="wrap">
-    <div class="story-photo">
-      <div class="story-tag">Est. in Hague</div>
-      <img src="IMG_5141.jpeg" alt="The I&amp;P Home Baked Goodness family on opening day">
-    </div>
-    <div>
-      <div class="eyebrow" style="color:var(--teal)">Our Story</div>
-      <h2>It started with a mom, a newborn, and a workbench.</h2>
-      <p>Irene grew up baking at her mother's side, then spent years learning the trade (from grocery store bakeries to Tim Hortons to camp kitchens) before an unexpected opportunity brought her home to Hague.</p>
-      <p>With her first baby in a carrier on the workbench, she and her mom opened the doors to I&amp;P for the very first time. That was the start of a fifteen-year journey.</p>
-
-      <div class="more-content" id="story-more">
-        <div class="story-chapter">
-          <span class="story-chapter-tag">Chapter Two</span>
-          <h3>Letting go, and coming home</h3>
-          <p>After five years, the family made the hard choice to step back and focus on family, selling the bakery to two trusted friends who ran it with care for years, guiding it through the challenges of COVID.</p>
-          <p>But Irene never stopped thinking about it. It felt like one of her own children. So one day, she reached out to ask if they'd consider selling it back. They said yes.</p>
-        </div>
-        <div class="story-chapter">
-          <span class="story-chapter-tag">Chapter Three</span>
-          <h3>Three shops, one family</h3>
-          <p>Once Irene was back at the helm in Hague, things moved fast. Three years later, a second shop opened in Martensville. Just two weeks after signing that lease, a third location arrived on 51st Street in Saskatoon, opening at the start of 2026.</p>
-          <p>Long hours, a lot of laughter, and a whole lot of flour. That's the short version of how one family bakery became three.</p>
-        </div>
-        <p class="story-quote">"Built on friendship, community, and a whole lot of flour."</p>
+    <div class="section-two">
+      <div class="section-head reveal">
+        <div class="eyebrow">What we build</div>
+        <h2>Six shapes<br>of outside.</h2>
       </div>
-
-      <button class="toggle-btn" id="story-toggle" onclick="toggleContent('story')">Continue reading our story</button>
-    </div>
-  </div>
-</section>
-
-<section class="menu" id="menu">
-  <div class="wrap">
-    <div class="menu-head reveal-item">
-      <div class="eyebrow">What We Make</div>
-      <h2>Three shops. One kitchen philosophy.</h2>
-      <p>Everything is made from scratch, every single day, down to the crust, the dough, and the tarts.</p>
-    </div>
-    <div class="menu-grid">
-
-      <div class="menu-card reveal-item" style="--rd:100ms">
-        <figure>
-          <img src="https://static.wixstatic.com/media/e9a461_ff69c2787aa544fcb10a41c6dcd4cca6~mv2.jpeg/v1/fill/w_700,h_500,al_c,q_90,usm_0.66_1.00_0.01,enc_avif,quality_auto/e9a461_ff69c2787aa544fcb10a41c6dcd4cca6~mv2.jpeg" alt="Canadian pizza">
-          <figcaption>Pizza</figcaption>
-        </figure>
-        <div class="body">
-          <h3>From-Scratch Pizza</h3>
-          <p class="menu-sub">Sizes: 8″ personal · 10″ gluten-free · 12″ medium · 14″ large. Prices shown are for 12″.</p>
-          <ul class="menu-list">
-            <li><span>Three Cheese</span><span>$25</span></li>
-            <li><span>Pepperoni</span><span>$25</span></li>
-            <li><span>Hawaiian</span><span>$25</span></li>
-            <li><span>Canadian <em>(pepperoni, bacon, mushrooms)</em></span><span>$27</span></li>
-          </ul>
-          <ul class="menu-list more-content" id="pizza-more">
-            <li><span>Meat Lovers <em>(pepperoni, salami, ham, ground beef, Italian sausage)</em></span><span>$28</span></li>
-            <li><span>Loaded <em>(family fave, everything on it)</em></span><span>$28</span></li>
-            <li><span>Chicken Teriyaki <em>(chicken, feta, onions, pineapple, teriyaki)</em></span><span>$28</span></li>
-            <li><span>Chicken Bacon Ranch</span><span>$28</span></li>
-            <li><span>Greek Chicken <em>(chicken, olives, spinach, feta, onions, greek sauce)</em></span><span>$28</span></li>
-            <li><span>Buffalo Chicken</span><span>$28</span></li>
-            <li><span>Breakfast Pizza <em>(SK's only)</em> <em>(ham, eggs, Italian sausage, peppers, onions)</em></span><span>$28</span></li>
-          </ul>
-          <p class="menu-foot">8″ from $14 · 14″ from $30 · 10″ gluten-free crust $20. Chicken Teriyaki not available in 10″.</p>
-        </div>
-      </div>
-
-      <div class="menu-card reveal-item" style="--rd:200ms">
-        <figure>
-          <img src="IMG_5780.jpeg" alt="Rows of scratch-made donut dough being prepped">
-          <figcaption>Baking &amp; Breakfast</figcaption>
-        </figure>
-        <div class="body">
-          <h3>Daily Baking &amp; Breakfast</h3>
-          <p class="menu-sub">Made from scratch every morning.</p>
-          <ul class="menu-list">
-            <li><span>Cinnamon Bun</span><span>$5</span></li>
-            <li><span>Muffin of the Day <em>(40+ varieties)</em></span><span>$4.25</span></li>
-            <li><span>Fresh Donut <em>(glazed, filled, long johns &amp; more)</em></span><span>$2.50</span></li>
-            <li><span>Tarts <em>(saskatoon, raisin butter, straw/rhub)</em></span><span>$3.50</span></li>
-          </ul>
-          <ul class="menu-list more-content" id="baking-more">
-            <li><span>Pie Slice of the Day <em>(apple, saskatoon, straw/rhub)</em></span><span>$5.25</span></li>
-            <li><span>Whole Pie <em>(pre-order or raw frozen)</em></span><span>$18</span></li>
-            <li><span>Puffed Wheat / Rice Krispie / Confetti Square</span><span>$4.25</span></li>
-            <li><span>Confetti Tray</span><span>$18</span></li>
-            <li><span>Cheese Biscuit</span><span>$3.75</span></li>
-            <li><span>Raisin Biscuit</span><span>$3.75</span></li>
-            <li><span>Raisin Bran Muffin</span><span>$3.75</span></li>
-            <li class="menu-divider"><span>Breakfast <em>(served til 11am)</em></span></li>
-            <li><span>Quiche <em>(ham or mushroom)</em></span><span>$5</span></li>
-            <li><span>Breakfast Sandwich <em>(bacon or ham w/ cheese)</em></span><span>$5</span></li>
-            <li><span>2×2×2 Plate <em>(2 eggs, 2 toast, 2 bacon/ham)</em></span><span>$7</span></li>
-            <li><span>Breakfast Pizza Slice</span><span>$8</span></li>
-            <li><span>Toast <em>(full / half)</em></span><span>$3.75 / $2.25</span></li>
-          </ul>
-          <p class="menu-foot">🍩 6 donuts $12 · 12 donuts $24. Buy 5 get the 6th free on tarts, muffins, cinnamon buns, squares &amp; biscuits.</p>
-        </div>
-      </div>
-
-      <div class="menu-card reveal-item" style="--rd:300ms">
-        <figure>
-          <img src="https://static.wixstatic.com/media/e9a461_d65c2d16dda743eab970d43ef6ccc961~mv2.jpeg/v1/fill/w_700,h_500,al_c,q_90,usm_0.66_1.00_0.01,enc_avif,quality_auto/e9a461_d65c2d16dda743eab970d43ef6ccc961~mv2.jpeg" alt="Retro ice cream float">
-          <figcaption>Ice Cream</figcaption>
-        </figure>
-        <div class="body">
-          <h3>Retro Ice Cream</h3>
-          <p class="menu-sub">Hand-scooped Chapman's, a family tradition.</p>
-          <ul class="menu-list">
-            <li><span>Chapman's hand-scooped cones</span><span>$3.75</span></li>
-            <li><span>Thick milkshakes</span><span>$5.80</span></li>
-            <li><span>Classic banana split</span><span>$8</span></li>
-            <li><span>Pop floats</span><span>$6.75</span></li>
-          </ul>
-          <ul class="menu-list more-content" id="icecream-more">
-            <li><span>Sundae <em>(chocolate, strawberry, caramel)</em></span><span>$4.15</span></li>
-            <li><span>Waffle cone upgrade</span><span>+$1</span></li>
-          </ul>
-        </div>
-      </div>
-
+      <p class="side reveal">Every backyard is different — we design around your grade, sightlines, sun, and how you actually plan to use the space. Below: our most-built configurations.</p>
     </div>
 
-    <button class="menu-master-toggle reveal-item" id="menu-master-toggle" onclick="toggleAllMenus()">View full menu</button>
-  </div>
-</section>
-
-<section class="delivery" id="delivery">
-  <div class="wrap">
-    <div class="delivery-head reveal-item">
-      <div class="eyebrow">Get It Delivered</div>
-      <h2>Skip the drive. Order delivery.</h2>
-      <p>Our Martensville and Saskatoon shops deliver through <span class="doordash-pill">DoorDash</span>. Same scratch-made pizza and baking, straight to your door.</p>
-    </div>
-
-    <div class="delivery-grid">
-      <div class="delivery-card reveal-item" style="--rd:100ms">
-        <span class="delivery-service">DoorDash</span>
-        <div class="delivery-loc">Martensville</div>
-        <a class="delivery-btn" href="https://www.doordash.com/en-CA/store/i&p-home-baked-goodness-martensville-37983675/87262203/" target="_blank" rel="noopener">Order Delivery →</a>
-      </div>
-      <div class="delivery-card reveal-item" style="--rd:200ms">
-        <span class="delivery-service">DoorDash</span>
-        <div class="delivery-loc">Saskatoon · 51st St</div>
-        <a class="delivery-btn" href="https://www.doordash.com/en-CA/store/i&p-home-baked-goodness-saskatoon-42457511/105026150/" target="_blank" rel="noopener">Order Delivery →</a>
-      </div>
-    </div>
-
-    <p class="delivery-note reveal-item" style="--rd:300ms">📍 <b>Hague</b> is pickup only. Grab your order fresh from the shop.</p>
-  </div>
-</section>
-
-<section class="locations" id="locations">
-  <div class="wrap">
-    <div class="loc-head reveal-item">
-      <div class="eyebrow">Order Online</div>
-      <h2>Find your I&amp;P</h2>
-    </div>
-    <div class="loc-grid">
-
-      <div class="loc-card reveal-item" style="--rd:100ms">
-        <div class="photo"><img src="IMG_0430.jpeg" alt="I&amp;P Home Baked Goodness, Hague storefront"></div>
-        <div class="content">
-          <h3>Hague</h3>
-          <div class="loc-rating">★ 4.5 · 118 reviews</div>
-          <address><span class="loc-street">100A 4th St, Hague, SK</span>Our original shop, on the way to the lake.</address>
-          <div class="loc-hours">
-            <div class="h-row"><b>Every day</b><span>6:30 AM – 9:00 PM</span></div>
-          </div>
-          <div class="loc-actions">
-            <a class="loc-btn" href="https://order.toasttab.com/online/i-p-home-baked-goodness-hauge" target="_blank" rel="noopener">Order Online →</a>
-            <a class="loc-map" href="https://www.google.com/maps/search/?api=1&amp;query=100A+4th+St+Hague+SK" target="_blank" rel="noopener">📍 View on Google Maps</a>
-          </div>
-        </div>
+    <div class="svc-grid">
+      <div class="svc-card reveal" style="--rd:60ms" data-tilt>
+        <span class="svc-num">01</span>
+        <svg class="svc-icon" viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="1.6">
+          <path d="M6 40 L58 40 L52 52 L12 52 Z" fill="rgba(201,149,95,.18)"/>
+          <path d="M14 24 L50 24 L58 40 L6 40 Z"/>
+          <line x1="20" y1="24" x2="14" y2="40"/><line x1="32" y1="24" x2="32" y2="40"/><line x1="44" y1="24" x2="50" y2="40"/>
+        </svg>
+        <h3>Ground-level decks</h3>
+        <p>Low-profile, ADA-friendly builds that hug the yard. Popular for hot tubs and small lots. No railing required under 24″.</p>
+        <div class="svc-tags"><span>Cedar</span><span>Composite</span><span>Hot-tub ready</span></div>
       </div>
 
-      <div class="loc-card reveal-item" style="--rd:200ms">
-        <div class="photo"><img src="https://static.wixstatic.com/media/e9a461_5ab49fd8924f44498e55940325eb6fb8~mv2.jpg/v1/fill/w_700,h_400,al_c,q_90,usm_0.66_1.00_0.01,enc_avif,quality_auto/e9a461_5ab49fd8924f44498e55940325eb6fb8~mv2.jpg" alt="Martensville location"></div>
-        <div class="content">
-          <h3>Martensville</h3>
-          <div class="loc-rating">★ 4.5 · 50 reviews</div>
-          <address><span class="loc-street">701 Centennial Dr N, Unit 3, Martensville, SK</span>Fresh donuts every morning, plus full breakfast menu.</address>
-          <div class="loc-hours">
-            <div class="h-row"><b>Sun – Thu</b><span>6:00 AM – 7:00 PM</span></div>
-            <div class="h-row"><b>Fri – Sat</b><span>6:00 AM – 9:00 PM</span></div>
-          </div>
-          <div class="loc-actions">
-            <a class="loc-btn" href="https://order.toasttab.com/online/i-p-home-baked-goodness-martensville" target="_blank" rel="noopener">Order Online →</a>
-            <a class="loc-map" href="https://www.google.com/maps/search/?api=1&amp;query=701+Centennial+Drive+North+Martensville+SK" target="_blank" rel="noopener">📍 View on Google Maps</a>
-          </div>
-        </div>
+      <div class="svc-card reveal" style="--rd:120ms" data-tilt>
+        <span class="svc-num">02</span>
+        <svg class="svc-icon" viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="1.6">
+          <path d="M4 40 L60 40 L52 50 L12 50 Z" fill="rgba(201,149,95,.14)"/>
+          <path d="M4 40 L4 20 L34 8 L34 28 Z" fill="rgba(201,149,95,.22)"/>
+          <path d="M34 28 L34 8 L60 20 L60 40 Z"/>
+          <line x1="34" y1="8" x2="34" y2="50"/>
+        </svg>
+        <h3>Multi-level decks</h3>
+        <p>Layered platforms with stair connections — perfect for split-level lots and multi-zone entertaining.</p>
+        <div class="svc-tags"><span>Custom design</span><span>Steel or wood frame</span></div>
       </div>
 
-      <div class="loc-card reveal-item" style="--rd:300ms">
-        <div class="photo"><img src="IMG_51stst_team.jpg" alt="I&amp;P Home Baked Goodness, Saskatoon 51st Street team"></div>
-        <div class="content">
-          <h3>Saskatoon · 51st St</h3>
-          <div class="loc-rating">★ 4.6 · 26 reviews</div>
-          <address><span class="loc-street">820C 51st St E, Saskatoon, SK</span>Our newest shop, opened at the start of 2026.</address>
-          <div class="loc-hours">
-            <div class="h-row"><b>Mon – Fri</b><span>7:30 AM – 7:00 PM</span></div>
-            <div class="h-row"><b>Sat – Sun</b><span>9:00 AM – 5:00 PM</span></div>
-          </div>
-          <div class="loc-actions">
-            <a class="loc-btn" href="https://order.toasttab.com/online/i-p-home-baked-goodness-ltd-51st-street-820c-51st-street" target="_blank" rel="noopener">Order Online →</a>
-            <a class="loc-map" href="https://www.google.com/maps/search/?api=1&amp;query=820C+51st+Street+East+Saskatoon+SK" target="_blank" rel="noopener">📍 View on Google Maps</a>
-          </div>
-        </div>
+      <div class="svc-card reveal" style="--rd:180ms" data-tilt>
+        <span class="svc-num">03</span>
+        <svg class="svc-icon" viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="1.6">
+          <path d="M8 36 L56 36 L52 46 L12 46 Z" fill="rgba(201,149,95,.14)"/>
+          <path d="M8 8 L56 8 L60 16 L4 16 Z" fill="rgba(201,149,95,.14)"/>
+          <line x1="12" y1="16" x2="12" y2="36"/>
+          <line x1="24" y1="16" x2="24" y2="36"/>
+          <line x1="40" y1="16" x2="40" y2="36"/>
+          <line x1="52" y1="16" x2="52" y2="36"/>
+        </svg>
+        <h3>Pergolas & shade</h3>
+        <p>Add height, structure, and 30% cooler afternoon shade. Cedar rough-sawn or aluminum-clad.</p>
+        <div class="svc-tags"><span>Retractable canopy</span><span>String-light ready</span></div>
       </div>
 
-    </div>
-    <p class="custom-note reveal-item" style="--rd:400ms">Planning something bigger? Call <b>Irene at 306-225-2244 ext 9</b> for catering &amp; bulk orders.</p>
-  </div>
-</section>
-
-<section class="testimonials">
-  <div class="wrap">
-    <div class="testimonials-head reveal-item">
-      <div class="eyebrow">What Locals Say</div>
-      <h2>194 five-star reviews across three towns</h2>
-    </div>
-    <!-- REVIEWS: real 5-star Google reviews, 3 per shop. Names shown as
-         initials to match how Google presents them publicly. -->
-    <div class="testi-grid">
-
-      <div class="testi-card reveal-item" style="--rd:100ms">
-        <div class="testi-head">
-          <div class="testi-avatar loc-hague">M</div>
-          <div class="testi-meta">
-            <div class="testi-name">Monica Thiessen</div>
-            <span class="testi-loc loc-hague">Hague</span>
-          </div>
-        </div>
-        <div class="testi-stars">★★★★★</div>
-        <p>"Amazing owners, great staff, and top quality food."</p>
-        <div class="testi-source">★★★★★ · Google</div>
+      <div class="svc-card reveal" style="--rd:60ms" data-tilt>
+        <span class="svc-num">04</span>
+        <svg class="svc-icon" viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="1.6">
+          <path d="M6 46 L58 46 L58 52 L6 52 Z" fill="rgba(201,149,95,.16)"/>
+          <line x1="10" y1="46" x2="10" y2="18"/><line x1="22" y1="46" x2="22" y2="18"/>
+          <line x1="42" y1="46" x2="42" y2="18"/><line x1="54" y1="46" x2="54" y2="18"/>
+          <line x1="6" y1="18" x2="58" y2="18"/>
+          <line x1="6" y1="30" x2="58" y2="30" stroke-dasharray="2 3"/>
+        </svg>
+        <h3>Railings & privacy</h3>
+        <p>Aluminum, glass, cable, or matched wood. Slat privacy screens sized to block the sightline you actually need.</p>
+        <div class="svc-tags"><span>Aluminum</span><span>Glass</span><span>Cable</span></div>
       </div>
 
-      <div class="testi-card reveal-item" style="--rd:170ms">
-        <div class="testi-head">
-          <div class="testi-avatar loc-martensville">G</div>
-          <div class="testi-meta">
-            <div class="testi-name">Geoff W.</div>
-            <span class="testi-loc loc-martensville">Martensville</span>
-          </div>
-        </div>
-        <div class="testi-stars">★★★★★</div>
-        <p>"Great pizza and combo deals, the pastries and donuts are awesome as well."</p>
-        <div class="testi-source">★★★★★ · Google</div>
+      <div class="svc-card reveal" style="--rd:120ms" data-tilt>
+        <span class="svc-num">05</span>
+        <svg class="svc-icon" viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="1.6">
+          <path d="M6 50 L58 50 L58 56 L6 56 Z" fill="rgba(201,149,95,.16)"/>
+          <path d="M20 50 L20 40 L44 40 L44 50 Z" fill="rgba(201,149,95,.22)"/>
+          <path d="M20 40 L28 22 L36 22 L44 40 Z"/>
+          <circle cx="32" cy="14" r="4" fill="rgba(224,106,43,.4)"/>
+          <line x1="14" y1="30" x2="18" y2="34" stroke="rgba(224,106,43,.4)"/>
+          <line x1="50" y1="30" x2="46" y2="34" stroke="rgba(224,106,43,.4)"/>
+        </svg>
+        <h3>Deck lighting</h3>
+        <p>Low-voltage rail lights, riser lights on every stair, wash lighting under the frame. Wired at framing stage — not tacked on later.</p>
+        <div class="svc-tags"><span>Warm 2700K</span><span>Dusk sensor</span></div>
       </div>
 
-      <div class="testi-card reveal-item" style="--rd:240ms">
-        <div class="testi-head">
-          <div class="testi-avatar loc-saskatoon has-photo">
-            <img src="https://lh3.googleusercontent.com/a-/ALV-UjUJq2d2DkiE01BI5mVRA86Qzm7LR4psPERxtH2R0KbD50EWyukD=w72-h72-p-rp-mo-ba12-br100" alt="Paige Holloway">
-          </div>
-          <div class="testi-meta">
-            <div class="testi-name">Paige Holloway</div>
-            <span class="testi-loc loc-saskatoon">Saskatoon</span>
-          </div>
-        </div>
-        <div class="testi-stars">★★★★★</div>
-        <p>"All meat pizza was hearty and tasty, donuts fresh and soft."</p>
-        <div class="testi-source">★★★★★ · Google</div>
+      <div class="svc-card reveal" style="--rd:180ms" data-tilt>
+        <span class="svc-num">06</span>
+        <svg class="svc-icon" viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="1.6">
+          <path d="M6 46 L58 46 L54 54 L10 54 Z" fill="rgba(201,149,95,.16)"/>
+          <path d="M6 46 L58 46" />
+          <path d="M20 46 L20 30 L44 30 L44 46 Z" fill="rgba(201,149,95,.28)"/>
+          <line x1="20" y1="34" x2="44" y2="34"/>
+          <path d="M12 46 L12 38 L20 38"/><path d="M52 46 L52 38 L44 38"/>
+        </svg>
+        <h3>Built-in seating</h3>
+        <p>Bench-perimeter seating that doubles as storage. Cedar tops with hidden fasteners, easy hinged access.</p>
+        <div class="svc-tags"><span>Storage inside</span><span>Cushion options</span></div>
       </div>
-
-      <div class="testi-card reveal-item" style="--rd:310ms">
-        <div class="testi-head">
-          <div class="testi-avatar loc-hague">K</div>
-          <div class="testi-meta">
-            <div class="testi-name">Kyle Ashdown</div>
-            <span class="testi-loc loc-hague">Hague</span>
-          </div>
-        </div>
-        <div class="testi-stars">★★★★★</div>
-        <p>"Thick, crunchy crust and plenty of toppings without being too greasy."</p>
-        <div class="testi-source">★★★★★ · Google</div>
-      </div>
-
-      <div class="testi-card reveal-item" style="--rd:380ms">
-        <div class="testi-head">
-          <div class="testi-avatar loc-martensville">K</div>
-          <div class="testi-meta">
-            <div class="testi-name">Kirkulese</div>
-            <span class="testi-loc loc-martensville">Martensville</span>
-          </div>
-        </div>
-        <div class="testi-stars">★★★★★</div>
-        <p>"Best place for tarts, ham and cheese quiche, and treats!!"</p>
-        <div class="testi-source">★★★★★ · Google</div>
-      </div>
-
-      <div class="testi-card reveal-item" style="--rd:450ms">
-        <div class="testi-head">
-          <div class="testi-avatar loc-saskatoon has-photo">
-            <img src="https://lh3.googleusercontent.com/a-/ALV-UjUa9GR1VbanuytK2MUJqGCy3K2QX8l8ssUi6GmuA63Y_uk4vOa4=w72-h72-p-rp-mo-ba12-br100" alt="Matt L">
-          </div>
-          <div class="testi-meta">
-            <div class="testi-name">Matt L</div>
-            <span class="testi-loc loc-saskatoon">Saskatoon</span>
-          </div>
-        </div>
-        <div class="testi-stars">★★★★★</div>
-        <p>"Fantastic baked goods, pizza, and ice cream."</p>
-        <div class="testi-source">★★★★★ · Google</div>
-      </div>
-
-      <div class="testi-card reveal-item" style="--rd:520ms">
-        <div class="testi-head">
-          <div class="testi-avatar loc-hague">S</div>
-          <div class="testi-meta">
-            <div class="testi-name">Sandy Mccabe</div>
-            <span class="testi-loc loc-hague">Hague</span>
-          </div>
-        </div>
-        <div class="testi-stars">★★★★★</div>
-        <p>"Ordered a loaded and bacon chicken ranch pizza on our way home to Wakaw."</p>
-        <div class="testi-source">★★★★★ · Google</div>
-      </div>
-
-      <div class="testi-card reveal-item" style="--rd:590ms">
-        <div class="testi-head">
-          <div class="testi-avatar loc-martensville">S</div>
-          <div class="testi-meta">
-            <div class="testi-name">Shannon Cholin</div>
-            <span class="testi-loc loc-martensville">Martensville</span>
-          </div>
-        </div>
-        <div class="testi-stars">★★★★★</div>
-        <p>"Also many types of baked goods, tarts, cinnamon buns, and ice cream."</p>
-        <div class="testi-source">★★★★★ · Google</div>
-      </div>
-
-      <div class="testi-card reveal-item" style="--rd:660ms">
-        <div class="testi-head">
-          <div class="testi-avatar loc-saskatoon">D</div>
-          <div class="testi-meta">
-            <div class="testi-name">Dan Kotanko</div>
-            <span class="testi-loc loc-saskatoon">Saskatoon</span>
-          </div>
-        </div>
-        <div class="testi-stars">★★★★★</div>
-        <p>"Hawaiian had a good amount of ham and pineapple, sauce was great too!"</p>
-        <div class="testi-source">★★★★★ · Google</div>
-      </div>
-
-    </div>
-
-    <div class="testi-google-row reveal-item" style="--rd:580ms">
-      <a class="testi-google-chip" href="https://www.google.com/maps/search/?api=1&amp;query=I%26P+Home+Baked+Goodness+Hague+SK" target="_blank" rel="noopener">See more reviews · Hague ↗</a>
-      <a class="testi-google-chip" href="https://www.google.com/maps/search/?api=1&amp;query=I%26P+Home+Baked+Goodness+Martensville+SK" target="_blank" rel="noopener">See more reviews · Martensville ↗</a>
-      <a class="testi-google-chip" href="https://www.google.com/maps/search/?api=1&amp;query=I%26P+Home+Baked+Goodness+Saskatoon+51st+Street" target="_blank" rel="noopener">See more reviews · Saskatoon ↗</a>
     </div>
   </div>
 </section>
 
-<section class="contact reveal" id="contact">
-  <div class="wrap contact-wrap">
-    <div>
-      <div class="eyebrow">Get In Touch</div>
-      <h2>Questions or catering?</h2>
-      <p>Pick your location and send us a note. We'll get back to you as soon as we can.</p>
-      <p>For custom orders, the fastest way to reach Irene directly:</p>
-      <div class="contact-phone">📞 306-225-2244 ext 9</div>
+<!-- ============ ESTIMATOR ============ -->
+<section class="estimator" id="estimator">
+  <div class="wrap">
+    <div class="section-two">
+      <div class="section-head reveal">
+        <div class="eyebrow">Real numbers, not vibes</div>
+        <h2>Estimate your<br>deck in 30 seconds.</h2>
+      </div>
+      <p class="side reveal">Drag the sliders, pick your material, add the extras you want — the number moves as you build. Not a form-first calculator: your estimate first, contact info only if you want a real quote.</p>
     </div>
-    <form class="contact-form" id="contact-form" onsubmit="return false;">
-      <div class="form-row">
-        <label for="contact-location">Which location is this about?</label>
-        <select id="contact-location" name="Location">
-          <option>Hague</option>
-          <option>Martensville</option>
-          <option>Saskatoon · 51st St</option>
-          <option>Catering</option>
-          <option>General / not sure</option>
-        </select>
-      </div>
-      <div class="form-row" id="catering-row" hidden>
-        <label for="contact-address">Event address <span class="form-optional">(optional)</span></label>
-        <input type="text" id="contact-address" placeholder="Where's the catering going?">
-      </div>
-      <div class="form-two">
-        <div class="form-row">
-          <label for="contact-first">First name</label>
-          <input type="text" id="contact-first" name="First name" required>
+
+    <div class="est-shell reveal">
+      <div class="est-controls">
+        <div class="est-block">
+          <div class="est-label"><span>Length</span><b id="lenOut">14 ft</b></div>
+          <input type="range" min="6" max="30" value="14" step="1" id="lenSlider" class="est-slider" data-cursor="hover">
         </div>
-        <div class="form-row">
-          <label for="contact-last">Last name</label>
-          <input type="text" id="contact-last" name="Last name">
+        <div class="est-block">
+          <div class="est-label"><span>Width</span><b id="widOut">12 ft</b></div>
+          <input type="range" min="6" max="24" value="12" step="1" id="widSlider" class="est-slider" data-cursor="hover">
+        </div>
+        <div class="est-block">
+          <div class="est-label"><span>Height off ground</span><b id="hgtOut">2 ft</b></div>
+          <input type="range" min="0" max="10" value="2" step="1" id="hgtSlider" class="est-slider" data-cursor="hover">
+        </div>
+
+        <div class="est-block">
+          <div class="est-label"><span>Material</span><b id="matOut">Cedar</b></div>
+          <div class="mat-grid" id="matGrid">
+            <button type="button" class="mat-opt" data-mat="pt" data-price="9" data-cursor="hover"><b>Pressure-treated</b><small>$9 / sq ft · budget</small></button>
+            <button type="button" class="mat-opt active" data-mat="cedar" data-price="14" data-cursor="hover"><b>Western Red Cedar</b><small>$14 / sq ft · natural</small></button>
+            <button type="button" class="mat-opt" data-mat="comp" data-price="22" data-cursor="hover"><b>Composite</b><small>$22 / sq ft · low-maint.</small></button>
+            <button type="button" class="mat-opt" data-mat="hard" data-price="32" data-cursor="hover"><b>Hardwood (Ipe)</b><small>$32 / sq ft · premium</small></button>
+          </div>
+        </div>
+
+        <div class="est-block">
+          <div class="est-label"><span>Add-ons</span><b>Optional</b></div>
+          <div class="addon-grid" id="addonGrid">
+            <div class="addon" data-price="1400" data-key="railing" data-cursor="hover"><span class="addon-check"><svg viewBox="0 0 12 12"><path fill="none" stroke="currentColor" stroke-width="2" d="M2 6 L5 9 L10 3"/></svg></span> Railing<span class="addon-price">+$1,400</span></div>
+            <div class="addon" data-price="900" data-key="stairs" data-cursor="hover"><span class="addon-check"><svg viewBox="0 0 12 12"><path fill="none" stroke="currentColor" stroke-width="2" d="M2 6 L5 9 L10 3"/></svg></span> Stairs<span class="addon-price">+$900</span></div>
+            <div class="addon" data-price="1800" data-key="lighting" data-cursor="hover"><span class="addon-check"><svg viewBox="0 0 12 12"><path fill="none" stroke="currentColor" stroke-width="2" d="M2 6 L5 9 L10 3"/></svg></span> Deck lighting<span class="addon-price">+$1,800</span></div>
+            <div class="addon" data-price="4800" data-key="pergola" data-cursor="hover"><span class="addon-check"><svg viewBox="0 0 12 12"><path fill="none" stroke="currentColor" stroke-width="2" d="M2 6 L5 9 L10 3"/></svg></span> Pergola<span class="addon-price">+$4,800</span></div>
+            <div class="addon" data-price="2200" data-key="bench" data-cursor="hover"><span class="addon-check"><svg viewBox="0 0 12 12"><path fill="none" stroke="currentColor" stroke-width="2" d="M2 6 L5 9 L10 3"/></svg></span> Built-in bench<span class="addon-price">+$2,200</span></div>
+            <div class="addon" data-price="1600" data-key="privacy" data-cursor="hover"><span class="addon-check"><svg viewBox="0 0 12 12"><path fill="none" stroke="currentColor" stroke-width="2" d="M2 6 L5 9 L10 3"/></svg></span> Privacy screen<span class="addon-price">+$1,600</span></div>
+          </div>
         </div>
       </div>
-      <div class="form-row">
-        <label for="contact-email">Email</label>
-        <input type="email" id="contact-email" name="Email" required>
+
+      <div class="est-preview">
+        <div class="est-label"><span>Live plan · top-down</span><b id="sqftOut">168 sq ft</b></div>
+        <div class="plan-wrap">
+          <svg id="plan-svg" viewBox="0 0 420 320" fill="none">
+            <defs>
+              <pattern id="planGrain" x="0" y="0" width="20" height="120" patternUnits="userSpaceOnUse">
+                <rect width="20" height="120" fill="#C9955F"/>
+                <line x1="0" y1="0" x2="0" y2="120" stroke="#8A5F3C" stroke-width=".6"/>
+                <path d="M0 30 Q10 26 20 32" stroke="#8A5F3C" stroke-width=".4" fill="none" opacity=".6"/>
+                <path d="M0 70 Q10 74 20 68" stroke="#8A5F3C" stroke-width=".4" fill="none" opacity=".6"/>
+              </pattern>
+              <pattern id="planPT" x="0" y="0" width="20" height="120" patternUnits="userSpaceOnUse">
+                <rect width="20" height="120" fill="#8FAE5F" opacity=".8"/>
+                <line x1="0" y1="0" x2="0" y2="120" stroke="#4A6835" stroke-width=".6"/>
+              </pattern>
+              <pattern id="planComp" x="0" y="0" width="20" height="120" patternUnits="userSpaceOnUse">
+                <rect width="20" height="120" fill="#5A4A3A"/>
+                <line x1="0" y1="0" x2="0" y2="120" stroke="#26221D" stroke-width=".8"/>
+              </pattern>
+              <pattern id="planHard" x="0" y="0" width="20" height="120" patternUnits="userSpaceOnUse">
+                <rect width="20" height="120" fill="#5C3820"/>
+                <line x1="0" y1="0" x2="0" y2="120" stroke="#2A1810" stroke-width=".7"/>
+                <path d="M0 40 Q10 36 20 42" stroke="#2A1810" stroke-width=".5" fill="none" opacity=".7"/>
+              </pattern>
+            </defs>
+
+            <rect x="10" y="20" width="400" height="30" fill="#1D1A17" stroke="#3D3025"/>
+            <text x="14" y="40" font-family="JetBrains Mono" font-size="10" fill="#B08155" letter-spacing="1">HOUSE</text>
+
+            <rect x="10" y="260" width="400" height="40" fill="#26221D"/>
+            <circle cx="30" cy="280" r="6" fill="#6B8E4E" opacity=".6"/>
+            <circle cx="380" cy="285" r="8" fill="#6B8E4E" opacity=".6"/>
+            <circle cx="60" cy="290" r="4" fill="#6B8E4E" opacity=".5"/>
+            <circle cx="330" cy="275" r="5" fill="#6B8E4E" opacity=".5"/>
+
+            <g id="planDeck">
+              <rect id="planRect" x="80" y="60" width="260" height="180" fill="url(#planGrain)" class="deck-board"/>
+              <g id="planLines" stroke="#8A5F3C" stroke-width=".6" opacity=".7"></g>
+              <g id="planRail" stroke="#26221D" stroke-width="2" fill="none" opacity="0"></g>
+              <g id="planStairs" fill="#8A5F3C" opacity="0"></g>
+              <g id="planPergola" stroke="#26221D" stroke-width="1.2" fill="none" opacity="0" stroke-dasharray="4 3"></g>
+              <g id="planBench" fill="#6B4423" opacity="0"></g>
+              <g id="planPrivacy" fill="#3D2B1F" opacity="0"></g>
+              <g id="planLighting" fill="#E06A2B" opacity="0"></g>
+            </g>
+
+            <line id="dimLineH" class="plan-dim-line" x1="80" y1="255" x2="340" y2="255" stroke-dasharray="2 2"/>
+            <text class="plan-dim" x="210" y="253" text-anchor="middle" id="dimLen">14 ft</text>
+            <line id="dimLineV" class="plan-dim-line" x1="355" y1="60" x2="355" y2="240" stroke-dasharray="2 2"/>
+            <text class="plan-dim" x="365" y="153" transform="rotate(-90 365 153)" text-anchor="middle" id="dimWid">12 ft</text>
+          </svg>
+        </div>
+
+        <div class="est-total">
+          <div>
+            <div class="est-total-num">
+              <sup>$</sup><span id="totLow">4,140</span> <span class="to">to</span> <sup>$</sup><span id="totHigh">5,320</span>
+            </div>
+            <div class="est-total-meta">Materials + labor · Saskatoon area · fall 2025</div>
+          </div>
+          <a href="#contact" class="btn wood" data-cursor="hover">Lock in a Quote <span class="arrow">→</span></a>
+        </div>
+        <div class="est-breakdown" id="estBreakdown">
+          <div><span>Framing & fasteners</span><span id="brFrame">$1,180</span></div>
+          <div><span>Decking material</span><span id="brDeck">$2,352</span></div>
+          <div><span>Labor & install</span><span id="brLabor">$1,344</span></div>
+          <div><span>Add-ons</span><span id="brAdd">$0</span></div>
+        </div>
       </div>
-      <div class="form-row">
-        <label for="contact-msg">Message</label>
-        <textarea id="contact-msg" name="Message" placeholder="Tell us what you need..."></textarea>
-      </div>
-      <button type="submit" class="form-submit">Send Message</button>
-      <div class="form-status" id="form-status" role="status" aria-live="polite"></div>
-      <p class="form-hint">Send opens the mail service of your choice, addressed to Irene. Catering order? Calling directly is fastest.</p>
-    </form>
+    </div>
   </div>
 </section>
 
-<footer>
+<!-- ============ MATERIALS ============ -->
+<section class="materials">
   <div class="wrap">
-    <div class="foot-brand">Home Baked Goodness <span style="opacity:0.6;font-weight:500;font-size:13px;">I&amp;P</span></div>
-    <div class="foot-links">
-      <a href="#story">Our Story</a>
-      <a href="#menu">Menu</a>
-      <a href="#locations">Locations</a>
-      <a href="#contact">Contact</a>
-      <a href="tel:3062252244">306-225-2244</a>
+    <div class="section-two">
+      <div class="section-head reveal">
+        <div class="eyebrow">Material honesty</div>
+        <h2>Four materials.<br>Real trade-offs.</h2>
+      </div>
+      <p class="side reveal">No upselling. If pressure-treated is right for your budget and yard, we'll say so. Prices are 2025 supplied-and-installed averages for a 200 sq ft deck.</p>
+    </div>
+
+    <div class="mat-cards">
+
+      <div class="mcard reveal" style="--rd:60ms" data-tilt>
+        <div class="mcard-swatch">
+          <svg viewBox="0 0 200 120" preserveAspectRatio="none">
+            <rect width="200" height="120" fill="#8FAE5F"/>
+            <g stroke="#4A6835" stroke-width=".8" opacity=".7">
+              <line x1="0" y1="20" x2="200" y2="20"/><line x1="0" y1="40" x2="200" y2="40"/>
+              <line x1="0" y1="60" x2="200" y2="60"/><line x1="0" y1="80" x2="200" y2="80"/>
+              <line x1="0" y1="100" x2="200" y2="100"/>
+            </g>
+            <path d="M0 25 Q50 22 100 27 T200 24" stroke="#6B8E4E" stroke-width=".6" fill="none" opacity=".9"/>
+            <path d="M0 65 Q50 68 100 63 T200 67" stroke="#6B8E4E" stroke-width=".6" fill="none" opacity=".9"/>
+          </svg>
+        </div>
+        <div class="mcard-body">
+          <div class="eyebrow" style="color:var(--moss);">Budget pick</div>
+          <h3>Pressure-treated</h3>
+          <p style="color:var(--paper-dim);font-size:14px;">Green-tinted southern yellow pine. Rated for ground contact. Needs staining every 2–3 years.</p>
+          <div class="mcard-price">$1,800<small> · 200 sq ft</small></div>
+          <div class="mcard-rows">
+            <div class="mcard-row"><span>Lifespan</span><b>15–20 yrs</b></div>
+            <div class="mcard-row"><span>Maintenance</span><b>High</b></div>
+            <div class="mcard-row"><span>Warranty</span><b>2 yr</b></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="mcard reveal" style="--rd:120ms" data-tilt>
+        <div class="mcard-swatch">
+          <svg viewBox="0 0 200 120" preserveAspectRatio="none">
+            <rect width="200" height="120" fill="#C9955F"/>
+            <g stroke="#8A5F3C" stroke-width="1" opacity=".9">
+              <line x1="0" y1="30" x2="200" y2="30"/><line x1="0" y1="60" x2="200" y2="60"/>
+              <line x1="0" y1="90" x2="200" y2="90"/>
+            </g>
+            <path d="M0 40 Q60 34 120 44 T200 40" stroke="#6B4423" stroke-width=".7" fill="none" opacity=".8"/>
+            <path d="M0 75 Q80 82 160 72 T200 76" stroke="#6B4423" stroke-width=".7" fill="none" opacity=".7"/>
+            <ellipse cx="70" cy="55" rx="18" ry="4" fill="#6B4423" opacity=".4"/>
+            <ellipse cx="150" cy="88" rx="14" ry="3" fill="#6B4423" opacity=".4"/>
+          </svg>
+        </div>
+        <div class="mcard-body">
+          <div class="eyebrow" style="color:var(--wood);">Most popular</div>
+          <h3>Western Red Cedar</h3>
+          <p style="color:var(--paper-dim);font-size:14px;">Naturally rot-resistant, low resin, holds stain beautifully. Warm colour that silvers gracefully.</p>
+          <div class="mcard-price">$2,840<small> · 200 sq ft</small></div>
+          <div class="mcard-rows">
+            <div class="mcard-row"><span>Lifespan</span><b>25 yrs</b></div>
+            <div class="mcard-row"><span>Maintenance</span><b>Medium</b></div>
+            <div class="mcard-row"><span>Warranty</span><b>5 yr</b></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="mcard reveal" style="--rd:180ms" data-tilt>
+        <div class="mcard-swatch">
+          <svg viewBox="0 0 200 120" preserveAspectRatio="none">
+            <rect width="200" height="120" fill="#5A4A3A"/>
+            <g stroke="#26221D" stroke-width="1.2" opacity=".9">
+              <line x1="0" y1="24" x2="200" y2="24"/><line x1="0" y1="48" x2="200" y2="48"/>
+              <line x1="0" y1="72" x2="200" y2="72"/><line x1="0" y1="96" x2="200" y2="96"/>
+            </g>
+            <g fill="#3D3025" opacity=".6">
+              <rect x="20" y="10" width="30" height="4"/><rect x="80" y="35" width="26" height="4"/>
+              <rect x="140" y="60" width="34" height="4"/><rect x="40" y="85" width="28" height="4"/>
+            </g>
+          </svg>
+        </div>
+        <div class="mcard-body">
+          <div class="eyebrow" style="color:var(--sky);">Low-maintenance</div>
+          <h3>Composite</h3>
+          <p style="color:var(--paper-dim);font-size:14px;">Capped composite from TimberTech / Trex. Won't rot, warp, splinter. Never needs staining.</p>
+          <div class="mcard-price">$4,460<small> · 200 sq ft</small></div>
+          <div class="mcard-rows">
+            <div class="mcard-row"><span>Lifespan</span><b>30+ yrs</b></div>
+            <div class="mcard-row"><span>Maintenance</span><b>Very low</b></div>
+            <div class="mcard-row"><span>Warranty</span><b>25 yr</b></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="mcard reveal" style="--rd:240ms" data-tilt>
+        <div class="mcard-swatch">
+          <svg viewBox="0 0 200 120" preserveAspectRatio="none">
+            <rect width="200" height="120" fill="#5C3820"/>
+            <g stroke="#2A1810" stroke-width="1" opacity=".9">
+              <line x1="0" y1="20" x2="200" y2="20"/><line x1="0" y1="40" x2="200" y2="40"/>
+              <line x1="0" y1="60" x2="200" y2="60"/><line x1="0" y1="80" x2="200" y2="80"/>
+              <line x1="0" y1="100" x2="200" y2="100"/>
+            </g>
+            <path d="M0 30 Q40 26 80 34 T160 30 T200 32" stroke="#2A1810" stroke-width=".6" fill="none" opacity=".7"/>
+            <path d="M0 70 Q40 74 80 66 T160 72 T200 68" stroke="#2A1810" stroke-width=".6" fill="none" opacity=".7"/>
+            <path d="M0 50 Q60 46 120 52 T200 48" stroke="#3D2312" stroke-width=".4" fill="none" opacity=".9"/>
+          </svg>
+        </div>
+        <div class="mcard-body">
+          <div class="eyebrow" style="color:var(--rust);">Premium</div>
+          <h3>Hardwood · Ipe</h3>
+          <p style="color:var(--paper-dim);font-size:14px;">South American ironwood. Fireproof-rated, 3× harder than oak. Ages to a silver-grey unless oiled.</p>
+          <div class="mcard-price">$6,400<small> · 200 sq ft</small></div>
+          <div class="mcard-rows">
+            <div class="mcard-row"><span>Lifespan</span><b>50+ yrs</b></div>
+            <div class="mcard-row"><span>Maintenance</span><b>Low</b></div>
+            <div class="mcard-row"><span>Warranty</span><b>10 yr</b></div>
+          </div>
+        </div>
+      </div>
+
     </div>
   </div>
-  <div class="foot-bottom wrap">© 2026 I&amp;P Home Baked Goodness. Made with care in Hague, Martensville &amp; Saskatoon.</div>
-</footer>
+</section>
 
-<a class="mobile-order-fab" href="#locations" aria-label="Order online">🍕 Order Online</a>
+<!-- ============ BEFORE / AFTER ============ -->
+<section class="transform">
+  <div class="wrap">
+    <div class="section-head reveal" style="text-align:center;margin:0 auto 48px;max-width:640px;">
+      <div class="eyebrow" style="justify-content:center;">Same yard · six weeks apart</div>
+      <h2 style="margin-top:20px;">Drag the handle.</h2>
+      <p style="margin:20px auto 0;">A 380 sq ft cedar build with pergola and bench seating — Sutherland neighbourhood, September 2024.</p>
+    </div>
 
-<div class="mail-picker" id="mail-picker" role="dialog" aria-modal="true" aria-labelledby="mail-picker-title" hidden>
-  <div class="mail-picker-backdrop" data-close-picker></div>
-  <div class="mail-picker-panel">
-    <button type="button" class="mail-picker-close" data-close-picker aria-label="Close">×</button>
-    <h3 id="mail-picker-title">Send with which mail app?</h3>
-    <p>Pick your mail service and we'll open a pre-filled message to Irene.</p>
-    <div class="mail-picker-options">
-      <button type="button" class="mail-picker-opt" data-mail="gmail"><span class="mp-i">✉</span>Gmail (browser)</button>
-      <button type="button" class="mail-picker-opt" data-mail="outlook"><span class="mp-i">✉</span>Outlook (browser)</button>
-      <button type="button" class="mail-picker-opt" data-mail="yahoo"><span class="mp-i">✉</span>Yahoo Mail (browser)</button>
-      <button type="button" class="mail-picker-opt" data-mail="default"><span class="mp-i">📱</span>Default mail app on this device</button>
+    <div class="ba-wrap reveal" id="baWrap" data-cursor="hover">
+      <span class="ba-tag before">Before</span>
+      <span class="ba-tag after">After</span>
+
+      <div class="ba-layer ba-before">
+        <svg viewBox="0 0 1600 900" preserveAspectRatio="xMidYMid slice">
+          <defs>
+            <linearGradient id="skyBefore" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0" stop-color="#3D3833"/><stop offset="1" stop-color="#5A5145"/>
+            </linearGradient>
+            <linearGradient id="dirt" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0" stop-color="#5A4433"/><stop offset="1" stop-color="#3D2E22"/>
+            </linearGradient>
+          </defs>
+          <rect width="1600" height="500" fill="url(#skyBefore)"/>
+          <rect y="480" width="1600" height="420" fill="url(#dirt)"/>
+          <g fill="#5A6E3F" opacity=".7">
+            <path d="M120 640 Q124 610 118 590 Q130 605 126 580 Q140 605 132 640 Z"/>
+            <path d="M340 690 Q346 660 340 640 Q356 655 350 630 Q366 660 356 690 Z"/>
+            <path d="M780 700 Q786 670 778 650 Q796 660 790 640 Q808 665 796 700 Z"/>
+            <path d="M1180 660 Q1186 630 1180 610 Q1198 625 1190 605 Q1210 625 1198 660 Z"/>
+            <path d="M1440 720 Q1446 690 1438 670 Q1456 685 1450 660 Q1470 685 1458 720 Z"/>
+          </g>
+          <ellipse cx="500" cy="720" rx="60" ry="12" fill="#3D3025" opacity=".7"/>
+          <ellipse cx="920" cy="760" rx="80" ry="16" fill="#3D3025" opacity=".7"/>
+          <ellipse cx="1300" cy="780" rx="50" ry="10" fill="#3D3025" opacity=".6"/>
+          <g fill="#6B4423">
+            <rect x="200" y="500" width="220" height="14" transform="rotate(-3 310 507)"/>
+            <rect x="180" y="518" width="240" height="14" transform="rotate(-2 300 525)" opacity=".85"/>
+            <rect x="200" y="540" width="180" height="14" transform="rotate(-4 290 547)" opacity=".7"/>
+          </g>
+          <rect x="0" y="200" width="500" height="500" fill="#4A403A"/>
+          <rect x="120" y="320" width="80" height="120" fill="#26221D"/>
+          <rect x="280" y="320" width="80" height="120" fill="#26221D"/>
+          <rect x="40" y="470" width="90" height="180" fill="#3D3025"/>
+          <path d="M0 200 L500 200 L500 100 L0 130 Z" fill="#3D3025"/>
+          <g fill="#3D2E22">
+            <rect x="600" y="380" width="18" height="200"/><rect x="680" y="380" width="18" height="200"/>
+            <rect x="760" y="380" width="18" height="200"/><rect x="840" y="380" width="18" height="200"/>
+            <rect x="920" y="380" width="18" height="200"/><rect x="1000" y="380" width="18" height="200"/>
+            <rect x="1080" y="380" width="18" height="200"/><rect x="1160" y="380" width="18" height="200"/>
+            <rect x="1240" y="380" width="18" height="200"/><rect x="1320" y="380" width="18" height="200"/>
+            <rect x="1400" y="380" width="18" height="200"/><rect x="1480" y="380" width="18" height="200"/>
+            <rect x="1560" y="380" width="18" height="200"/>
+          </g>
+        </svg>
+      </div>
+
+      <div class="ba-layer ba-after" id="baAfter">
+        <svg viewBox="0 0 1600 900" preserveAspectRatio="xMidYMid slice">
+          <defs>
+            <linearGradient id="skyAfter" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0" stop-color="#E88A44"/><stop offset=".5" stop-color="#C9955F"/><stop offset="1" stop-color="#8FAE5F"/>
+            </linearGradient>
+            <linearGradient id="grassAfter" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0" stop-color="#6B8E4E"/><stop offset="1" stop-color="#4A6835"/>
+            </linearGradient>
+            <pattern id="grainAfter" x="0" y="0" width="40" height="900" patternUnits="userSpaceOnUse">
+              <rect width="40" height="900" fill="#C9955F"/>
+              <line x1="0" y1="0" x2="0" y2="900" stroke="#8A5F3C" stroke-width="1.5"/>
+              <path d="M0 200 Q20 195 40 205" stroke="#8A5F3C" stroke-width=".8" fill="none" opacity=".7"/>
+              <path d="M0 450 Q20 455 40 445" stroke="#8A5F3C" stroke-width=".8" fill="none" opacity=".6"/>
+              <path d="M0 700 Q20 695 40 705" stroke="#8A5F3C" stroke-width=".8" fill="none" opacity=".7"/>
+            </pattern>
+          </defs>
+          <rect width="1600" height="500" fill="url(#skyAfter)"/>
+          <circle cx="1300" cy="240" r="60" fill="#F4EDE0" opacity=".6"/>
+          <rect y="480" width="1600" height="420" fill="url(#grassAfter)"/>
+          <rect x="0" y="200" width="500" height="500" fill="#4A403A"/>
+          <rect x="120" y="320" width="80" height="120" fill="#F4EDE0" opacity=".8"/>
+          <rect x="280" y="320" width="80" height="120" fill="#F4EDE0" opacity=".8"/>
+          <rect x="40" y="470" width="90" height="180" fill="#3D3025"/>
+          <path d="M0 200 L500 200 L500 100 L0 130 Z" fill="#3D3025"/>
+          <rect x="480" y="480" width="920" height="180" fill="url(#grainAfter)"/>
+          <rect x="480" y="660" width="920" height="30" fill="#6B4423"/>
+          <rect x="500" y="340" width="16" height="140" fill="#26221D"/>
+          <rect x="1380" y="340" width="16" height="140" fill="#26221D"/>
+          <rect x="940" y="340" width="16" height="140" fill="#26221D"/>
+          <rect x="480" y="330" width="940" height="18" fill="#3D2E22"/>
+          <g fill="#3D2E22">
+            <rect x="500" y="310" width="18" height="18"/><rect x="600" y="310" width="18" height="18"/>
+            <rect x="700" y="310" width="18" height="18"/><rect x="800" y="310" width="18" height="18"/>
+            <rect x="900" y="310" width="18" height="18"/><rect x="1000" y="310" width="18" height="18"/>
+            <rect x="1100" y="310" width="18" height="18"/><rect x="1200" y="310" width="18" height="18"/>
+            <rect x="1300" y="310" width="18" height="18"/><rect x="1380" y="310" width="18" height="18"/>
+          </g>
+          <path d="M500 320 Q940 380 1380 320" stroke="#26221D" stroke-width="1.5" fill="none"/>
+          <g fill="#E06A2B" opacity=".9">
+            <circle cx="600" cy="345" r="5"/><circle cx="700" cy="358" r="5"/><circle cx="800" cy="368" r="5"/>
+            <circle cx="900" cy="374" r="5"/><circle cx="1000" cy="376" r="5"/><circle cx="1100" cy="372" r="5"/>
+            <circle cx="1200" cy="365" r="5"/><circle cx="1300" cy="352" r="5"/>
+          </g>
+          <rect x="1000" y="450" width="360" height="30" fill="#8A5F3C"/>
+          <rect x="1000" y="480" width="24" height="24" fill="#8A5F3C"/>
+          <rect x="1336" y="480" width="24" height="24" fill="#8A5F3C"/>
+          <rect x="520" y="440" width="80" height="60" fill="#3D2E22"/>
+          <path d="M540 440 Q548 400 542 390 Q560 400 568 380 Q580 400 574 435 Z" fill="#6B8E4E"/>
+          <g stroke="#26221D" stroke-width="4" fill="none">
+            <line x1="1400" y1="330" x2="1400" y2="490"/>
+            <line x1="1400" y1="490" x2="1560" y2="490"/>
+            <g stroke-width="1.5">
+              <line x1="1420" y1="490" x2="1420" y2="440"/>
+              <line x1="1440" y1="490" x2="1440" y2="440"/>
+              <line x1="1460" y1="490" x2="1460" y2="440"/>
+              <line x1="1480" y1="490" x2="1480" y2="440"/>
+              <line x1="1500" y1="490" x2="1500" y2="440"/>
+              <line x1="1520" y1="490" x2="1520" y2="440"/>
+              <line x1="1540" y1="490" x2="1540" y2="440"/>
+            </g>
+            <line x1="1400" y1="440" x2="1560" y2="440"/>
+          </g>
+          <g fill="#6B4423" opacity=".9">
+            <rect x="580" y="380" width="20" height="120"/><rect x="640" y="380" width="20" height="120"/>
+            <rect x="700" y="380" width="20" height="120"/><rect x="760" y="380" width="20" height="120"/>
+            <rect x="820" y="380" width="20" height="120"/>
+          </g>
+        </svg>
+      </div>
+
+      <div class="ba-handle" id="baHandle"><span class="arrows">‹ ›</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ GALLERY ============ -->
+<section class="gallery" id="gallery">
+  <div class="wrap">
+    <div class="section-two">
+      <div class="section-head reveal">
+        <div class="eyebrow">Recent projects</div>
+        <h2>Nine backyards<br>we're proud of.</h2>
+      </div>
+      <p class="side reveal">Every project a different challenge — slope, footprint, sun exposure, what the family actually wanted to do out there. Click any project to see the write-up.</p>
+    </div>
+
+    <div class="gal-grid" id="galGrid"></div>
+  </div>
+</section>
+
+<div class="lb" id="lightbox" data-cursor="hover">
+  <div class="lb-inner">
+    <button class="lb-close" id="lbClose" aria-label="Close">×</button>
+    <div id="lbBody"></div>
+    <div class="lb-meta">
+      <div>
+        <h3 id="lbTitle"></h3>
+        <p id="lbDesc"></p>
+      </div>
+      <div style="text-align:right;">
+        <div class="eyebrow" id="lbLoc" style="color:var(--wood);"></div>
+        <div style="font-family:'JetBrains Mono',monospace;font-size:12px;color:var(--paper-dim);margin-top:6px;" id="lbStats"></div>
+      </div>
     </div>
   </div>
 </div>
 
+<!-- ============ PROCESS ============ -->
+<section class="process" id="process">
+  <div class="wrap">
+    <div class="section-two">
+      <div class="section-head reveal">
+        <div class="eyebrow">How it goes</div>
+        <h2>Four steps from<br>quote to first beer.</h2>
+      </div>
+      <p class="side reveal">The whole process — from your first call to a finished deck — takes 4–8 weeks depending on scope and season. Here's how it breaks down.</p>
+    </div>
+
+    <div class="steps reveal" id="steps">
+      <div class="step-line" id="stepLine"></div>
+
+      <div class="step" data-step="1">
+        <div class="step-num">1</div>
+        <div class="step-body">
+          <div class="step-tag">Day 1–3</div>
+          <h3>On-site consultation</h3>
+          <p>We come out, measure, look at grade and drainage, and talk through how you want to actually use the space. Free. No sales pitch.</p>
+        </div>
+        <div class="step-visual">
+          <div class="line"><span>Site visit</span><b>Booked in 48h</b></div>
+          <div class="line"><span>Measurements</span><b>Laser + tape</b></div>
+          <div class="line"><span>Sightlines / sun</span><b>Photographed</b></div>
+          <div class="line"><span>Budget range</span><b class="ok">Discussed</b></div>
+        </div>
+      </div>
+
+      <div class="step" data-step="2">
+        <div class="step-num">2</div>
+        <div class="step-body">
+          <div class="step-tag">Week 1–2</div>
+          <h3>Design + fixed quote</h3>
+          <p>You get a 3D render, a materials list, and a fixed-price quote that isn't going to change. Two rounds of revisions included.</p>
+        </div>
+        <div class="step-visual">
+          <div class="line"><span>3D render</span><b>SketchUp + PDF</b></div>
+          <div class="line"><span>Material samples</span><b>Delivered</b></div>
+          <div class="line"><span>Revisions</span><b>2× included</b></div>
+          <div class="line"><span>Fixed quote</span><b class="ok">Locked</b></div>
+        </div>
+      </div>
+
+      <div class="step" data-step="3">
+        <div class="step-num">3</div>
+        <div class="step-body">
+          <div class="step-tag">Week 3–6</div>
+          <h3>Permits + build</h3>
+          <p>We pull city permits, our crew shows up when we said we would, and we protect your grass, driveway, and any landscaping. Daily photos.</p>
+        </div>
+        <div class="step-visual">
+          <div class="line"><span>City permit</span><b>Filed by us</b></div>
+          <div class="line"><span>Crew arrival</span><b>7:30 AM on day 1</b></div>
+          <div class="line"><span>Lawn protection</span><b>Boards + tarp</b></div>
+          <div class="line"><span>Daily updates</span><b class="ok">Text + photo</b></div>
+        </div>
+      </div>
+
+      <div class="step" data-step="4">
+        <div class="step-num">4</div>
+        <div class="step-body">
+          <div class="step-tag">Handover day</div>
+          <h3>Walkthrough + warranty</h3>
+          <p>We walk every screw with you, fix anything you spot on the spot, and hand over a written 10-year workmanship warranty. Then we leave. First beer's on you.</p>
+        </div>
+        <div class="step-visual">
+          <div class="line"><span>Punch list</span><b>Zero items</b></div>
+          <div class="line"><span>Site cleanup</span><b>Broom-clean</b></div>
+          <div class="line"><span>Warranty doc</span><b>10 yr signed</b></div>
+          <div class="line"><span>First cold one</span><b class="ok">Yours ✓</b></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ TESTIMONIALS ============ -->
+<section class="testi">
+  <div class="wrap">
+    <div class="section-two">
+      <div class="section-head reveal">
+        <div class="eyebrow">Homeowners talk</div>
+        <h2>127 reviews. 4.9 stars.<br>Read a few.</h2>
+      </div>
+      <p class="side reveal">Every one of these is verified through Google or HomeStars. We don't cherry-pick — you can read every review right on our profile.</p>
+    </div>
+
+    <div class="testi-grid">
+      <div class="tcard reveal" style="--rd:60ms" data-tilt>
+        <div class="tcard-stars">★★★★★</div>
+        <blockquote>"Cody's crew showed up when they said they would, every single day for three weeks. The deck is dead-level, tight seams, and they left our yard cleaner than they found it. Not a common experience with trades."</blockquote>
+        <div class="tcard-foot">
+          <div class="tcard-avatar">J</div>
+          <div class="tcard-meta"><span class="tcard-name">Jessica R.</span><span class="tcard-loc">Sutherland · Cedar w/ pergola</span></div>
+        </div>
+      </div>
+      <div class="tcard reveal" style="--rd:120ms" data-tilt>
+        <div class="tcard-stars">★★★★★</div>
+        <blockquote>"Got three quotes. Two were vague, this one was itemized to the fastener. Ended up mid-price but with the actual specs I wanted. Would hire again in a heartbeat."</blockquote>
+        <div class="tcard-foot">
+          <div class="tcard-avatar" style="background:var(--moss);color:var(--paper);">M</div>
+          <div class="tcard-meta"><span class="tcard-name">Marcus D.</span><span class="tcard-loc">Willowgrove · Composite multi-level</span></div>
+        </div>
+      </div>
+      <div class="tcard reveal" style="--rd:180ms" data-tilt>
+        <div class="tcard-stars">★★★★★</div>
+        <blockquote>"After my old deck failed inspection I called around. Saskatoon Deck Shop tore the old one out, dug new footings below frost line, and rebuilt in cedar in under three weeks. Passed inspection first try."</blockquote>
+        <div class="tcard-foot">
+          <div class="tcard-avatar" style="background:var(--rust);color:var(--paper);">A</div>
+          <div class="tcard-meta"><span class="tcard-name">Anita K.</span><span class="tcard-loc">Nutana · Rebuild + railings</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ SERVICE AREA ============ -->
+<section class="area" id="area">
+  <div class="wrap">
+    <div class="area-wrap">
+      <div class="reveal">
+        <div class="eyebrow">Service area</div>
+        <h2 style="margin-top:20px;">Saskatoon<br>and 60 km out.</h2>
+        <p style="color:var(--paper-dim);margin-top:20px;max-width:440px;">We build across Saskatoon proper and the surrounding communities — no trip fees within 60 km of the shop.</p>
+        <ul class="area-list">
+          <li>Saskatoon (all neighbourhoods)</li>
+          <li>Warman</li>
+          <li>Martensville</li>
+          <li>Osler</li>
+          <li>Dalmeny</li>
+          <li>Blackstrap</li>
+          <li>Aberdeen</li>
+          <li>Vanscoy</li>
+          <li>Clavet</li>
+          <li>Delisle</li>
+        </ul>
+      </div>
+      <div class="reveal">
+        <svg class="map-svg" viewBox="0 0 500 400">
+          <defs>
+            <radialGradient id="mapBg" cx=".5" cy=".5" r=".7">
+              <stop offset="0" stop-color="#26221D"/><stop offset="1" stop-color="#141210"/>
+            </radialGradient>
+          </defs>
+          <rect width="500" height="400" fill="url(#mapBg)"/>
+          <path d="M40 60 Q120 140 200 180 Q280 220 340 260 Q400 300 460 340" stroke="#3D5A6E" stroke-width="18" fill="none" opacity=".7"/>
+          <path d="M40 60 Q120 140 200 180 Q280 220 340 260 Q400 300 460 340" stroke="#5A7A8E" stroke-width="10" fill="none" opacity=".5"/>
+          <g transform="translate(250 200)">
+            <circle class="ring pulse" cx="0" cy="0" r="60"/>
+            <circle class="ring pulse" cx="0" cy="0" r="100" style="animation-delay:1s"/>
+            <circle class="ring pulse" cx="0" cy="0" r="140" style="animation-delay:2s"/>
+            <circle cx="0" cy="0" r="180" fill="none" stroke="#B08155" stroke-opacity=".2" stroke-dasharray="4 4"/>
+          </g>
+          <g transform="translate(250 200)">
+            <circle r="8" fill="#E06A2B"/>
+            <circle r="14" fill="none" stroke="#E06A2B" stroke-opacity=".5" stroke-width="2"/>
+            <path d="M-4 -18 L4 -18 L0 -8 Z" fill="#E06A2B"/>
+          </g>
+          <text class="city-label main" x="266" y="196">SASKATOON</text>
+          <g>
+            <circle class="city-dot" cx="180" cy="130" r="3"/><text class="city-label" x="188" y="134">WARMAN</text>
+            <circle class="city-dot" cx="200" cy="160" r="3"/><text class="city-label" x="128" y="164">MARTENSVILLE</text>
+            <circle class="city-dot" cx="150" cy="80" r="3"/><text class="city-label" x="158" y="84">OSLER</text>
+            <circle class="city-dot" cx="120" cy="130" r="3"/><text class="city-label" x="60" y="134">DALMENY</text>
+            <circle class="city-dot" cx="330" cy="290" r="3"/><text class="city-label" x="338" y="294">BLACKSTRAP</text>
+            <circle class="city-dot" cx="330" cy="180" r="3"/><text class="city-label" x="338" y="184">ABERDEEN</text>
+            <circle class="city-dot" cx="180" cy="260" r="3"/><text class="city-label" x="110" y="264">VANSCOY</text>
+            <circle class="city-dot" cx="320" cy="250" r="3"/><text class="city-label" x="328" y="254">CLAVET</text>
+            <circle class="city-dot" cx="110" cy="220" r="3"/><text class="city-label" x="50" y="224">DELISLE</text>
+          </g>
+          <g transform="translate(450 60)">
+            <circle r="18" fill="none" stroke="#B08155" stroke-opacity=".4"/>
+            <path d="M0 -14 L4 4 L0 0 L-4 4 Z" fill="#E06A2B"/>
+            <path d="M0 14 L4 -4 L0 0 L-4 -4 Z" fill="#B08155" opacity=".5"/>
+            <text x="0" y="-24" text-anchor="middle" font-family="JetBrains Mono" font-size="8" fill="#B08155" letter-spacing="1">N</text>
+          </g>
+          <g transform="translate(30 370)">
+            <line x1="0" y1="0" x2="70" y2="0" stroke="#B08155" stroke-width="1.5"/>
+            <line x1="0" y1="-4" x2="0" y2="4" stroke="#B08155" stroke-width="1.5"/>
+            <line x1="70" y1="-4" x2="70" y2="4" stroke="#B08155" stroke-width="1.5"/>
+            <text x="35" y="16" text-anchor="middle" font-family="JetBrains Mono" font-size="8" fill="#B08155" letter-spacing="1">30 KM</text>
+          </g>
+        </svg>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FAQ ============ -->
+<section class="faq">
+  <div class="wrap">
+    <div class="section-head reveal" style="text-align:center;margin:0 auto 60px;max-width:640px;">
+      <div class="eyebrow" style="justify-content:center;">Things people ask</div>
+      <h2 style="margin-top:20px;">Answers first, quotes second.</h2>
+    </div>
+    <div class="faq-list">
+      <details class="qa reveal" data-cursor="hover">
+        <summary>How much does a typical deck cost in Saskatoon?<span class="plus">+</span></summary>
+        <div class="qa-a">For a 200 sq ft build with basic railings, most homeowners land between $6,000 (pressure-treated) and $14,500 (composite, fully loaded). Use the estimator above to model your specific build — those numbers are within 8% of our real quotes.</div>
+      </details>
+      <details class="qa reveal" data-cursor="hover">
+        <summary>Do I need a permit for a deck in Saskatoon?<span class="plus">+</span></summary>
+        <div class="qa-a">Any deck over 2 ft off the ground or attached to your house requires a permit. We handle the filing, drawings, and inspection scheduling as part of every build — you never touch City Hall.</div>
+      </details>
+      <details class="qa reveal" data-cursor="hover">
+        <summary>Can you build in winter?<span class="plus">+</span></summary>
+        <div class="qa-a">We book design and permits Nov–Feb, and start ground-breaking as soon as frost is out — usually early April. Deposits secure your slot in the build calendar; most spring slots are gone by January.</div>
+      </details>
+      <details class="qa reveal" data-cursor="hover">
+        <summary>What does the 10-year warranty actually cover?<span class="plus">+</span></summary>
+        <div class="qa-a">Everything we did with our hands: framing, fasteners, board attachment, railings, stairs, level, seams. It doesn't cover material defects — those are covered by the manufacturer's warranty, which is usually longer (25 yr on composite). We handle claims on both.</div>
+      </details>
+      <details class="qa reveal" data-cursor="hover">
+        <summary>Do you tear out my old deck too?<span class="plus">+</span></summary>
+        <div class="qa-a">Yes. Teardown, haul-away, footing removal — $600–$1,200 depending on size and how the old one was attached. Included as a line item on your quote so you're not surprised.</div>
+      </details>
+      <details class="qa reveal" data-cursor="hover">
+        <summary>Can I see one in person before I commit?<span class="plus">+</span></summary>
+        <div class="qa-a">Almost always yes. We keep a rotating list of recent clients happy to show their deck to a serious prospect. Ask during your consultation and we'll match you to a build near you.</div>
+      </details>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CONTACT ============ -->
+<section class="contact" id="contact">
+  <div class="wrap">
+    <div class="contact-wrap">
+      <div class="contact-info reveal">
+        <div class="eyebrow">Get a real quote</div>
+        <h2>Let's build<br>your backyard.</h2>
+        <p class="lede">Tell us a bit about your project and we'll get back to you within one business day — usually the same afternoon.</p>
+
+        <div class="contact-row">
+          <span class="contact-ico">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7 12.8 12.8 0 0 0 .7 2.8 2 2 0 0 1-.4 2.1L8 10a16 16 0 0 0 6 6l1.4-1.4a2 2 0 0 1 2.1-.4 12.8 12.8 0 0 0 2.8.7A2 2 0 0 1 22 16.9z"/></svg>
+          </span>
+          <div><b>Call or text</b><a href="tel:+13065558342">(306) 555-8342</a></div>
+        </div>
+        <div class="contact-row">
+          <span class="contact-ico">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg>
+          </span>
+          <div><b>Email</b><a href="mailto:hello@saskatoondeckshop.ca">hello@saskatoondeckshop.ca</a></div>
+        </div>
+        <div class="contact-row">
+          <span class="contact-ico">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M21 10c0 7-9 13-9 13S3 17 3 10a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          </span>
+          <div><b>Shop</b><span>2140 Faithfull Ave · Saskatoon, SK</span></div>
+        </div>
+        <div class="contact-row">
+          <span class="contact-ico">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>
+          </span>
+          <div><b>Hours</b><span>Mon–Fri 8–6 · Sat 9–3 · Sun by appointment</span></div>
+        </div>
+      </div>
+
+      <form class="form reveal" id="quoteForm">
+        <h3>Free consultation</h3>
+        <p class="form-sub">The more you tell us, the better the first call.</p>
+        <div class="frow frow-two">
+          <div><label>Name</label><input required type="text" name="name" placeholder="Jane Doe"></div>
+          <div><label>Phone</label><input required type="tel" name="phone" placeholder="(306) 555-0000"></div>
+        </div>
+        <div class="frow"><label>Email</label><input required type="email" name="email" placeholder="jane@example.com"></div>
+        <div class="frow frow-two">
+          <div><label>Neighbourhood</label><input type="text" name="hood" placeholder="Sutherland"></div>
+          <div>
+            <label>Approx. size</label>
+            <select name="size">
+              <option>Under 150 sq ft</option>
+              <option selected>150–300 sq ft</option>
+              <option>300–500 sq ft</option>
+              <option>Over 500 sq ft</option>
+              <option>Not sure yet</option>
+            </select>
+          </div>
+        </div>
+        <div class="frow">
+          <label>What are you thinking?</label>
+          <textarea name="notes" placeholder="Cedar deck off the kitchen, pergola for shade, room for a 6-person table..."></textarea>
+        </div>
+        <button class="btn" type="submit" data-cursor="hover">Send it over <span class="arrow">→</span></button>
+        <div class="form-ok" id="formOk"></div>
+        <div class="form-note">We reply within 1 business day. Zero spam, no email lists.</div>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FOOTER ============ -->
+<footer>
+  <div class="wrap">
+    <div class="foot-cols">
+      <div class="foot-col">
+        <div class="brand" style="margin-bottom:12px;">
+          <svg class="brand-mark" viewBox="0 0 40 40">
+            <rect x="1" y="1" width="38" height="38" rx="6" fill="var(--ink-2)" stroke="var(--wood)" stroke-width="2"/>
+            <path d="M6 26 L34 26 L30 32 L10 32 Z" fill="var(--wood-3)"/>
+            <path d="M10 18 L30 18 L34 26 L6 26 Z" fill="var(--wood)"/>
+            <path d="M10 18 L30 18 L30 32 L10 32 Z" fill="none" stroke="var(--ink)" stroke-width="1.2"/>
+          </svg>
+          <span>Saskatoon Deck Shop<small>Est. Saskatoon, SK</small></span>
+        </div>
+        <p class="foot-lede">Craft deck builder serving Saskatoon and 60 km out. Family-owned, fully insured, WCB coverage on every crew.</p>
+      </div>
+      <div class="foot-col">
+        <h5>Sitemap</h5>
+        <ul>
+          <li><a href="#build">What We Build</a></li>
+          <li><a href="#estimator">Cost Estimator</a></li>
+          <li><a href="#gallery">Projects</a></li>
+          <li><a href="#process">Process</a></li>
+          <li><a href="#area">Service Area</a></li>
+        </ul>
+      </div>
+      <div class="foot-col">
+        <h5>Contact</h5>
+        <ul>
+          <li><a href="tel:+13065558342">(306) 555-8342</a></li>
+          <li><a href="mailto:hello@saskatoondeckshop.ca">hello@saskatoondeckshop.ca</a></li>
+          <li><a href="#contact">2140 Faithfull Ave</a></li>
+          <li><a href="#contact">Saskatoon, SK</a></li>
+        </ul>
+      </div>
+      <div class="foot-col">
+        <h5>Follow</h5>
+        <ul>
+          <li><a href="#">Instagram — @sk_deck_shop</a></li>
+          <li><a href="#">Facebook — Saskatoon Deck Shop</a></li>
+          <li><a href="#">HomeStars — 4.9 ★</a></li>
+          <li><a href="#">Google Reviews — 127</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="foot-word">Saskatoon<em> Decks</em></div>
+    <div class="foot-bottom">
+      <span>© <span id="yr"></span> Saskatoon Deck Shop · WCB #SK-2011-8342 · SGI Insured</span>
+      <span>Backyards, elevated — since 2011</span>
+    </div>
+  </div>
+</footer>
+
 <script>
-document.documentElement.classList.add('js');
 (function(){
-  var revealSel = '.reveal, .reveal-item';
-  if(!('IntersectionObserver' in window)){
-    document.querySelectorAll(revealSel).forEach(function(el){el.classList.add('is-visible');});
-  } else {
-    var io = new IntersectionObserver(function(entries){
-      entries.forEach(function(e){
-        if(e.isIntersecting){
-          e.target.classList.add('is-visible');
-          io.unobserve(e.target);
-        }
-      });
-    },{rootMargin:'0px 0px -8% 0px',threshold:0.08});
-    document.querySelectorAll(revealSel).forEach(function(el){io.observe(el);});
+  'use strict';
+
+  var reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  /* ---------- Year ---------- */
+  document.getElementById('yr').textContent = new Date().getFullYear();
+
+  /* ---------- Live status ---------- */
+  var liveDot = document.getElementById('liveDot');
+  var now = new Date();
+  var h = now.getHours(), day = now.getDay();
+  var open = (day >= 1 && day <= 5 && h >= 8 && h < 18) || (day === 6 && h >= 9 && h < 15);
+  if (!open) liveDot.innerHTML = 'Closed · we reply first thing tomorrow';
+
+  /* ---------- Custom cursor ---------- */
+  var dot = document.getElementById('cursorDot');
+  var ring = document.getElementById('cursorRing');
+  var tx=0, ty=0, rx=0, ry=0;
+  document.addEventListener('mousemove', function(e){
+    tx = e.clientX; ty = e.clientY;
+    dot.style.transform = 'translate('+(tx-3)+'px,'+(ty-3)+'px)';
+  });
+  function lerp(){
+    rx += (tx - rx) * 0.18;
+    ry += (ty - ry) * 0.18;
+    ring.style.transform = 'translate('+(rx-18)+'px,'+(ry-18)+'px)';
+    requestAnimationFrame(lerp);
   }
-  var nav = document.querySelector('nav');
-  var fab = document.querySelector('.mobile-order-fab');
+  if (!reduced) lerp();
+
+  document.addEventListener('mouseover', function(e){
+    var t = e.target.closest('[data-cursor="hover"]');
+    if (t) { ring.classList.add('hover'); dot.classList.add('hover'); }
+  });
+  document.addEventListener('mouseout', function(e){
+    var t = e.target.closest('[data-cursor="hover"]');
+    if (t) { ring.classList.remove('hover'); dot.classList.remove('hover'); }
+  });
+
+  /* ---------- Scroll progress ---------- */
+  var sp = document.getElementById('scrollProgress');
+  var nav = document.getElementById('topnav');
   function onScroll(){
-    var y = window.scrollY;
-    if(nav){nav.classList.toggle('scrolled', y > 24);}
-    if(fab){fab.classList.toggle('show', y > 600);}
+    var docH = document.documentElement.scrollHeight - window.innerHeight;
+    var pct = docH > 0 ? (window.scrollY / docH) * 100 : 0;
+    sp.style.width = pct + '%';
+    nav.classList.toggle('scrolled', window.scrollY > 40);
   }
   window.addEventListener('scroll', onScroll, {passive:true});
   onScroll();
-})();
-(function(){
-  var form = document.getElementById('contact-form');
-  if(!form) return;
-  var status = document.getElementById('form-status');
-  var picker = document.getElementById('mail-picker');
-  var pending = null;
-  var TO = 'info@homebakedgoodness.ca';
 
-  function openPicker(data){
-    pending = data;
-    picker.hidden = false;
-    document.body.style.overflow = 'hidden';
-  }
-  function closePicker(){
-    picker.hidden = true;
-    document.body.style.overflow = '';
-  }
-
-  var locSelect = document.getElementById('contact-location');
-  var cateringRow = document.getElementById('catering-row');
-  function syncCateringRow(){
-    if(!locSelect || !cateringRow) return;
-    if(locSelect.value === 'Catering'){
-      cateringRow.hidden = false;
-    } else {
-      cateringRow.hidden = true;
-    }
-  }
-  if(locSelect){locSelect.addEventListener('change', syncCateringRow); syncCateringRow();}
-
-  form.addEventListener('submit', function(e){
-    e.preventDefault();
-    var loc = (document.getElementById('contact-location')||{}).value || '';
-    var first = (document.getElementById('contact-first')||{}).value.trim();
-    var last = (document.getElementById('contact-last')||{}).value.trim();
-    var email = (document.getElementById('contact-email')||{}).value.trim();
-    var msg = (document.getElementById('contact-msg')||{}).value.trim();
-    var address = (document.getElementById('contact-address')||{}).value.trim();
-    if(!first || !email){
-      status.textContent = 'Please add your name and email first.';
-      status.className = 'form-status err';
-      return;
-    }
-    var name = (first + ' ' + last).trim();
-    var subject = 'Website message from ' + name + ' (' + loc + ')';
-    var body =
-      'Location: ' + loc + '\n' +
-      (loc === 'Catering' && address ? 'Event address: ' + address + '\n' : '') +
-      'Name: ' + name + '\n' +
-      'Reply to: ' + email + '\n\n' +
-      'Message:\n' + msg + '\n';
-    openPicker({subject: subject, body: body});
-    status.textContent = '';
-    status.className = 'form-status';
+  /* ---------- Mobile menu ---------- */
+  var ham = document.getElementById('ham');
+  var mm = document.getElementById('mobileMenu');
+  ham.addEventListener('click', function(){
+    ham.classList.toggle('open');
+    mm.classList.toggle('open');
   });
+  window.closeMenu = function(){ ham.classList.remove('open'); mm.classList.remove('open'); };
 
-  picker.addEventListener('click', function(e){
-    if(e.target.hasAttribute('data-close-picker')) closePicker();
-  });
-  document.addEventListener('keydown', function(e){
-    if(e.key === 'Escape' && !picker.hidden) closePicker();
-  });
+  /* ---------- Reveal on scroll ---------- */
+  var io = new IntersectionObserver(function(ents){
+    ents.forEach(function(e){
+      if (e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); }
+    });
+  }, {threshold:0.12, rootMargin:'0px 0px -60px 0px'});
+  document.querySelectorAll('.reveal').forEach(function(el){ io.observe(el); });
 
-  picker.querySelectorAll('.mail-picker-opt').forEach(function(btn){
-    btn.addEventListener('click', function(){
-      if(!pending) return;
-      var s = encodeURIComponent(pending.subject);
-      var b = encodeURIComponent(pending.body);
-      var to = encodeURIComponent(TO);
-      var url;
-      switch(btn.dataset.mail){
-        case 'gmail':
-          url = 'https://mail.google.com/mail/?view=cm&fs=1&to=' + to + '&su=' + s + '&body=' + b;
-          window.open(url, '_blank', 'noopener'); break;
-        case 'outlook':
-          url = 'https://outlook.office.com/mail/deeplink/compose?to=' + to + '&subject=' + s + '&body=' + b;
-          window.open(url, '_blank', 'noopener'); break;
-        case 'yahoo':
-          url = 'https://compose.mail.yahoo.com/?to=' + to + '&subject=' + s + '&body=' + b;
-          window.open(url, '_blank', 'noopener'); break;
-        default:
-          url = 'mailto:' + TO + '?subject=' + s + '&body=' + b;
-          window.location.href = url;
-      }
-      closePicker();
-      status.textContent = "Opened in " + btn.textContent.trim() + ". Hit Send there to actually deliver it.";
-      status.className = 'form-status ok';
+  /* ---------- Hero mouse-tilt on deck ---------- */
+  var heroVis = document.getElementById('heroVisual');
+  var heroDeck = document.getElementById('heroDeck');
+  if (heroVis && !reduced) {
+    heroVis.addEventListener('mousemove', function(e){
+      var r = heroVis.getBoundingClientRect();
+      var x = (e.clientX - r.left) / r.width - 0.5;
+      var y = (e.clientY - r.top) / r.height - 0.5;
+      heroDeck.style.transform = 'rotateX('+(-y*10)+'deg) rotateY('+(x*14)+'deg)';
+    });
+    heroVis.addEventListener('mouseleave', function(){ heroDeck.style.transform = 'rotateX(0) rotateY(0)'; });
+  }
+
+  /* ---------- Card tilt (spotlight) ---------- */
+  document.querySelectorAll('[data-tilt]').forEach(function(card){
+    card.addEventListener('mousemove', function(e){
+      var r = card.getBoundingClientRect();
+      var x = (e.clientX - r.left) / r.width * 100;
+      var y = (e.clientY - r.top) / r.height * 100;
+      card.style.setProperty('--mx', x + '%');
+      card.style.setProperty('--my', y + '%');
     });
   });
+
+  /* ---------- ESTIMATOR ---------- */
+  var lenS = document.getElementById('lenSlider');
+  var widS = document.getElementById('widSlider');
+  var hgtS = document.getElementById('hgtSlider');
+  var lenO = document.getElementById('lenOut');
+  var widO = document.getElementById('widOut');
+  var hgtO = document.getElementById('hgtOut');
+  var sqftO = document.getElementById('sqftOut');
+  var dimLen = document.getElementById('dimLen');
+  var dimWid = document.getElementById('dimWid');
+  var dimLineH = document.getElementById('dimLineH');
+  var dimLineV = document.getElementById('dimLineV');
+  var matO = document.getElementById('matOut');
+  var totLow = document.getElementById('totLow');
+  var totHigh = document.getElementById('totHigh');
+  var brFrame = document.getElementById('brFrame');
+  var brDeck = document.getElementById('brDeck');
+  var brLabor = document.getElementById('brLabor');
+  var brAdd = document.getElementById('brAdd');
+
+  var planRect = document.getElementById('planRect');
+  var planLines = document.getElementById('planLines');
+  var planRail = document.getElementById('planRail');
+  var planStairs = document.getElementById('planStairs');
+  var planPergola = document.getElementById('planPergola');
+  var planBench = document.getElementById('planBench');
+  var planPrivacy = document.getElementById('planPrivacy');
+  var planLighting = document.getElementById('planLighting');
+
+  var state = { len:14, wid:12, hgt:2, matKey:'cedar', matPrice:14, addons: new Set() };
+  var matPatternMap = {pt:'url(#planPT)', cedar:'url(#planGrain)', comp:'url(#planComp)', hard:'url(#planHard)'};
+  var matNameMap = {pt:'Pressure-treated', cedar:'Cedar', comp:'Composite', hard:'Hardwood (Ipe)'};
+
+  function fmt(n){ return Math.round(n).toLocaleString('en-US'); }
+
+  function drawPlan(){
+    var w = 40 + (state.len - 6) * (220/24);
+    var hh = 60 + (state.wid - 6) * (120/18);
+    var x = 80 + (260 - w)/2;
+    var y = 60 + (180 - hh)/2;
+    planRect.setAttribute('x', x);
+    planRect.setAttribute('y', y);
+    planRect.setAttribute('width', w);
+    planRect.setAttribute('height', hh);
+    planRect.setAttribute('fill', matPatternMap[state.matKey]);
+
+    var lines = '';
+    for (var bx = x + 20; bx < x + w; bx += 20) {
+      lines += '<line x1="'+bx+'" y1="'+y+'" x2="'+bx+'" y2="'+(y+hh)+'"/>';
+    }
+    planLines.innerHTML = lines;
+
+    dimLen.setAttribute('x', x + w/2);
+    dimLen.setAttribute('y', y+hh+13);
+    dimLen.textContent = state.len + ' ft';
+    dimLineH.setAttribute('x1', x);
+    dimLineH.setAttribute('x2', x+w);
+    dimLineH.setAttribute('y1', y+hh+15);
+    dimLineH.setAttribute('y2', y+hh+15);
+
+    var vx = x + w + 15;
+    dimLineV.setAttribute('x1', vx);
+    dimLineV.setAttribute('x2', vx);
+    dimLineV.setAttribute('y1', y);
+    dimLineV.setAttribute('y2', y+hh);
+    dimWid.setAttribute('x', vx + 10);
+    dimWid.setAttribute('y', y + hh/2);
+    dimWid.setAttribute('transform', 'rotate(-90 '+(vx+10)+' '+(y+hh/2)+')');
+    dimWid.textContent = state.wid + ' ft';
+
+    planRail.style.opacity     = state.addons.has('railing')  ? 1 : 0;
+    planStairs.style.opacity   = state.addons.has('stairs')   ? 1 : 0;
+    planPergola.style.opacity  = state.addons.has('pergola')  ? 1 : 0;
+    planBench.style.opacity    = state.addons.has('bench')    ? 1 : 0;
+    planPrivacy.style.opacity  = state.addons.has('privacy')  ? 1 : 0;
+    planLighting.style.opacity = state.addons.has('lighting') ? 1 : 0;
+
+    planRail.innerHTML =
+      '<path d="M'+x+' '+y+' L'+x+' '+(y+hh)+'"/>' +
+      '<path d="M'+(x+w)+' '+y+' L'+(x+w)+' '+(y+hh)+'"/>' +
+      '<path d="M'+x+' '+(y+hh)+' L'+(x+w)+' '+(y+hh)+'"/>';
+    planPergola.innerHTML =
+      '<rect x="'+(x+2)+'" y="'+(y+2)+'" width="'+(w-4)+'" height="'+(hh-4)+'"/>' +
+      '<line x1="'+(x+2)+'" y1="'+(y+hh/4)+'" x2="'+(x+w-2)+'" y2="'+(y+hh/4)+'"/>' +
+      '<line x1="'+(x+2)+'" y1="'+(y+hh/2)+'" x2="'+(x+w-2)+'" y2="'+(y+hh/2)+'"/>' +
+      '<line x1="'+(x+2)+'" y1="'+(y+3*hh/4)+'" x2="'+(x+w-2)+'" y2="'+(y+3*hh/4)+'"/>';
+    planStairs.innerHTML =
+      '<rect x="'+(x+w/2-40)+'" y="'+(y+hh)+'" width="80" height="6"/>' +
+      '<rect x="'+(x+w/2-30)+'" y="'+(y+hh+6)+'" width="60" height="6"/>' +
+      '<rect x="'+(x+w/2-20)+'" y="'+(y+hh+12)+'" width="40" height="6"/>';
+    planBench.innerHTML = '<rect x="'+(x+2)+'" y="'+(y+2)+'" width="'+(w-4)+'" height="10"/>';
+    planPrivacy.innerHTML = '<rect x="'+(x+w-4)+'" y="'+y+'" width="4" height="'+hh+'"/>';
+    planLighting.innerHTML =
+      '<circle cx="'+x+'" cy="'+y+'" r="3"/><circle cx="'+(x+w)+'" cy="'+y+'" r="3"/>' +
+      '<circle cx="'+(x+w/2)+'" cy="'+y+'" r="3"/>' +
+      '<circle cx="'+x+'" cy="'+(y+hh/2)+'" r="3"/><circle cx="'+(x+w)+'" cy="'+(y+hh/2)+'" r="3"/>' +
+      '<circle cx="'+x+'" cy="'+(y+hh)+'" r="3"/><circle cx="'+(x+w)+'" cy="'+(y+hh)+'" r="3"/>' +
+      '<circle cx="'+(x+w/2)+'" cy="'+(y+hh)+'" r="3"/>';
+  }
+
+  function recompute(){
+    var sqft = state.len * state.wid;
+    sqftO.textContent = sqft + ' sq ft';
+
+    lenO.textContent = state.len + ' ft';
+    widO.textContent = state.wid + ' ft';
+    hgtO.textContent = state.hgt + ' ft';
+    matO.textContent = matNameMap[state.matKey];
+
+    [lenS, widS, hgtS].forEach(function(s){
+      var pct = (s.value - s.min) / (s.max - s.min) * 100;
+      s.style.backgroundSize = pct + '% 100%';
+    });
+
+    var framePerSqft = 5 + state.hgt * 0.35;
+    var laborPerSqft = 8 + state.hgt * 0.5;
+    var framing = sqft * framePerSqft;
+    var decking = sqft * state.matPrice;
+    var labor = sqft * laborPerSqft;
+    var addonSum = 0;
+    document.querySelectorAll('.addon.on').forEach(function(a){ addonSum += Number(a.dataset.price); });
+
+    var base = framing + decking + labor + addonSum;
+    var low = base;
+    var high = base * 1.28;
+
+    totLow.textContent = fmt(low);
+    totHigh.textContent = fmt(high);
+    brFrame.textContent = '$' + fmt(framing);
+    brDeck.textContent  = '$' + fmt(decking);
+    brLabor.textContent = '$' + fmt(labor);
+    brAdd.textContent   = '$' + fmt(addonSum);
+
+    drawPlan();
+  }
+
+  [lenS, widS, hgtS].forEach(function(s){
+    s.addEventListener('input', function(){
+      state.len = +lenS.value; state.wid = +widS.value; state.hgt = +hgtS.value;
+      recompute();
+    });
+  });
+  document.querySelectorAll('.mat-opt').forEach(function(btn){
+    btn.addEventListener('click', function(){
+      document.querySelectorAll('.mat-opt').forEach(function(b){ b.classList.remove('active'); });
+      btn.classList.add('active');
+      state.matKey = btn.dataset.mat;
+      state.matPrice = +btn.dataset.price;
+      recompute();
+    });
+  });
+  document.querySelectorAll('.addon').forEach(function(el){
+    el.addEventListener('click', function(){
+      el.classList.toggle('on');
+      var key = el.dataset.key;
+      if (el.classList.contains('on')) state.addons.add(key);
+      else state.addons.delete(key);
+      recompute();
+    });
+  });
+  recompute();
+
+  /* ---------- BEFORE/AFTER drag ---------- */
+  var ba = document.getElementById('baWrap');
+  var dragging = false;
+  function setBA(pct){
+    pct = Math.max(0, Math.min(100, pct));
+    ba.style.setProperty('--ba', pct + '%');
+  }
+  function baFromEvent(e){
+    var r = ba.getBoundingClientRect();
+    var cx = (e.touches ? e.touches[0].clientX : e.clientX);
+    return ((cx - r.left) / r.width) * 100;
+  }
+  ba.addEventListener('mousedown', function(e){ dragging = true; setBA(baFromEvent(e)); });
+  ba.addEventListener('touchstart', function(e){ dragging = true; setBA(baFromEvent(e)); }, {passive:true});
+  window.addEventListener('mousemove', function(e){ if (dragging) setBA(baFromEvent(e)); });
+  window.addEventListener('touchmove', function(e){ if (dragging) setBA(baFromEvent(e)); }, {passive:true});
+  window.addEventListener('mouseup', function(){ dragging = false; });
+  window.addEventListener('touchend', function(){ dragging = false; });
+  ba.addEventListener('mousemove', function(e){
+    var r = ba.getBoundingClientRect();
+    var pct = ((e.clientX - r.left) / r.width) * 100;
+    if (!dragging && Math.abs(pct - 50) < 40) return;
+    if (dragging) setBA(pct);
+  });
+  setBA(50);
+
+  /* ---------- GALLERY ---------- */
+  var projects = [
+    { title:"Sutherland Retreat", loc:"Sutherland · 2024", mat:"Cedar + Pergola", sqft:"380 sq ft", tall:false,
+      desc:"Multi-level cedar with retractable canopy pergola. Family of five, hot tub cutout, integrated bench storage.",
+      badge:"Signature build" },
+    { title:"Riverbend Overlook", loc:"Silverwood · 2024", mat:"Composite · TimberTech", sqft:"520 sq ft", tall:true,
+      desc:"Elevated composite deck with glass railings preserving river view. Low-voltage rail lights.",
+      badge:"River view" },
+    { title:"Warman Farmhouse", loc:"Warman · 2023", mat:"Pressure-treated + Cedar rail", sqft:"260 sq ft", tall:false,
+      desc:"Budget-conscious PT platform with cedar railings and matched fascia for the farmhouse aesthetic.",
+      badge:"Budget win" },
+    { title:"Nutana Rebuild", loc:"Nutana · 2024", mat:"Ipe hardwood", sqft:"180 sq ft", tall:false,
+      desc:"Tore out a failing 30-year deck, rebuilt in Brazilian Ipe with hidden fasteners. Passed inspection first try.",
+      badge:"Failed → passed" },
+    { title:"Willowgrove Multi-Level", loc:"Willowgrove · 2024", mat:"Composite", sqft:"640 sq ft", tall:true,
+      desc:"Three-tier composite build with cable railings. Dining zone, lounge zone, hot-tub zone.",
+      badge:"Three zones" },
+    { title:"Blackstrap Lakehouse", loc:"Blackstrap · 2023", mat:"Cedar + Steel frame", sqft:"820 sq ft", tall:false,
+      desc:"Wrap-around cedar deck on steel screw-pile frame. Built to survive lake wind and shifting soil.",
+      badge:"Steel frame" },
+    { title:"Osler Garden Nook", loc:"Osler · 2024", mat:"Cedar ground-level", sqft:"140 sq ft", tall:false,
+      desc:"Small-footprint ground-level cedar with integrated raised planters. Hot-tub-ready with drain.",
+      badge:"Small lot" },
+    { title:"Aberdeen Sunset Deck", loc:"Aberdeen · 2023", mat:"Composite + Aluminum rail", sqft:"420 sq ft", tall:true,
+      desc:"West-facing 420 sq ft with 8ft privacy panel and dimmable string-light system on smart timer.",
+      badge:"Privacy panel" },
+    { title:"Delisle Family Build", loc:"Delisle · 2024", mat:"Cedar w/ pergola", sqft:"340 sq ft", tall:false,
+      desc:"Cedar deck with pergola shade structure. Built for a family with two dogs and weekend BBQs.",
+      badge:"Dog-friendly" }
+  ];
+
+  var swatches = [
+    '<svg viewBox="0 0 400 300" preserveAspectRatio="xMidYMid slice"><defs><linearGradient id="g1a" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#E88A44"/><stop offset=".6" stop-color="#C9955F"/><stop offset="1" stop-color="#8FAE5F"/></linearGradient></defs><rect width="400" height="300" fill="url(#g1a)"/><rect y="200" width="400" height="100" fill="#6B4423"/><g stroke="#4A2F1E" stroke-width=".8" opacity=".6"><line x1="0" y1="215" x2="400" y2="215"/><line x1="0" y1="240" x2="400" y2="240"/><line x1="0" y1="265" x2="400" y2="265"/></g><g fill="#26221D"><rect x="30" y="120" width="20" height="80"/><rect x="180" y="120" width="20" height="80"/><rect x="330" y="120" width="20" height="80"/></g><rect x="20" y="110" width="340" height="18" fill="#26221D"/><g fill="#26221D"><rect x="60" y="90" width="18" height="20"/><rect x="120" y="90" width="18" height="20"/><rect x="180" y="90" width="18" height="20"/><rect x="240" y="90" width="18" height="20"/><rect x="300" y="90" width="18" height="20"/></g><circle cx="340" cy="60" r="24" fill="#F4EDE0" opacity=".6"/></svg>',
+    '<svg viewBox="0 0 400 300" preserveAspectRatio="xMidYMid slice"><defs><linearGradient id="g2a" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#7FB3C7"/><stop offset="1" stop-color="#4A6875"/></linearGradient></defs><rect width="400" height="300" fill="url(#g2a)"/><path d="M0 180 Q100 160 200 175 T400 165 L400 220 L0 220 Z" fill="#3D5A6E" opacity=".7"/><rect y="200" width="400" height="100" fill="#3D3025"/><rect y="200" width="400" height="30" fill="#5A4A3A"/><g stroke="#26221D" stroke-width="1" opacity=".8"><line x1="0" y1="210" x2="400" y2="210"/><line x1="0" y1="222" x2="400" y2="222"/></g><g stroke="#F4EDE0" stroke-width="1"><line x1="20" y1="140" x2="20" y2="200"/><line x1="80" y1="140" x2="80" y2="200"/><line x1="140" y1="140" x2="140" y2="200"/><line x1="200" y1="140" x2="200" y2="200"/><line x1="260" y1="140" x2="260" y2="200"/><line x1="320" y1="140" x2="320" y2="200"/><line x1="380" y1="140" x2="380" y2="200"/><line x1="20" y1="140" x2="380" y2="140"/></g></svg>',
+    '<svg viewBox="0 0 400 300" preserveAspectRatio="xMidYMid slice"><defs><linearGradient id="g3a" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#4A5568"/><stop offset="1" stop-color="#8FAE5F"/></linearGradient></defs><rect width="400" height="300" fill="url(#g3a)"/><path d="M40 200 L100 100 L160 200 Z" fill="#3D3025"/><rect x="40" y="200" width="120" height="60" fill="#5A4A3A"/><rect x="180" y="140" width="180" height="120" fill="#6B8E4E" opacity=".7"/><g stroke="#4A6835" stroke-width="1"><line x1="180" y1="160" x2="360" y2="160"/><line x1="180" y1="180" x2="360" y2="180"/><line x1="180" y1="200" x2="360" y2="200"/></g><g fill="#8A5F3C"><rect x="200" y="120" width="6" height="20"/><rect x="230" y="120" width="6" height="20"/><rect x="260" y="120" width="6" height="20"/><rect x="290" y="120" width="6" height="20"/><rect x="320" y="120" width="6" height="20"/></g></svg>',
+    '<svg viewBox="0 0 400 300" preserveAspectRatio="xMidYMid slice"><defs><linearGradient id="g4a" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#3D3025"/><stop offset="1" stop-color="#1D1A17"/></linearGradient></defs><rect width="400" height="300" fill="url(#g4a)"/><rect y="180" width="400" height="120" fill="#5C3820"/><g stroke="#2A1810" stroke-width="1.5" opacity=".9"><line x1="0" y1="200" x2="400" y2="200"/><line x1="0" y1="230" x2="400" y2="230"/><line x1="0" y1="260" x2="400" y2="260"/></g><g fill="#E06A2B" opacity=".9"><circle cx="60" cy="90" r="4"/><circle cx="140" cy="80" r="4"/><circle cx="220" cy="90" r="4"/><circle cx="300" cy="80" r="4"/><circle cx="360" cy="90" r="4"/></g><path d="M40 100 Q200 60 380 100" stroke="#3D2E22" stroke-width="1" fill="none"/></svg>',
+    '<svg viewBox="0 0 400 300" preserveAspectRatio="xMidYMid slice"><defs><linearGradient id="g5a" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#5A4A3A"/><stop offset="1" stop-color="#26221D"/></linearGradient></defs><rect width="400" height="300" fill="url(#g5a)"/><rect y="180" width="400" height="30" fill="#3D3025"/><rect y="210" width="400" height="30" fill="#5A4A3A"/><rect y="240" width="400" height="30" fill="#3D3025"/><rect y="270" width="400" height="30" fill="#5A4A3A"/><g stroke="#F4EDE0" stroke-width="1" opacity=".6"><line x1="60" y1="120" x2="60" y2="240"/><line x1="180" y1="140" x2="180" y2="240"/><line x1="300" y1="130" x2="300" y2="240"/></g></svg>',
+    '<svg viewBox="0 0 400 300" preserveAspectRatio="xMidYMid slice"><defs><linearGradient id="g6a" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#E88A44"/><stop offset="1" stop-color="#7FB3C7"/></linearGradient></defs><rect width="400" height="300" fill="url(#g6a)"/><path d="M0 200 Q200 190 400 200 L400 300 L0 300 Z" fill="#3D5A6E"/><rect x="60" y="140" width="280" height="80" fill="#C9955F"/><g stroke="#8A5F3C" stroke-width="1"><line x1="60" y1="160" x2="340" y2="160"/><line x1="60" y1="180" x2="340" y2="180"/><line x1="60" y1="200" x2="340" y2="200"/></g><g fill="#26221D"><rect x="80" y="220" width="10" height="40"/><rect x="180" y="220" width="10" height="40"/><rect x="290" y="220" width="10" height="40"/></g></svg>',
+    '<svg viewBox="0 0 400 300" preserveAspectRatio="xMidYMid slice"><defs><linearGradient id="g7a" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#8FAE5F"/><stop offset="1" stop-color="#4A6835"/></linearGradient></defs><rect width="400" height="300" fill="url(#g7a)"/><ellipse cx="200" cy="260" rx="180" ry="30" fill="#4A6835" opacity=".7"/><rect x="80" y="180" width="240" height="80" fill="#C9955F"/><g stroke="#8A5F3C" stroke-width="1"><line x1="80" y1="200" x2="320" y2="200"/><line x1="80" y1="220" x2="320" y2="220"/><line x1="80" y1="240" x2="320" y2="240"/></g><rect x="60" y="160" width="30" height="40" fill="#6B4423"/><path d="M60 160 Q70 130 66 120 Q80 130 90 118 Q98 130 90 160" fill="#6B8E4E"/><rect x="310" y="160" width="30" height="40" fill="#6B4423"/><path d="M310 160 Q320 130 316 120 Q330 130 340 118 Q348 130 340 160" fill="#6B8E4E"/></svg>',
+    '<svg viewBox="0 0 400 300" preserveAspectRatio="xMidYMid slice"><defs><radialGradient id="g8a" cx=".7" cy=".8" r=".9"><stop offset="0" stop-color="#E06A2B"/><stop offset=".5" stop-color="#C9955F"/><stop offset="1" stop-color="#3D3025"/></radialGradient></defs><rect width="400" height="300" fill="url(#g8a)"/><circle cx="280" cy="220" r="60" fill="#F4EDE0" opacity=".4"/><rect y="240" width="400" height="60" fill="#26221D"/><rect x="20" y="200" width="360" height="40" fill="#5A4A3A"/><g stroke="#26221D" stroke-width="1"><line x1="20" y1="220" x2="380" y2="220"/></g><rect x="60" y="120" width="8" height="120" fill="#26221D"/><rect x="60" y="120" width="200" height="8" fill="#26221D"/></svg>',
+    '<svg viewBox="0 0 400 300" preserveAspectRatio="xMidYMid slice"><defs><linearGradient id="g9a" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#7FB3C7"/><stop offset=".7" stop-color="#C9955F"/><stop offset="1" stop-color="#6B8E4E"/></linearGradient></defs><rect width="400" height="300" fill="url(#g9a)"/><rect y="200" width="400" height="100" fill="#8A5F3C"/><g stroke="#4A2F1E" stroke-width="1" opacity=".7"><line x1="0" y1="220" x2="400" y2="220"/><line x1="0" y1="240" x2="400" y2="240"/><line x1="0" y1="260" x2="400" y2="260"/></g><g fill="#26221D"><rect x="40" y="130" width="14" height="80"/><rect x="200" y="130" width="14" height="80"/><rect x="346" y="130" width="14" height="80"/></g><rect x="30" y="120" width="340" height="14" fill="#3D2E22"/></svg>'
+  ];
+
+  var galGrid = document.getElementById('galGrid');
+  projects.forEach(function(p, i){
+    var item = document.createElement('div');
+    item.className = 'gal-item reveal' + (p.tall ? ' tall' : '');
+    item.style.setProperty('--rd', (60 * (i % 6)) + 'ms');
+    item.setAttribute('data-cursor','hover');
+    item.innerHTML =
+      '<span class="gal-badge">'+p.badge+'</span>' +
+      swatches[i] +
+      '<div class="gal-meta"><h4>'+p.title+'</h4><p>'+p.loc+' · '+p.mat+' · '+p.sqft+'</p></div>';
+    item.addEventListener('click', function(){ openLB(i); });
+    galGrid.appendChild(item);
+    io.observe(item);
+  });
+
+  var lb = document.getElementById('lightbox');
+  var lbBody = document.getElementById('lbBody');
+  var lbTitle = document.getElementById('lbTitle');
+  var lbDesc = document.getElementById('lbDesc');
+  var lbLoc = document.getElementById('lbLoc');
+  var lbStats = document.getElementById('lbStats');
+  function openLB(i){
+    var p = projects[i];
+    lbBody.innerHTML = swatches[i];
+    lbTitle.textContent = p.title;
+    lbDesc.textContent = p.desc;
+    lbLoc.textContent = p.loc;
+    lbStats.textContent = p.mat + ' · ' + p.sqft;
+    lb.classList.add('open');
+  }
+  function closeLB(){ lb.classList.remove('open'); }
+  document.getElementById('lbClose').addEventListener('click', closeLB);
+  lb.addEventListener('click', function(e){ if (e.target === lb) closeLB(); });
+  document.addEventListener('keydown', function(e){ if (e.key === 'Escape') closeLB(); });
+
+  /* ---------- PROCESS TIMELINE ---------- */
+  var stepsEl = document.getElementById('steps');
+  var stepLine = document.getElementById('stepLine');
+  var stepEls = document.querySelectorAll('.step');
+  function onStepScroll(){
+    var rect = stepsEl.getBoundingClientRect();
+    var total = rect.height;
+    var scrolled = Math.max(0, Math.min(total, window.innerHeight/2 - rect.top));
+    var pct = total > 0 ? (scrolled / total) * 100 : 0;
+    stepLine.style.setProperty('--fill', pct + '%');
+    stepEls.forEach(function(s){
+      var sr = s.getBoundingClientRect();
+      s.classList.toggle('active', sr.top < window.innerHeight * 0.55 && sr.bottom > 100);
+    });
+  }
+  window.addEventListener('scroll', onStepScroll, {passive:true});
+  onStepScroll();
+
+  /* ---------- FORM ---------- */
+  var form = document.getElementById('quoteForm');
+  form.addEventListener('submit', function(e){
+    e.preventDefault();
+    var data = Object.fromEntries(new FormData(form));
+    var ok = document.getElementById('formOk');
+    var firstName = (data.name || '').split(' ')[0] || 'friend';
+    ok.textContent = 'Thanks '+firstName+" — we'll reach out to "+data.phone+' within one business day.';
+    form.reset();
+    setTimeout(function(){ ok.textContent = ''; }, 8000);
+  });
+
 })();
-function toggleAllMenus(){
-  var lists = document.querySelectorAll('#pizza-more, #baking-more, #icecream-more');
-  var btn = document.getElementById('menu-master-toggle');
-  var willOpen = !lists[0].classList.contains('open');
-  lists.forEach(function(el){el.classList.toggle('open', willOpen);});
-  btn.classList.toggle('open', willOpen);
-  btn.childNodes[0].nodeValue = willOpen ? 'Show less' : 'View full menu';
-}
-function toggleMobileMenu(){
-  var panel = document.getElementById('mobile-menu');
-  var btn = document.getElementById('hamburger-btn');
-  var isOpen = panel.classList.toggle('open');
-  btn.classList.toggle('open', isOpen);
-  btn.setAttribute('aria-expanded', isOpen);
-}
-function closeMobileMenu(){
-  document.getElementById('mobile-menu').classList.remove('open');
-  var btn = document.getElementById('hamburger-btn');
-  btn.classList.remove('open');
-  btn.setAttribute('aria-expanded', 'false');
-}
-function toggleContent(id){
-  var content = document.getElementById(id + '-more');
-  var btn = document.getElementById(id + '-toggle');
-  var isOpen = content.classList.toggle('open');
-  btn.classList.toggle('open', isOpen);
-  if(id === 'story'){
-    btn.textContent = isOpen ? 'Show less' : 'Continue reading our story';
-  } else {
-    btn.textContent = isOpen ? 'Show less' : btn.getAttribute('data-label');
-  }
-}
-document.querySelectorAll('.toggle-btn').forEach(function(btn){
-  if(btn.id !== 'story-toggle'){
-    btn.setAttribute('data-label', btn.textContent);
-  }
-});
 </script>
 </body>
 </html>
